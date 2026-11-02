@@ -370,6 +370,7 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
 .plan li::marker { color: var(--red-text); }
 .fine { margin-top: 20px; font-size: 0.9rem; color: var(--muted); max-width: 62ch; }
 .cta-row { margin-top: 28px; }
+.stay-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 20px 40px; }
 
 /* Footer */
 .foot { border-top: 1px solid var(--line); background: var(--surface); padding-block: 44px 28px; }
@@ -839,7 +840,7 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
   var PRIORITY = ['sauna', 'whirlpool', 'breakfast', 'fjord', 'lake', 'sea', 'beach', 'swim', 'forest', 'dogs', 'kids', 'parking', 'kitchen', 'bath', 'heating', 'wifi', 'ev'];
   var PRICES = [0, 1000, 1500, 2000];
   var DATA = [
-    { id: 1, type: 'glamping', region: 'mj', sleeps: 2, price: null, ad: false, prem: true, slug: 'manefjord', img: 'zelt-aussen-tag', url: 'https://manefjordglamping.dk/',
+    { id: 1, type: 'glamping', region: 'mj', sleeps: 2, price: null, ad: false, prem: true, slug: 'manefjord', img: 'zelt-leuchtet', url: 'https://manefjordglamping.dk/',
       am: ['parking', 'ev', 'wifi', 'heating', 'bath', 'kitchen'] }
   ];
 
@@ -994,6 +995,7 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
       phone: '+4560905439',
       phoneLabel: '+45 60 90 54 39',
       gallery: [
+        ['zelt-leuchtet', { da: 'Teltet lyser op i skumringen', de: 'Das Zelt leuchtet in der Dämmerung', en: 'The tent glowing at dusk' }],
         ['zelt-aussen-tag', { da: 'Lotus Belle-teltet på en træterrasse foran det gamle murstenshus', de: 'Das Lotus-Belle-Zelt auf einer Holzterrasse vor dem alten Backsteinhaus', en: 'The Lotus Belle tent on a timber deck in front of the old brick house' }],
         ['zelt-innen-tag', { da: 'Teltet indefra med panoramavindue, dobbeltseng og brændeovn', de: 'Das Zelt von innen mit Panoramafenster, Doppelbett und Holzofen', en: 'Inside the tent with panoramic window, double bed and wood stove' }],
         ['bett-abend', { da: 'Dobbeltsengen med lyskæde om aftenen', de: 'Das Doppelbett am Abend mit Lichterkette', en: 'The double bed in the evening with fairy lights' }],
@@ -1001,7 +1003,6 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
         ['ofen', { da: 'Brændeovnen i teltet', de: 'Der Holzofen im Zelt', en: 'The wood stove in the tent' }],
         ['sitzecke', { da: 'Siddeplads med lammeskind og lanterne', de: 'Sitzecke mit Schaffell und Laterne', en: 'Seating area with sheepskins and a lantern' }],
         ['zelt-feuer-nacht', { da: 'Teltet og bålplads om aftenen', de: 'Zelt und Feuerstelle am Abend', en: 'The tent and fire pit in the evening' }],
-        ['zelt-leuchtet', { da: 'Teltet lyser op i skumringen', de: 'Das Zelt leuchtet in der Dämmerung', en: 'The tent glowing at dusk' }],
         ['blick-garten', { da: 'Udsigt fra teltet over haven med terrasse og bålplads', de: 'Blick aus dem Zelt über den Garten mit Terrasse und Feuerstelle', en: 'View from the tent over the garden with terrace and fire pit' }],
         ['fruehstueck-garten', { da: 'Morgenmad på terrassen i haven', de: 'Frühstück auf der Terrasse im Garten', en: 'Breakfast on the terrace in the garden' }],
         ['bad-1', { da: 'Det private badeværelse', de: 'Das private Bad', en: 'The private bathroom' }],
@@ -1357,7 +1358,7 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
         return '<button type="button" data-lb="' + i + '"><img src="img/t/' + gi[0] + '.webp" alt="' + esc(gi[1][lang] || gi[1].da) + '" loading="lazy" width="720" height="540"></button>';
       }).join('') + '</div>' +
       '<p class="stay-note" style="margin-top:28px">' + c.own + '</p>' +
-      '<div class="cta-row"><a class="btn btn-red" href="' + st.book + '" target="_blank" rel="noopener">' + c.book + ' ↗</a><a class="rlink" href="#ophold">← ' + c.back + '</a></div></div></section>';
+      '<div class="cta-row stay-cta"><a class="btn btn-red" href="' + st.book + '" target="_blank" rel="noopener">' + c.book + ' ↗</a><a class="rlink" href="#ophold">← ' + c.back + '</a></div></div></section>';
     $('view-stay').innerHTML = head + top + body + gal;
   }
 
