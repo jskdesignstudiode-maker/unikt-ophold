@@ -5,9 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Unikt Ophold samler glamping og særlige overnatninger i Danmark: telte, hytter, trætophuse og husbåde.">
 <title>Unikt Ophold</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Public+Sans:wght@400;500;600&display=swap">
+<link rel="preload" href="fonts/jost-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/public-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face { font-family: 'Jost'; font-style: normal; font-weight: 100 900; font-display: swap; src: url(fonts/jost-latin-wght-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Public Sans'; font-style: normal; font-weight: 100 900; font-display: swap; src: url(fonts/public-sans-latin-wght-normal.woff2) format('woff2'); }
+</style>
+<script>
+/* Consent Mode v2: everything denied by default. Nothing is loaded before consent. */
+window.dataLayer = window.dataLayer || [];
+function gtag(){ dataLayer.push(arguments); }
+gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied', wait_for_update: 500 });
+</script>
 <style>
 /* Layout: calm portal in the manner of a hotel booking site. White header, pale hero with a ghosted Dannebrog cross and a raised search card, red kept for buttons and small accents. */
 :root {
@@ -373,6 +382,22 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
 .stay-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 20px 40px; }
 
 /* Footer */
+.cc { position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 90; max-width: 640px; margin-inline: auto; background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 2px; padding: 22px; box-shadow: 0 8px 32px rgba(0,0,0,.22); }
+.cc[hidden] { display: none; }
+.cc h2 { font-family: var(--font-display); font-weight: 500; font-size: 1.25rem; margin-bottom: 8px; }
+.cc p { font-size: 0.92rem; color: var(--muted); }
+.cc-opts { margin-top: 14px; display: grid; gap: 10px; }
+.cc-opts label { display: flex; gap: 10px; align-items: flex-start; font-size: 0.92rem; }
+.cc-opts input { margin-top: 4px; accent-color: var(--red); }
+.cc-btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+.cc-btns .btn { flex: 1 1 150px; border: 1px solid var(--line); justify-content: center; }
+.cc-btns .btn-red { border-color: var(--red); }
+.linkbtn { background: none; border: 0; padding: 0; color: inherit; font: inherit; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+
+.legal-doc { max-width: 70ch; }
+.legal-doc h2 { font-family: var(--font-display); font-weight: 500; font-size: 1.3rem; margin: 28px 0 8px; }
+.legal-doc h2:first-child { margin-top: 0; }
+.legal a, .legal-doc a { color: var(--red-text); }
 .foot { border-top: 1px solid var(--line); background: var(--surface); padding-block: 44px 28px; }
 .foot-in { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px; }
 .foot p.about { color: var(--muted); font-size: 0.9rem; max-width: 46ch; margin-top: 12px; }
@@ -601,6 +626,7 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
 <div id="view-region" hidden></div>
 <div id="view-theme" hidden></div>
 <div id="view-stay" hidden></div>
+<div id="view-legal" hidden></div>
 <div class="lb" id="lb" hidden role="dialog" aria-modal="true"><button class="lb-x" id="lb-x" type="button">×</button><button class="lb-p" id="lb-p" type="button">‹</button><img id="lb-i" alt=""><button class="lb-n" id="lb-n" type="button">›</button><p class="lb-c" id="lb-c"></p></div>
 
 <footer class="foot">
@@ -621,7 +647,7 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
         <a href="#hosts" data-i18n="nav_hosts"></a>
       </nav>
     </div>
-    <p class="legal">&copy; 2026 Unikt Ophold</p>
+    <p class="legal">&copy; 2026 Unikt Ophold · <a href="#impressum" data-i18n="nav_imp"></a> · <a href="#datenschutz" data-i18n="nav_priv"></a><span id="cc-link-wrap" hidden> · <button type="button" class="linkbtn" id="cc-open"></button></span></p>
   </div>
 </footer>
 
@@ -692,7 +718,7 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
       pf1: 'Alt fra Basis', pf2: 'Egen side med billeder, pris og links', pf3: 'Ekstra annonceplads på forsiden og i din region, markeret som Annonce',
       fine: 'Siden finansieres af annoncer og af udbydere, der vælger Udvalgt. Alle annoncer og betalte placeringer er tydeligt markeret.',
       cta: 'Tilmeld dit ophold',
-      foot_p: 'Et uafhængigt overblik over glamping og særlige overnatninger i Danmark.',
+      foot_p: 'Et uafhængigt overblik over glamping og særlige overnatninger i Danmark.', nav_imp: 'Impressum', nav_priv: 'Privatlivspolitik',
       toast_soon: 'Tilmelding åbner, når siden lanceres.',
       toast_out: 'På den færdige side åbnes opholdets egen side her på Unikt Ophold.',
       toast_site: 'På den færdige side åbnes værtens egen hjemmeside i en ny fane.'
@@ -757,7 +783,7 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
       pf1: 'Alles aus Basis', pf2: 'Eigene Seite mit Bildern, Preis und Links', pf3: 'Zusätzlicher Werbeplatz auf der Startseite und in deiner Region, als Anzeige gekennzeichnet',
       fine: 'Die Seite finanziert sich über Werbeanzeigen und über Gastgeber, die Premium wählen. Alle Anzeigen und bezahlten Platzierungen sind klar gekennzeichnet.',
       cta: 'Unterkunft anmelden',
-      foot_p: 'Ein unabhängiger Überblick über Glamping und besondere Unterkünfte in Dänemark.',
+      foot_p: 'Ein unabhängiger Überblick über Glamping und besondere Unterkünfte in Dänemark.', nav_imp: 'Impressum', nav_priv: 'Datenschutz',
       toast_soon: 'Die Anmeldung öffnet zum Start der Seite.',
       toast_out: 'Auf der fertigen Seite öffnet sich jetzt die eigene Seite der Unterkunft bei Unikt Ophold.',
       toast_site: 'Auf der fertigen Seite öffnet sich die Website des Gastgebers in einem neuen Tab.'
@@ -822,7 +848,7 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
       pf1: 'Everything in Basic', pf2: 'Your own page with photos, price and links', pf3: 'Extra ad placement on the front page and in your region, marked as Ad',
       fine: 'The site is funded by advertising and by hosts who choose Featured. All ads and paid placements are clearly marked.',
       cta: 'List your stay',
-      foot_p: 'An independent overview of glamping and unique stays in Denmark.',
+      foot_p: 'An independent overview of glamping and unique stays in Denmark.', nav_imp: 'Legal notice', nav_priv: 'Privacy policy',
       toast_soon: 'Sign-up opens when the site launches.',
       toast_out: 'On the finished site the stay’s own page on Unikt Ophold would open now.',
       toast_site: 'On the finished site the host’s own website would open in a new tab.'
@@ -1361,6 +1387,68 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
     $('view-stay').innerHTML = head + top + body + gal;
   }
 
+  var curLegal = null;
+  var OP = { name: 'Skaberhuset v/Jessica Stockmayer', cvr: '45811816', street: 'Bjergbyvej 5', city: '7870 Roslev', muni: 'Skive', mail: 'info@skaberhusetjessicastockmayer.dk' };
+  var LEGAL = {
+    impressum: {
+      da: { h: 'Impressum', ps: [
+        ['Udbyder', OP.name + '<br>' + OP.street + '<br>' + OP.city + '<br>Danmark'],
+        ['Virksomhed', 'CVR-nr.: ' + OP.cvr + '<br>Hjemsted: Skive Kommune<br>Enkeltmandsvirksomhed'],
+        ['Kontakt', 'E-mail: <a href="mailto:' + OP.mail + '">' + OP.mail + '</a>'],
+        ['Ansvarlig for indholdet', 'Jessica Stockmayer, adresse som ovenfor.'],
+        ['Om siden', 'Unikt Ophold er en uafhængig oversigt over glamping og særlige overnatninger i Danmark. Vi formidler ikke bookinger. Du booker direkte hos værten. Vi driver også selv Månefjord Glamping, som er vist på siden og markeret som egen udlejning.'],
+        ['Tvistløsning', 'Vi deltager ikke i tvistløsning ved et forbrugerklagenævn, medmindre loven kræver det. Forbrugere kan klage til Forbrugerklagenævnet (forbrug.dk).']] },
+      de: { h: 'Impressum', ps: [
+        ['Anbieter', OP.name + '<br>' + OP.street + '<br>' + OP.city + '<br>Dänemark'],
+        ['Unternehmen', 'CVR-Nr.: ' + OP.cvr + '<br>Sitz: Gemeinde Skive<br>Einzelunternehmen'],
+        ['Kontakt', 'E-Mail: <a href="mailto:' + OP.mail + '">' + OP.mail + '</a>'],
+        ['Verantwortlich für den Inhalt', 'Jessica Stockmayer, Anschrift wie oben.'],
+        ['Über diese Seite', 'Unikt Ophold ist ein unabhängiger Überblick über Glamping und besondere Unterkünfte in Dänemark. Wir vermitteln keine Buchungen. Du buchst direkt beim Gastgeber. Wir betreiben außerdem selbst Månefjord Glamping, das auf der Seite gezeigt und als eigene Vermietung gekennzeichnet ist.'],
+        ['Streitbeilegung', 'Wir nehmen an keinem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teil, außer das Gesetz verlangt es. Verbraucher können sich an den dänischen Forbrugerklagenævnet (forbrug.dk) wenden.']] },
+      en: { h: 'Legal notice', ps: [
+        ['Provider', OP.name + '<br>' + OP.street + '<br>' + OP.city + '<br>Denmark'],
+        ['Business', 'CVR no.: ' + OP.cvr + '<br>Registered in: Skive Municipality<br>Sole proprietorship'],
+        ['Contact', 'Email: <a href="mailto:' + OP.mail + '">' + OP.mail + '</a>'],
+        ['Responsible for the content', 'Jessica Stockmayer, address as above.'],
+        ['About this site', 'Unikt Ophold is an independent overview of glamping and unique stays in Denmark. We do not handle bookings. You book directly with the host. We also run Månefjord Glamping ourselves, which is shown on the site and marked as our own rental.'],
+        ['Dispute resolution', 'We do not take part in dispute resolution before a consumer board unless the law requires it. Consumers can complain to the Danish Consumer Complaints Board (forbrug.dk).']] }
+    },
+    datenschutz: {
+      da: { h: 'Privatlivspolitik', ps: [
+        ['Dataansvarlig', OP.name + ', ' + OP.street + ', ' + OP.city + ', CVR ' + OP.cvr + '. Kontakt: <a href="mailto:' + OP.mail + '">' + OP.mail + '</a>'],
+        ['Kort fortalt', 'Siden bruger ingen cookies til statistik eller markedsføring og indlæser ingen skrifttyper eller scripts fra andre servere. Vi laver ingen brugerprofiler.'],
+        ['Serverdata', 'Siden ligger hos Cloudflare, Inc. Ved hvert besøg behandles teknisk nødvendige data, fx IP-adresse, tidspunkt, side og browsertype, for at levere siden og sikre den mod misbrug. Retsgrundlag: berettiget interesse, GDPR art. 6, stk. 1, litra f. Cloudflare kan behandle data uden for EU. Overførsel sker på grundlag af EU-USA Data Privacy Framework eller standardkontraktbestemmelser.'],
+        ['Lokal lagring', 'Dit sprogvalg gemmes i din browser (localStorage), så siden husker det. Det er teknisk nødvendigt, og oplysningen sendes ikke til os.'],
+        ['E-mail', 'Hvis du skriver til os eller til en vært via et link på siden, åbnes dit eget e-mailprogram. Vi behandler kun dine oplysninger for at besvare din henvendelse (art. 6, stk. 1, litra b eller f) og sletter dem, når de ikke længere er nødvendige.'],
+        ['Links til andre sider', 'Siden linker til værters egne websites og til booking hos dem. Så gælder deres privatlivspolitik. Vi har ingen indflydelse på deres databehandling.'],
+        ['Fremtidige tjenester', 'Hvis vi senere bruger Google Ads, statistik eller kort, beder vi først om dit samtykke i et cookiebanner, og denne politik opdateres.'],
+        ['Dine rettigheder', 'Du har ret til indsigt, berigtigelse, sletning, begrænsning, dataportabilitet og indsigelse. Skriv til os. Du kan også klage til Datatilsynet (datatilsynet.dk).']] },
+      de: { h: 'Datenschutzerklärung', ps: [
+        ['Verantwortlicher', OP.name + ', ' + OP.street + ', ' + OP.city + ', CVR ' + OP.cvr + '. Kontakt: <a href="mailto:' + OP.mail + '">' + OP.mail + '</a>'],
+        ['Kurz gesagt', 'Die Seite setzt keine Cookies für Statistik oder Werbung und lädt keine Schriften oder Skripte von fremden Servern. Wir erstellen keine Nutzerprofile.'],
+        ['Serverdaten', 'Die Seite wird bei Cloudflare, Inc. betrieben. Bei jedem Besuch werden technisch notwendige Daten verarbeitet, etwa IP-Adresse, Zeitpunkt, aufgerufene Seite und Browsertyp, um die Seite auszuliefern und vor Missbrauch zu schützen. Rechtsgrundlage: berechtigtes Interesse, Art. 6 Abs. 1 lit. f DSGVO. Cloudflare kann Daten außerhalb der EU verarbeiten. Die Übermittlung stützt sich auf das EU-US Data Privacy Framework oder Standardvertragsklauseln.'],
+        ['Lokale Speicherung', 'Deine Sprachauswahl wird in deinem Browser gespeichert (localStorage), damit die Seite sie sich merkt. Das ist technisch notwendig, und die Information wird nicht an uns gesendet.'],
+        ['E-Mail', 'Wenn du uns oder einem Gastgeber über einen Link auf der Seite schreibst, öffnet sich dein eigenes E-Mail-Programm. Wir verarbeiten deine Angaben nur, um deine Anfrage zu beantworten (Art. 6 Abs. 1 lit. b oder f DSGVO), und löschen sie, wenn sie nicht mehr nötig sind.'],
+        ['Links zu anderen Seiten', 'Die Seite verlinkt auf die Websites der Gastgeber und auf die Buchung dort. Dann gilt deren Datenschutzerklärung. Auf deren Datenverarbeitung haben wir keinen Einfluss.'],
+        ['Künftige Dienste', 'Wenn wir später Google Ads, Statistik oder Karten einsetzen, fragen wir zuerst in einem Cookie-Banner nach deiner Einwilligung, und diese Erklärung wird angepasst.'],
+        ['Deine Rechte', 'Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch. Schreib uns dazu. Du kannst dich auch bei der dänischen Datenschutzbehörde Datatilsynet beschweren (datatilsynet.dk).']] },
+      en: { h: 'Privacy policy', ps: [
+        ['Controller', OP.name + ', ' + OP.street + ', ' + OP.city + ', CVR ' + OP.cvr + '. Contact: <a href="mailto:' + OP.mail + '">' + OP.mail + '</a>'],
+        ['In short', 'The site sets no cookies for statistics or advertising and loads no fonts or scripts from other servers. We do not build user profiles.'],
+        ['Server data', 'The site is hosted by Cloudflare, Inc. Each visit processes technically necessary data, such as IP address, time, page and browser type, to deliver the site and protect it from abuse. Legal basis: legitimate interest, GDPR Art. 6(1)(f). Cloudflare may process data outside the EU. Transfers rely on the EU-US Data Privacy Framework or standard contractual clauses.'],
+        ['Local storage', 'Your language choice is stored in your browser (localStorage) so the site remembers it. This is technically necessary and is not sent to us.'],
+        ['Email', 'If you write to us or to a host through a link on the site, your own email program opens. We only process your details to answer your enquiry (Art. 6(1)(b) or (f)) and delete them when no longer needed.'],
+        ['Links to other sites', 'The site links to hosts’ own websites and to booking there. Their privacy policies then apply. We have no influence on their data processing.'],
+        ['Future services', 'If we later use Google Ads, statistics or maps, we will first ask for your consent in a cookie banner and update this policy.'],
+        ['Your rights', 'You have the right to access, rectification, erasure, restriction, data portability and objection. Write to us. You can also complain to the Danish Data Protection Agency, Datatilsynet (datatilsynet.dk).']] }
+    }
+  };
+  function renderLegal(k) {
+    var c = LEGAL[k][lang] || LEGAL[k].da;
+    $('view-legal').innerHTML = '<section class="page-head"><div class="wrap"><nav class="crumbs"><a href="#top">' + t('crumb_home') + '</a><span aria-hidden="true">›</span><span aria-current="page">' + c.h + '</span></nav><h1>' + c.h + '</h1></div></section>' +
+      '<section class="section"><div class="wrap"><div class="legal-doc">' + c.ps.map(function (x) { return '<h2>' + x[0] + '</h2><p>' + x[1] + '</p>'; }).join('') + '</div></div></section>';
+  }
+
   var lbIdx = 0;
   function lbShow(i) {
     var st = STAYS[curStay]; if (!st) return;
@@ -1398,6 +1486,7 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
     render();
     if (curGuide && !$('view-region').hidden) renderGuide(curGuide);
     if (curTheme && !$('view-theme').hidden) renderTheme(curTheme, curThemeReg);
+    if (!$('view-legal').hidden) renderLegal(location.hash.slice(1));
     if (curStay && !$('view-stay').hidden) { renderStay(curStay); if (!$('lb').hidden) lbShow(lbIdx); }
   }
 
@@ -1420,17 +1509,19 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
     var h = (location.hash || '').replace('#', '');
     var tp = h.indexOf('t-') === 0 ? h.slice(2).split('~') : [];
     var isTheme = !!THEMES[tp[0]] && (!tp[1] || REGION_IDS.indexOf(tp[1]) > -1);
-    var next = h === 'hosts' ? 'hosts' : (GUIDES[h] ? 'region' : (isTheme ? 'theme' : (STAYS[h] ? 'stay' : 'home')));
+    var next = (h === 'impressum' || h === 'datenschutz') ? 'legal' : h === 'hosts' ? 'hosts' : (GUIDES[h] ? 'region' : (isTheme ? 'theme' : (STAYS[h] ? 'stay' : 'home')));
     $('view-home').hidden = next !== 'home';
     $('view-hosts').hidden = next !== 'hosts';
     $('view-region').hidden = next !== 'region';
     $('view-theme').hidden = next !== 'theme';
     $('view-stay').hidden = next !== 'stay';
+    $('view-legal').hidden = next !== 'legal';
     if (!$('lb').hidden) lbHide();
-    document.title = next === 'stay' ? STAYS[h].da.title + ' – Unikt Ophold' : 'Unikt Ophold';
+    document.title = next === 'legal' ? (h === 'impressum' ? t('nav_imp') : t('nav_priv')) + ' – Unikt Ophold' : next === 'stay' ? STAYS[h].da.title + ' – Unikt Ophold' : 'Unikt Ophold';
     if (next === 'region') renderGuide(h);
     if (next === 'theme') renderTheme(tp[0], tp[1]);
     if (next === 'stay') renderStay(h);
+    if (next === 'legal') renderLegal(h);
     if (next !== 'home') { window.scrollTo(0, 0); view = next; return; }
     if (view !== 'home') {
       view = 'home';
@@ -1485,5 +1576,50 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
   route();
 })();
 </script>
+<div class="cc" id="cc" role="dialog" aria-modal="false" aria-labelledby="cc-h" hidden></div>
+<script>
+(function () {
+  /* Set to true as soon as Google Ads / Analytics / maps are added. Until then no cookie banner is needed. */
+  var CONSENT_ENABLED = false;
+  var KEY = 'uo-consent';
+  var X = {
+    da: { h: 'Cookies og privatliv', p: 'Vi bruger nødvendige cookies, så siden virker. Statistik og markedsføring bruges kun, hvis du siger ja. Du kan ændre dit valg når som helst.', n: 'Nødvendige (altid aktive)', s: 'Statistik', m: 'Markedsføring', all: 'Acceptér alle', no: 'Kun nødvendige', save: 'Gem valg', set: 'Indstillinger', link: 'Cookie-indstillinger' },
+    de: { h: 'Cookies und Datenschutz', p: 'Wir verwenden notwendige Cookies, damit die Seite funktioniert. Statistik und Marketing nutzen wir nur, wenn du zustimmst. Du kannst deine Wahl jederzeit ändern.', n: 'Notwendig (immer aktiv)', s: 'Statistik', m: 'Marketing', all: 'Alle akzeptieren', no: 'Nur notwendige', save: 'Auswahl speichern', set: 'Einstellungen', link: 'Cookie-Einstellungen' },
+    en: { h: 'Cookies and privacy', p: 'We use necessary cookies so the site works. Statistics and marketing are only used if you say yes. You can change your choice at any time.', n: 'Necessary (always on)', s: 'Statistics', m: 'Marketing', all: 'Accept all', no: 'Necessary only', save: 'Save choice', set: 'Settings', link: 'Cookie settings' }
+  };
+  var box = document.getElementById('cc'), wrap = document.getElementById('cc-link-wrap'), openBtn = document.getElementById('cc-open');
+  function L() { var l = document.documentElement.lang; return X[l] ? X[l] : X.da; }
+  function read() { try { return JSON.parse(localStorage.getItem(KEY)); } catch (e) { return null; } }
+  function write(v) { try { localStorage.setItem(KEY, JSON.stringify(v)); } catch (e) {} }
+  function apply(v) {
+    gtag('consent', 'update', { analytics_storage: v.stat ? 'granted' : 'denied', ad_storage: v.mkt ? 'granted' : 'denied', ad_user_data: v.mkt ? 'granted' : 'denied', ad_personalization: v.mkt ? 'granted' : 'denied' });
+    /* Load Google tag / Ads / Analytics scripts HERE, only when v.stat or v.mkt is true. */
+  }
+  function done(v) { v.t = Date.now(); write(v); apply(v); box.hidden = true; }
+  function show(detail) {
+    var x = L(), cur = read() || {};
+    box.innerHTML = '<h2 id="cc-h">' + x.h + '</h2><p>' + x.p + '</p>' +
+      '<div class="cc-opts"' + (detail ? '' : ' hidden') + ' id="cc-opts"><label><input type="checkbox" checked disabled><span>' + x.n + '</span></label>' +
+      '<label><input type="checkbox" id="cc-s"' + (cur.stat ? ' checked' : '') + '><span>' + x.s + '</span></label>' +
+      '<label><input type="checkbox" id="cc-m"' + (cur.mkt ? ' checked' : '') + '><span>' + x.m + '</span></label></div>' +
+      '<div class="cc-btns"><button type="button" class="btn btn-red" id="cc-all">' + x.all + '</button><button type="button" class="btn" id="cc-no">' + x.no + '</button>' +
+      '<button type="button" class="btn" id="cc-set">' + (detail ? x.save : x.set) + '</button></div>';
+    box.hidden = false;
+    document.getElementById('cc-all').onclick = function () { done({ stat: true, mkt: true }); };
+    document.getElementById('cc-no').onclick = function () { done({ stat: false, mkt: false }); };
+    document.getElementById('cc-set').onclick = function () {
+      if (!detail) { show(true); return; }
+      done({ stat: document.getElementById('cc-s').checked, mkt: document.getElementById('cc-m').checked });
+    };
+  }
+  if (!CONSENT_ENABLED) return;
+  wrap.hidden = false; openBtn.textContent = L().link;
+  openBtn.onclick = function () { show(true); };
+  new MutationObserver(function () { openBtn.textContent = L().link; if (!box.hidden) show(!document.getElementById('cc-opts').hidden); }).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+  var v = read();
+  if (v) apply(v); else show(false);
+})();
+</script>
+
 </body>
 </html>
