@@ -619,6 +619,7 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
       </div>
       <p class="fine" data-i18n="fine"></p>
       <div class="cta-row"><button class="btn btn-red" type="button" data-toast-key="toast_soon" data-i18n="cta"></button></div>
+      <p style="margin-top:28px"><a class="rlink" href="#lodgify" data-i18n="nosite"></a></p>
     </div>
   </section>
 </div>
@@ -718,7 +719,7 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
       pf1: 'Alt fra Basis', pf2: 'Egen side med billeder, pris og links', pf3: 'Ekstra annonceplads på forsiden og i din region, markeret som Annonce',
       fine: 'Siden finansieres af annoncer og af udbydere, der vælger Udvalgt. Alle annoncer og betalte placeringer er tydeligt markeret.',
       cta: 'Tilmeld dit ophold',
-      foot_p: 'Et uafhængigt overblik over glamping og særlige overnatninger i Danmark.', nav_imp: 'Impressum', nav_priv: 'Privatlivspolitik',
+      foot_p: 'Et uafhængigt overblik over glamping og særlige overnatninger i Danmark.', nav_imp: 'Impressum', nav_priv: 'Privatlivspolitik', nosite: 'Har du ingen egen hjemmeside? Se, hvordan du får en bookingside →',
       toast_soon: 'Tilmelding åbner, når siden lanceres.',
       toast_out: 'På den færdige side åbnes opholdets egen side her på Unikt Ophold.',
       toast_site: 'På den færdige side åbnes værtens egen hjemmeside i en ny fane.'
@@ -783,7 +784,7 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
       pf1: 'Alles aus Basis', pf2: 'Eigene Seite mit Bildern, Preis und Links', pf3: 'Zusätzlicher Werbeplatz auf der Startseite und in deiner Region, als Anzeige gekennzeichnet',
       fine: 'Die Seite finanziert sich über Werbeanzeigen und über Gastgeber, die Premium wählen. Alle Anzeigen und bezahlten Platzierungen sind klar gekennzeichnet.',
       cta: 'Unterkunft anmelden',
-      foot_p: 'Ein unabhängiger Überblick über Glamping und besondere Unterkünfte in Dänemark.', nav_imp: 'Impressum', nav_priv: 'Datenschutz',
+      foot_p: 'Ein unabhängiger Überblick über Glamping und besondere Unterkünfte in Dänemark.', nav_imp: 'Impressum', nav_priv: 'Datenschutz', nosite: 'Noch keine eigene Website? So bekommst du eine Buchungsseite →',
       toast_soon: 'Die Anmeldung öffnet zum Start der Seite.',
       toast_out: 'Auf der fertigen Seite öffnet sich jetzt die eigene Seite der Unterkunft bei Unikt Ophold.',
       toast_site: 'Auf der fertigen Seite öffnet sich die Website des Gastgebers in einem neuen Tab.'
@@ -848,7 +849,7 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
       pf1: 'Everything in Basic', pf2: 'Your own page with photos, price and links', pf3: 'Extra ad placement on the front page and in your region, marked as Ad',
       fine: 'The site is funded by advertising and by hosts who choose Featured. All ads and paid placements are clearly marked.',
       cta: 'List your stay',
-      foot_p: 'An independent overview of glamping and unique stays in Denmark.', nav_imp: 'Legal notice', nav_priv: 'Privacy policy',
+      foot_p: 'An independent overview of glamping and unique stays in Denmark.', nav_imp: 'Legal notice', nav_priv: 'Privacy policy', nosite: 'No website of your own yet? See how to get a booking site →',
       toast_soon: 'Sign-up opens when the site launches.',
       toast_out: 'On the finished site the stay’s own page on Unikt Ophold would open now.',
       toast_site: 'On the finished site the host’s own website would open in a new tab.'
@@ -1413,6 +1414,26 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
         ['About this site', 'Unikt Ophold is an independent overview of glamping and unique stays in Denmark. We do not handle bookings. You book directly with the host. We also run Månefjord Glamping ourselves, which is shown on the site and marked as our own rental.'],
         ['Dispute resolution', 'We do not take part in dispute resolution before a consumer board unless the law requires it. Consumers can complain to the Danish Consumer Complaints Board (forbrug.dk).']] }
     },
+    lodgify: {
+      da: { h: 'Har du ingen egen hjemmeside?', ps: [
+        ['Hvorfor en egen bookingside', 'På Unikt Ophold linker vi til din egen side, og dér booker gæsten direkte hos dig. Det betyder ingen provision til os og ingen mellemled. Har du endnu ingen side, kan du få en hurtigt med et system til udlejning.'],
+        ['Lodgify', 'Lodgify er et program til udlejere af feriehuse og særlige overnatninger. Du kan bygge en bookingside, tage imod forespørgsler og betalinger og samle kalenderen ét sted. Vi bruger det selv til Månefjord Glamping.'],
+        ['Det skal du vide', 'Vi har ikke vurderet alle alternativer. Kig også på andre systemer, og læs Lodgifys priser og vilkår, før du vælger.'],
+        ['Annonce', 'Linket nedenfor er et henvisningslink. Hvis du tilmelder dig via det, får vi en provision fra Lodgify, og du får selv en rabat på 15 %. Det koster dig ikke ekstra, og det påvirker ikke, hvilke ophold vi viser.']],
+        cta: 'Se Lodgify (annonce) ↗' },
+      de: { h: 'Noch keine eigene Website?', ps: [
+        ['Warum eine eigene Buchungsseite', 'Auf Unikt Ophold verlinken wir auf deine eigene Seite, und dort bucht der Gast direkt bei dir. Das heißt: keine Provision für uns und kein Zwischenhändler. Hast du noch keine Seite, bekommst du schnell eine mit einem Vermietungssystem.'],
+        ['Lodgify', 'Lodgify ist ein Programm für Vermieter von Ferienhäusern und besonderen Unterkünften. Du kannst eine Buchungsseite bauen, Anfragen und Zahlungen annehmen und den Kalender an einem Ort bündeln. Wir nutzen es selbst für Månefjord Glamping.'],
+        ['Gut zu wissen', 'Wir haben nicht alle Alternativen geprüft. Schau dir auch andere Systeme an und lies die Preise und Bedingungen von Lodgify, bevor du dich entscheidest.'],
+        ['Anzeige', 'Der Link unten ist ein Empfehlungslink. Wenn du dich darüber anmeldest, erhalten wir eine Vergütung von Lodgify, und du bekommst selbst 15 % Rabatt. Für dich entstehen keine Mehrkosten, und es beeinflusst nicht, welche Unterkünfte wir zeigen.']],
+        cta: 'Lodgify ansehen (Anzeige) ↗' },
+      en: { h: 'No website of your own yet?', ps: [
+        ['Why your own booking page', 'On Unikt Ophold we link to your own page, where the guest books directly with you. That means no commission for us and no middleman. If you do not have a page yet, a rental system can give you one quickly.'],
+        ['Lodgify', 'Lodgify is software for owners of holiday homes and unique stays. You can build a booking page, take enquiries and payments and keep your calendar in one place. We use it ourselves for Månefjord Glamping.'],
+        ['Good to know', 'We have not reviewed every alternative. Look at other systems too, and read Lodgify’s prices and terms before you decide.'],
+        ['Ad', 'The link below is a referral link. If you sign up through it, we receive a commission from Lodgify, and you get 15 % off yourself. It costs you nothing extra and does not affect which stays we show.']],
+        cta: 'See Lodgify (ad) ↗' }
+    },
     datenschutz: {
       da: { h: 'Privatlivspolitik', ps: [
         ['Dataansvarlig', OP.name + ', ' + OP.street + ', ' + OP.city + ', CVR ' + OP.cvr + '. Kontakt: <a href="mailto:' + OP.mail + '">' + OP.mail + '</a>'],
@@ -1446,7 +1467,7 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
   function renderLegal(k) {
     var c = LEGAL[k][lang] || LEGAL[k].da;
     $('view-legal').innerHTML = '<section class="page-head"><div class="wrap"><nav class="crumbs"><a href="#top">' + t('crumb_home') + '</a><span aria-hidden="true">›</span><span aria-current="page">' + c.h + '</span></nav><h1>' + c.h + '</h1></div></section>' +
-      '<section class="section"><div class="wrap"><div class="legal-doc">' + c.ps.map(function (x) { return '<h2>' + x[0] + '</h2><p>' + x[1] + '</p>'; }).join('') + '</div></div></section>';
+      '<section class="section"><div class="wrap"><div class="legal-doc">' + c.ps.map(function (x) { return '<h2>' + x[0] + '</h2><p>' + x[1] + '</p>'; }).join('') + (c.cta ? '<div class="cta-row stay-cta"><a class="btn btn-red" href="https://lodgify.cello.so/6MROUvviten" target="_blank" rel="sponsored nofollow noopener">' + c.cta + '</a><a class="rlink" href="#hosts">← ' + t('nav_hosts') + '</a></div>' : '') + '</div></div></section>';
   }
 
   var lbIdx = 0;
@@ -1509,7 +1530,7 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
     var h = (location.hash || '').replace('#', '');
     var tp = h.indexOf('t-') === 0 ? h.slice(2).split('~') : [];
     var isTheme = !!THEMES[tp[0]] && (!tp[1] || REGION_IDS.indexOf(tp[1]) > -1);
-    var next = (h === 'impressum' || h === 'datenschutz') ? 'legal' : h === 'hosts' ? 'hosts' : (GUIDES[h] ? 'region' : (isTheme ? 'theme' : (STAYS[h] ? 'stay' : 'home')));
+    var next = (h === 'impressum' || h === 'datenschutz' || h === 'lodgify') ? 'legal' : h === 'hosts' ? 'hosts' : (GUIDES[h] ? 'region' : (isTheme ? 'theme' : (STAYS[h] ? 'stay' : 'home')));
     $('view-home').hidden = next !== 'home';
     $('view-hosts').hidden = next !== 'hosts';
     $('view-region').hidden = next !== 'region';
@@ -1517,7 +1538,7 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
     $('view-stay').hidden = next !== 'stay';
     $('view-legal').hidden = next !== 'legal';
     if (!$('lb').hidden) lbHide();
-    document.title = next === 'legal' ? (h === 'impressum' ? t('nav_imp') : t('nav_priv')) + ' – Unikt Ophold' : next === 'stay' ? STAYS[h].da.title + ' – Unikt Ophold' : 'Unikt Ophold';
+    document.title = next === 'legal' ? (LEGAL[h][lang] || LEGAL[h].da).h + ' – Unikt Ophold' : next === 'stay' ? STAYS[h].da.title + ' – Unikt Ophold' : 'Unikt Ophold';
     if (next === 'region') renderGuide(h);
     if (next === 'theme') renderTheme(tp[0], tp[1]);
     if (next === 'stay') renderStay(h);
