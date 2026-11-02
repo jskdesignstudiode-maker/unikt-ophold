@@ -1,0 +1,1216 @@
+<title>Unikt Ophold</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: calm portal in the manner of a hotel booking site. White header, pale hero with a ghosted Dannebrog cross and a raised search card, red kept for buttons and small accents. */
+:root {
+  --red: #C8102E;
+  --red-deep: #A50D26;
+  --red-text: #B50E29;
+  --red-tint: #FBECEF;
+  --hero-stripe: rgba(200, 16, 46, 0.055);
+  --bg: #FFFFFF;
+  --surface: #F6F4F4;
+  --line: #E4E0E1;
+  --fg: #1F1A1B;
+  --muted: #655D5F;
+  --focus: #B50E29;
+  --shadow: 0 6px 24px rgba(31, 26, 27, 0.08);
+  --ill-sky: #F1EBEC;
+  --ill-ground: #E0D6D8;
+  --ill-water: #D9E1E4;
+  --ill-shape: #FFFFFF;
+  --ill-line: #C8102E;
+  --font-display: 'Jost', 'Futura', 'Century Gothic', system-ui, sans-serif;
+  --font-body: 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --red: #D9344A;
+    --red-deep: #C42A40;
+    --red-text: #F27489;
+    --red-tint: rgba(217, 52, 74, 0.16);
+    --hero-stripe: rgba(217, 52, 74, 0.09);
+    --bg: #131011;
+    --surface: #1B1517;
+    --line: #342B2E;
+    --fg: #F4EFEF;
+    --muted: #ABA0A3;
+    --focus: #F27489;
+    --shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+    --ill-sky: #221B1D;
+    --ill-ground: #2C2326;
+    --ill-water: #2A3438;
+    --ill-shape: #3A2F32;
+    --ill-line: #E0566A;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --red: #D9344A;
+  --red-deep: #C42A40;
+  --red-text: #F27489;
+  --red-tint: rgba(217, 52, 74, 0.16);
+  --hero-stripe: rgba(217, 52, 74, 0.09);
+  --bg: #131011;
+  --surface: #1B1517;
+  --line: #342B2E;
+  --fg: #F4EFEF;
+  --muted: #ABA0A3;
+  --focus: #F27489;
+  --shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+  --ill-sky: #221B1D;
+  --ill-ground: #2C2326;
+  --ill-water: #2A3438;
+  --ill-shape: #3A2F32;
+  --ill-line: #E0566A;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+h1, h2, h3, p { margin: 0; }
+button, select { font: inherit; color: inherit; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+.wrap {
+  width: 100%;
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  font-weight: 600;
+  padding: 12px 22px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1.3;
+  transition: background-color .15s ease;
+}
+.btn-red { background: var(--red); color: #FFFFFF; }
+.btn-red:hover { background: var(--red-deep); }
+
+/* Header */
+.top { background: var(--bg); border-bottom: 1px solid var(--line); }
+.bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; }
+.brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; font-family: var(--font-display); font-weight: 500; font-size: 1.35rem; letter-spacing: 0.01em; }
+.mark { width: 30px; height: auto; display: block; flex: none; --mark-bg: var(--red); --mark-x: #FFFFFF; }
+.mark .bg { fill: var(--mark-bg); }
+.mark .x { fill: var(--mark-x); }
+.nav { display: flex; align-items: center; gap: 28px; }
+.nav-links { display: flex; gap: 28px; }
+.nav-links a { text-decoration: none; font-size: 0.95rem; }
+.nav-links a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.lang { display: flex; border: 1px solid var(--line); border-radius: 2px; overflow: hidden; }
+.lang button { background: transparent; border: 0; padding: 6px 11px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; cursor: pointer; }
+.lang button + button { border-left: 1px solid var(--line); }
+.lang button:hover { background: var(--surface); }
+.lang button[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
+
+/* Hero */
+.hero { position: relative; overflow: hidden; background: var(--surface); border-bottom: 1px solid var(--line); }
+.hero-bg { position: absolute; inset: 0; pointer-events: none; }
+.hero-bg::before {
+  content: "";
+  position: absolute; top: 0; bottom: 0; left: 32.4%;
+  width: clamp(24px, 4.5vw, 64px);
+  background: var(--hero-stripe);
+}
+.hero-bg::after {
+  content: "";
+  position: absolute; left: 0; right: 0; top: 42.9%;
+  height: clamp(24px, 4.5vw, 64px);
+  background: var(--hero-stripe);
+}
+.hero-in { position: relative; z-index: 1; padding-block: clamp(36px, 6vw, 64px) 44px; }
+.hero-copy { max-width: 780px; }
+.eyebrow { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--red-text); }
+.hero h1 {
+  margin-top: 14px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2.2rem, 5.6vw, 3.8rem);
+  line-height: 1.07;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+  max-width: 20ch;
+}
+.hero-copy .lead { margin-top: 16px; font-size: 1.08rem; max-width: 56ch; color: var(--muted); }
+
+.search {
+  margin-top: 32px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  box-shadow: var(--shadow);
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1.2fr 1.2fr 0.8fr auto;
+  gap: 14px;
+  align-items: end;
+  max-width: 980px;
+}
+.field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.field label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.field select {
+  width: 100%;
+  min-width: 0;
+  padding: 12px 12px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  cursor: pointer;
+}
+.field select:hover { border-color: var(--muted); }
+.search .btn { padding-block: 13px; }
+.search-note { margin-top: 12px; font-size: 0.85rem; color: var(--muted); }
+.usp { list-style: none; margin: 22px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 28px; font-size: 0.95rem; }
+.usp li { display: flex; align-items: center; gap: 8px; }
+.usp svg { width: 18px; height: 18px; flex: none; color: var(--red); }
+
+/* Sections */
+.section { padding-block: 64px; }
+.section.alt { background: var(--surface); }
+.section-head { display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; max-width: 64ch; }
+.label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem, 3.4vw, 2.2rem); line-height: 1.15; letter-spacing: -0.01em; text-wrap: balance; }
+.sub { color: var(--muted); }
+.note { display: flex; align-items: baseline; flex-wrap: wrap; gap: 10px; font-size: 0.9rem; color: var(--muted); }
+.note .pill { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red-text); border: 1px solid var(--red-text); padding: 1px 8px; border-radius: 2px; }
+
+/* Browse: filters + results */
+.browse { display: grid; grid-template-columns: 268px minmax(0, 1fr); gap: 32px; align-items: start; }
+.results { min-width: 0; }
+.filter-toggle {
+  display: none;
+  align-items: center; gap: 10px;
+  padding: 10px 16px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.badge { background: var(--red); color: #FFFFFF; min-width: 22px; padding: 0 6px; border-radius: 2px; font-size: 0.8rem; text-align: center; }
+.filters {
+  display: flex; flex-direction: column; gap: 22px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 20px;
+  min-width: 0;
+}
+.filters-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.filters-head h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.25rem; }
+.reset { background: none; border: 0; padding: 0; color: var(--red-text); font-weight: 600; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.fgroup { border: 0; margin: 0; padding: 0; min-width: 0; }
+.fgroup legend { padding: 0; margin-bottom: 6px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.check { display: flex; align-items: center; gap: 10px; padding: 5px 0; cursor: pointer; font-size: 0.95rem; }
+.check input { width: 18px; height: 18px; margin: 0; flex: none; accent-color: var(--red); cursor: pointer; }
+.amen { display: flex; flex-direction: column; gap: 18px; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+.chip {
+  padding: 8px 16px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: border-color .15s ease, background-color .15s ease;
+}
+.chip:hover { border-color: var(--muted); }
+.chip[aria-pressed="true"] { background: var(--red-tint); border-color: var(--red); color: var(--red-text); font-weight: 600; }
+.count { margin-bottom: 18px; color: var(--muted); font-size: 0.9rem; }
+
+/* Listing cards */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); gap: 24px; }
+.card { display: flex; flex-direction: column; min-width: 0; background: var(--bg); border: 1px solid var(--line); border-radius: 2px; overflow: hidden; }
+.card-fig { position: relative; margin: 0; aspect-ratio: 16 / 10; max-width: 100%; overflow: hidden; background: var(--ill-sky); }
+.card-fig svg { display: block; width: 100%; height: 100%; }
+.card-body { display: flex; flex-direction: column; gap: 6px; padding: 16px; flex: 1; }
+.tag-ad {
+  position: absolute; top: 12px; left: 12px;
+  background: #FFFFFF; color: #A50D26;
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 3px 9px; border-radius: 2px;
+}
+.card-meta { font-size: 0.74rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.card-title { font-family: var(--font-display); font-weight: 500; font-size: 1.25rem; line-height: 1.25; text-wrap: balance; }
+.card-tags { font-size: 0.88rem; color: var(--muted); }
+.card-row { display: flex; justify-content: space-between; gap: 4px 12px; flex-wrap: wrap; font-size: 0.95rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.card-row b { color: var(--fg); font-weight: 600; }
+.card-link {
+  margin-top: auto; padding-top: 12px;
+  border-top: 1px solid var(--line);
+  font-weight: 600; text-decoration: none; color: var(--red-text);
+}
+.card-body .card-row { margin-bottom: 8px; }
+.card-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+.empty { grid-column: 1 / -1; padding: 24px 0; color: var(--muted); }
+.empty b { color: var(--fg); display: block; }
+
+/* Regions */
+.regions { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 24px; }
+.rcard { background: var(--bg); border: 1px solid var(--line); border-radius: 2px; padding: 24px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.rname { font-family: var(--font-display); font-weight: 500; font-size: 1.45rem; }
+.rdesc { color: var(--muted); font-size: 0.95rem; }
+.rlabel { margin-top: 10px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.sights { list-style: none; margin: 0 0 14px; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.sights li { display: flex; flex-direction: column; font-size: 0.95rem; }
+.sights b { font-weight: 600; }
+.sights span { color: var(--muted); font-size: 0.88rem; }
+.rlinks { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 8px 22px; }
+.rlink { padding: 0; background: none; border: 0; text-align: left; color: var(--red-text); font-weight: 600; font-size: 1rem; cursor: pointer; text-decoration: none; }
+.rlink:hover { text-decoration: underline; text-underline-offset: 4px; }
+.crumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font-size: 0.9rem; color: var(--muted); }
+.crumbs a { color: var(--red-text); text-decoration: none; }
+.crumbs a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.rp-intro { max-width: 62ch; font-size: 1.08rem; }
+.tlinks { display: flex; flex-wrap: wrap; gap: 10px; }
+.tlink { display: inline-block; padding: 10px 16px; border: 1px solid var(--line); border-radius: 2px; background: var(--bg); color: var(--text); text-decoration: none; font-size: 0.95rem; }
+.tlink:hover { border-color: var(--red-text); color: var(--red-text); }
+
+/* Tips and criteria */
+.tips, .criteria { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 32px; }
+.crit { border-top: 1px solid var(--line); padding-top: 18px; }
+.crit h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.25rem; margin-bottom: 8px; }
+.crit p { color: var(--muted); }
+
+/* FAQ */
+.faq { max-width: 820px; }
+.qa { border-top: 1px solid var(--line); }
+.qa:last-child { border-bottom: 1px solid var(--line); }
+.qa summary { list-style: none; cursor: pointer; padding: 18px 0; font-family: var(--font-display); font-weight: 500; font-size: 1.15rem; display: flex; justify-content: space-between; gap: 16px; }
+.qa summary::-webkit-details-marker { display: none; }
+.qa summary::after { content: "+"; color: var(--red-text); font-size: 1.4rem; line-height: 1; flex: none; }
+.qa[open] summary::after { content: "\2013"; }
+.qa p { color: var(--muted); padding-bottom: 20px; max-width: 62ch; }
+
+/* Host page */
+.page-head { background: var(--surface); border-bottom: 1px solid var(--line); padding-block: 36px 40px; }
+.page-head .wrap { display: flex; flex-direction: column; gap: 12px; max-width: 1180px; }
+.back { font-size: 0.95rem; text-decoration: none; color: var(--red-text); font-weight: 600; width: fit-content; }
+.back:hover { text-decoration: underline; text-underline-offset: 4px; }
+.page-head h1 { font-family: var(--font-display); font-weight: 500; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; letter-spacing: -0.01em; text-wrap: balance; max-width: 22ch; }
+.plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 24px; max-width: 880px; }
+.plan { background: var(--bg); border: 1px solid var(--line); border-radius: 2px; padding: 28px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.plan.feat { border: 2px solid var(--red); }
+.plan h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.5rem; }
+.plan .price { font-family: var(--font-display); font-size: 1.15rem; color: var(--red-text); font-weight: 500; }
+.plan ul { margin: 0; padding-left: 1.1em; display: flex; flex-direction: column; gap: 6px; }
+.plan li::marker { color: var(--red-text); }
+.fine { margin-top: 20px; font-size: 0.9rem; color: var(--muted); max-width: 62ch; }
+.cta-row { margin-top: 28px; }
+
+/* Footer */
+.foot { border-top: 1px solid var(--line); background: var(--surface); padding-block: 44px 28px; }
+.foot-in { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px; }
+.foot p.about { color: var(--muted); font-size: 0.9rem; max-width: 46ch; margin-top: 12px; }
+.foot nav { display: flex; flex-direction: column; gap: 8px; font-size: 0.95rem; }
+.foot nav a { text-decoration: none; }
+.foot nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.legal { margin-top: 32px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 0.82rem; color: var(--muted); }
+
+/* Toast */
+.toast {
+  position: fixed; z-index: 20;
+  left: max(16px, env(safe-area-inset-left, 0px));
+  right: max(16px, env(safe-area-inset-right, 0px));
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  max-width: 440px;
+  background: var(--fg); color: var(--bg);
+  padding: 14px 18px; border-radius: 2px; font-size: 0.95rem;
+}
+
+@media (max-width: 860px) {
+  .search { grid-template-columns: 1fr 1fr; }
+  .search .btn { grid-column: 1 / -1; }
+  .nav-links { display: none; }
+  .browse { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .filter-toggle { display: inline-flex; justify-self: start; }
+  .filters { display: none; }
+  .filters.open { display: flex; }
+}
+@media (max-width: 520px) {
+  .search { grid-template-columns: 1fr; padding: 16px; }
+  .section { padding-block: 52px; }
+  .brand { font-size: 1.2rem; }
+}
+</style>
+
+<header class="top" id="top">
+  <div class="wrap bar">
+    <a class="brand" href="#top" data-i18n-aria="aria_top">
+      <svg class="mark" viewBox="0 0 37 28" aria-hidden="true"><rect class="bg" width="37" height="28"/><rect class="x" x="12" width="4" height="28"/><rect class="x" y="12" width="37" height="4"/></svg>
+      <span>Unikt Ophold</span>
+    </a>
+    <nav class="nav" data-i18n-aria="aria_menu">
+      <div class="nav-links">
+        <a href="#ophold" data-i18n="nav_find"></a>
+        <a href="#regioner" data-i18n="nav_regions"></a>
+        <a href="#tips" data-i18n="nav_tips"></a>
+        <a href="#udvaelgelse" data-i18n="nav_how"></a>
+      </div>
+      <div class="lang" role="group" data-i18n-aria="aria_lang">
+        <button type="button" data-lang="da" aria-pressed="true">DA</button>
+        <button type="button" data-lang="de" aria-pressed="false">DE</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div id="view-home">
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="wrap hero-in">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="eyebrow"></p>
+        <h1 data-i18n="h1"></h1>
+        <p class="lead" data-i18n="lead"></p>
+      </div>
+
+      <form class="search" id="search" data-i18n-aria="aria_search">
+        <div class="field"><label for="f-region" data-i18n="lbl_region"></label><select id="f-region"></select></div>
+        <div class="field"><label for="f-type" data-i18n="lbl_type"></label><select id="f-type"></select></div>
+        <div class="field"><label for="f-guests" data-i18n="lbl_guests"></label><select id="f-guests"></select></div>
+        <button class="btn btn-red" type="submit" data-i18n="search_btn"></button>
+      </form>
+      <p class="search-note" data-i18n="search_note"></p>
+      <ul class="usp">
+        <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="usp1"></span></li>
+        <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="usp2"></span></li>
+        <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="usp3"></span></li>
+      </ul>
+    </div>
+  </section>
+
+  <main>
+    <section class="section" id="ophold" aria-labelledby="h-ophold">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="label" data-i18n="s1_label"></p>
+          <h2 id="h-ophold" data-i18n="s1_h2"></h2>
+        </div>
+
+        <div class="browse">
+          <button class="filter-toggle" id="filter-toggle" type="button" aria-expanded="false" aria-controls="filters">
+            <span data-i18n="ftitle"></span><span class="badge" id="badge" hidden></span>
+          </button>
+
+          <aside class="filters" id="filters" data-i18n-aria="ftitle">
+            <div class="filters-head">
+              <h3 data-i18n="ftitle"></h3>
+              <button class="reset" id="reset" type="button" data-i18n="freset" hidden></button>
+            </div>
+            <div class="field"><label for="s-region" data-i18n="lbl_region"></label><select id="s-region"></select></div>
+            <div class="field"><label for="s-guests" data-i18n="lbl_guests"></label><select id="s-guests"></select></div>
+            <div class="field"><label for="s-price" data-i18n="lbl_price"></label><select id="s-price"></select></div>
+            <div class="amen" id="amen"></div>
+          </aside>
+
+          <div class="results">
+            <div class="chips" id="chips" role="group" data-i18n-aria="aria_types"></div>
+            <p class="count" id="count" aria-live="polite"></p>
+            <div class="grid" id="grid"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="regioner" aria-labelledby="h-regioner">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="label" data-i18n="s2_label"></p>
+          <h2 id="h-regioner" data-i18n="s2_h2"></h2>
+          <p class="sub" data-i18n="s2_sub"></p>
+        </div>
+        <div class="regions" id="regions"></div>
+      </div>
+    </section>
+
+    <section class="section" id="temaer" aria-labelledby="h-temaer">
+      <div class="wrap">
+        <div class="section-head"><h2 id="h-temaer"></h2></div>
+        <div class="tlinks" id="themes"></div>
+      </div>
+    </section>
+
+    <section class="section" id="tips" aria-labelledby="h-tips">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="label" data-i18n="tips_label"></p>
+          <h2 id="h-tips" data-i18n="tips_h2"></h2>
+          <p class="sub" data-i18n="tips_sub"></p>
+        </div>
+        <div class="tips">
+          <article class="crit"><h3 data-i18n="tip1_h"></h3><p data-i18n="tip1_p"></p></article>
+          <article class="crit"><h3 data-i18n="tip2_h"></h3><p data-i18n="tip2_p"></p></article>
+          <article class="crit"><h3 data-i18n="tip3_h"></h3><p data-i18n="tip3_p"></p></article>
+          <article class="crit"><h3 data-i18n="tip4_h"></h3><p data-i18n="tip4_p"></p></article>
+          <article class="crit"><h3 data-i18n="tip5_h"></h3><p data-i18n="tip5_p"></p></article>
+          <article class="crit"><h3 data-i18n="tip6_h"></h3><p data-i18n="tip6_p"></p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="udvaelgelse" aria-labelledby="h-udv">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="label" data-i18n="s3_label"></p>
+          <h2 id="h-udv" data-i18n="s3_h2"></h2>
+          <p class="sub" data-i18n="s3_sub"></p>
+        </div>
+        <div class="criteria">
+          <div class="crit"><h3 data-i18n="c1_h"></h3><p data-i18n="c1_p"></p></div>
+          <div class="crit"><h3 data-i18n="c2_h"></h3><p data-i18n="c2_p"></p></div>
+          <div class="crit"><h3 data-i18n="c3_h"></h3><p data-i18n="c3_p"></p></div>
+          <div class="crit"><h3 data-i18n="c4_h"></h3><p data-i18n="c4_p"></p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq" aria-labelledby="h-faq">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="label" data-i18n="faq_label"></p>
+          <h2 id="h-faq" data-i18n="faq_h2"></h2>
+        </div>
+        <div class="faq">
+          <details class="qa"><summary data-i18n="q1"></summary><p data-i18n="a1"></p></details>
+          <details class="qa"><summary data-i18n="q2"></summary><p data-i18n="a2"></p></details>
+          <details class="qa"><summary data-i18n="q3"></summary><p data-i18n="a3"></p></details>
+          <details class="qa"><summary data-i18n="q4"></summary><p data-i18n="a4"></p></details>
+          <details class="qa"><summary data-i18n="q5"></summary><p data-i18n="a5"></p></details>
+          <details class="qa"><summary data-i18n="q6"></summary><p data-i18n="a6"></p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div id="view-hosts" hidden>
+  <section class="page-head">
+    <div class="wrap">
+      <a class="back" href="#top" data-i18n="back"></a>
+      <p class="label" data-i18n="s4_label"></p>
+      <h1 data-i18n="s4_h2"></h1>
+      <p class="sub" data-i18n="s4_sub"></p>
+    </div>
+  </section>
+  <section class="section" aria-label="Basis og Udvalgt">
+    <div class="wrap">
+      <div class="plans">
+        <div class="plan">
+          <h2 style="font-size:1.5rem" data-i18n="pb_h"></h2>
+          <p class="price" data-i18n="pb_price"></p>
+          <ul>
+            <li data-i18n="pb1"></li>
+            <li data-i18n="pb2"></li>
+            <li data-i18n="pb3"></li>
+          </ul>
+        </div>
+        <div class="plan feat">
+          <h2 style="font-size:1.5rem" data-i18n="pf_h"></h2>
+          <p class="price" data-i18n="pf_price"></p>
+          <ul>
+            <li data-i18n="pf1"></li>
+            <li data-i18n="pf2"></li>
+            <li data-i18n="pf3"></li>
+          </ul>
+        </div>
+      </div>
+      <p class="fine" data-i18n="fine"></p>
+      <div class="cta-row"><button class="btn btn-red" type="button" data-toast-key="toast_soon" data-i18n="cta"></button></div>
+    </div>
+  </section>
+</div>
+
+<div id="view-region" hidden></div>
+<div id="view-theme" hidden></div>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-in">
+      <div>
+        <a class="brand" href="#top" data-i18n-aria="aria_top">
+          <svg class="mark" viewBox="0 0 37 28" aria-hidden="true"><rect class="bg" width="37" height="28"/><rect class="x" x="12" width="4" height="28"/><rect class="x" y="12" width="37" height="4"/></svg>
+          <span>Unikt Ophold</span>
+        </a>
+        <p class="about" data-i18n="foot_p"></p>
+      </div>
+      <nav data-i18n-aria="aria_sections">
+        <a href="#ophold" data-i18n="nav_find"></a>
+        <a href="#regioner" data-i18n="nav_regions"></a>
+        <a href="#tips" data-i18n="nav_tips"></a>
+        <a href="#faq" data-i18n="nav_faq"></a>
+        <a href="#hosts" data-i18n="nav_hosts"></a>
+      </nav>
+    </div>
+    <p class="legal">&copy; 2026 Unikt Ophold</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script>
+(function () {
+  var LOCALE = { da: 'da-DK', de: 'de-DE', en: 'en-GB' };
+
+  var T = {
+    da: {
+      aria_top: 'Unikt Ophold, til toppen', aria_menu: 'Hovedmenu', aria_lang: 'Sprog', aria_search: 'Søg efter ophold', aria_types: 'Filtrer efter type', aria_sections: 'Sidens afsnit',
+      nav_find: 'Find ophold', nav_regions: 'Regioner', nav_tips: 'Tips', nav_how: 'Sådan vælger vi', nav_faq: 'Spørgsmål', nav_hosts: 'For udbydere',
+      back: '← Tilbage til forsiden',
+      crumb_home: 'Forside', crumb_label: 'Brødkrummesti',
+      rp_h1: 'Glamping i {r}', rp_stays: 'Ophold i {r}', rp_all: 'Se alle ophold med filtre', rp_see: 'Se og opleve i {r}', rp_tips: 'Tips til {r}', rp_faq: 'Spørgsmål om {r}', rcard_guide: 'Læs guiden',
+      eyebrow: 'Glamping og særlige ophold i Danmark',
+      h1: 'Overnat et sted, du ikke glemmer.',
+      lead: 'Teltet i klitterne, hytten i skoven, huset i trætoppene. Sammenlign håndplukkede overnatninger og book direkte hos udbyderen.',
+      lbl_region: 'Region', lbl_type: 'Type', lbl_guests: 'Gæster', lbl_price: 'Pris pr. nat',
+      search_btn: 'Find ophold', all_dk: 'Hele Danmark', all_types: 'Alle typer', chip_all: 'Alle',
+      guest_one: '{n} gæst', guest_many: '{n} gæster',
+      search_note: 'Priser og ledige datoer ser du hos udbyderen.',
+      usp1: 'Håndplukkede ophold', usp2: 'Book direkte hos udbyderen', usp3: 'Ingen gebyrer for gæster',
+      s1_label: 'Udvalgte ophold', s1_h2: 'Ophold i Danmark', pill: 'Eksempel',
+      s1_note: 'Visningen bruger fiktive ophold. De rigtige kommer, når siden åbner.',
+      ftitle: 'Filtre', freset: 'Nulstil', price_any: 'Alle priser', price_max: 'Højst {n} kr',
+      g_wellness: 'Wellness', g_location: 'Beliggenhed', g_food: 'Mad og drikke', g_facilities: 'Faciliteter',
+      a_sauna: 'Sauna', a_whirlpool: 'Whirlpool eller spa', a_sea: 'Hav', a_fjord: 'Fjord', a_lake: 'Sø', a_beach: 'Strand', a_forest: 'Skov', a_swim: 'Bademulighed',
+      a_breakfast: 'Morgenmad', a_kitchen: 'Køkken',
+      a_parking: 'Parkering', a_ev: 'Ladestander til elbil', a_dogs: 'Hunde tilladt', a_kids: 'Børnevenlig', a_wifi: 'Wi-Fi', a_heating: 'Opvarmet hele året', a_bath: 'Eget badeværelse',
+      ty_glamping: 'Glamping', ty_cabin: 'Hytte', ty_treehouse: 'Trætophus', ty_houseboat: 'Husbåd', ty_tiny: 'Tiny house', ty_farm: 'Gårdferie',
+      r_nj: 'Nordjylland', r_mj: 'Midtjylland', r_sj: 'Sydjylland', r_fyn: 'Fyn', r_sjl: 'Sjælland', r_bh: 'Bornholm',
+      rd_nj: 'Klitter, Skagen og Vesterhavet', rd_mj: 'Søhøjlandet og egnen omkring Aarhus', rd_sj: 'Vadehavet og Lillebælt', rd_fyn: 'Det sydfynske øhav og små landsbyer', rd_sjl: 'Kyster og skove tæt på København', rd_bh: 'Klipper, røgerier og små havnebyer',
+      n1: 'Månefjord Glamping', n2: 'Skovhytte med udendørs spa', n3: 'Trætophus over fjorden', n4: 'Husbåd i den gamle havn', n5: 'Tiny house på marken', n6: 'Længehus med havudsigt', n7: 'Teltlandsby ved søen', n8: 'Fjordhytte med sauna', n9: 'Landsbygård med morgenmad',
+      count_one: 'Viser 1 ophold', count_many: 'Viser {n} ophold',
+      empty_b: 'Ingen ophold matcher endnu.', empty: 'Prøv færre filtre, en anden region eller flere pladser.',
+      up_to: 'Op til {n} gæster', from_pre: 'fra', per_night: '/ nat', view: 'Se opholdet', view_site: 'Til værtens hjemmeside', ad: 'Annonce',
+      s2_label: 'Regioner', s2_h2: 'Find efter egn',
+      s2_sub: 'Fra klitterne i nord til klipperne på Bornholm. Vælg en egn, se hvad der er at opleve i nærheden, og find et ophold.',
+      sights_label: 'Se og opleve', region_cta: 'Se ophold',
+      tips_label: 'Tips', tips_h2: 'Tips til dit ophold',
+      tips_sub: 'Små råd, der gør et ophold i telt, hytte eller trætophus bedre.',
+      tip1_h: 'Glamping om vinteren', tip1_p: 'Mange steder har brændeovn eller varme hele året. Tjek opvarmning, isolering og eget badeværelse, før du booker.',
+      tip2_h: 'Rejs med hund', tip2_p: 'Spørg, om hunde er velkomne, og om der er hegn eller plads til at løbe. Nogle steder tager et gebyr for rengøring.',
+      tip3_h: 'Bedste tid at rejse', tip3_p: 'Juli er mest populær og dyrest. Maj, juni og september giver ofte lavere priser og mere ro.',
+      tip4_h: 'Pak til glamping', tip4_p: 'Tag varme lag med, selv om sommeren. Nætterne ved kysten kan være kølige. Spørg, om sengetøj og håndklæder er med.',
+      tip5_h: 'Book i god tid', tip5_p: 'De mest populære steder er ofte booket flere måneder frem i sommerferien. Fleksible datoer giver flere valg.',
+      tip6_h: 'Tjek afstande og parkering', tip6_p: 'Mange steder ligger langt fra offentlig transport. Spørg om parkering og afstanden til nærmeste købmand.',
+      s3_label: 'Kuratering', s3_h2: 'Sådan vælger vi',
+      s3_sub: 'Vi viser færre ophold, men dem, der er værd at rejse efter. Det er de fire ting, et sted skal kunne.',
+      c1_h: 'Særlig beliggenhed', c1_p: 'Ved vand, i skov eller på åben mark. Stedet skal føles anderledes end et almindeligt sommerhus.',
+      c2_h: 'Gode billeder', c2_p: 'Udbydere sender billeder i høj kvalitet, så du ser stedet, som det er.',
+      c3_h: 'Gæsternes ord', c3_p: 'Anmeldelser fra folk, der har overnattet der, vægter tungt, når vi vælger.',
+      c4_h: 'Klar pris', c4_p: 'Pris pr. nat og det, den dækker, skal stå tydeligt, før du klikker videre.',
+      faq_label: 'Spørgsmål og svar', faq_h2: 'Ofte stillede spørgsmål',
+      q1: 'Hvad er glamping?', a1: 'Glamping er camping med komfort. Du får rigtige senge, ofte eget badeværelse og opvarmning, og nogle steder sauna eller spa.',
+      q2: 'Hvornår er det bedst at glampe i Danmark?', a2: 'Fra maj til september er det mest behageligt. Mange steder har åbent hele året og er opvarmede, så også efteråret og vinteren kan være hyggelige.',
+      q3: 'Må jeg tage min hund med?', a3: 'Det afhænger af stedet. Brug filteret Hunde tilladt for kun at se de ophold, hvor hunde er velkomne.',
+      q4: 'Hvordan booker jeg?', a4: 'Du klikker videre til udbyderens egen side og booker direkte hos dem. Priser og ledige datoer ser du dér.',
+      q5: 'Koster det noget at bruge Unikt Ophold?', a5: 'Nej. Du betaler kun udbyderen for dit ophold. Vi tager ingen gebyrer af gæster.',
+      q6: 'Hvad betyder Annonce?', a6: 'Annonce betyder, at en udbyder har betalt for ekstra synlighed. Betalte placeringer er altid markeret.',
+      s4_label: 'For udbydere', s4_h2: 'Gæsten booker direkte hos dig',
+      s4_sub: 'Det er gratis at være med. Du betaler ingen provision og ingen klikpris. Vil du have ekstra synlighed, kan du vælge Udvalgt.',
+      pb_h: 'Basis', pb_price: 'Gratis',
+      pb1: 'Opført i listen over ophold', pb2: 'Kan findes via søgning og filtre', pb3: 'Ingen provision på bookinger',
+      pf_h: 'Udvalgt', pf_price: '500 kr om året',
+      pf1: 'Alt fra Basis', pf2: 'Egen side med billeder, pris og links', pf3: 'Ekstra annonceplads på forsiden og i din region, markeret som Annonce',
+      fine: 'Siden finansieres af annoncer og af udbydere, der vælger Udvalgt. Alle annoncer og betalte placeringer er tydeligt markeret.',
+      cta: 'Tilmeld dit ophold',
+      foot_p: 'Et uafhængigt overblik over glamping og særlige overnatninger i Danmark.',
+      toast_soon: 'Tilmelding åbner, når siden lanceres.',
+      toast_out: 'På den færdige side åbnes opholdets egen side her på Unikt Ophold.',
+      toast_site: 'På den færdige side åbnes værtens egen hjemmeside i en ny fane.'
+    },
+    de: {
+      aria_top: 'Unikt Ophold, nach oben', aria_menu: 'Hauptmenü', aria_lang: 'Sprache', aria_search: 'Unterkünfte suchen', aria_types: 'Nach Art filtern', aria_sections: 'Abschnitte der Seite',
+      nav_find: 'Unterkünfte finden', nav_regions: 'Regionen', nav_tips: 'Tipps', nav_how: 'So wählen wir aus', nav_faq: 'Fragen', nav_hosts: 'Für Gastgeber',
+      back: '← Zurück zur Startseite',
+      crumb_home: 'Startseite', crumb_label: 'Brotkrumenpfad',
+      rp_h1: 'Glamping in {r}', rp_stays: 'Unterkünfte in {r}', rp_all: 'Alle Unterkünfte mit Filtern', rp_see: 'Sehenswert in {r}', rp_tips: 'Tipps für {r}', rp_faq: 'Fragen zu {r}', rcard_guide: 'Zum Reiseführer',
+      eyebrow: 'Glamping und besondere Unterkünfte in Dänemark',
+      h1: 'Übernachte an einem Ort, den du nicht vergisst.',
+      lead: 'Das Zelt in den Dünen, die Hütte im Wald, das Haus in den Baumkronen. Vergleiche handverlesene Unterkünfte und buche direkt beim Gastgeber.',
+      lbl_region: 'Region', lbl_type: 'Art', lbl_guests: 'Gäste', lbl_price: 'Preis pro Nacht',
+      search_btn: 'Unterkünfte finden', all_dk: 'Ganz Dänemark', all_types: 'Alle Arten', chip_all: 'Alle',
+      guest_one: '{n} Gast', guest_many: '{n} Gäste',
+      search_note: 'Preise und freie Termine siehst du beim Gastgeber.',
+      usp1: 'Handverlesene Unterkünfte', usp2: 'Direkt beim Gastgeber buchen', usp3: 'Keine Gebühren für Gäste',
+      s1_label: 'Ausgewählte Unterkünfte', s1_h2: 'Unterkünfte in Dänemark', pill: 'Beispiel',
+      s1_note: 'Die Ansicht zeigt fiktive Unterkünfte. Die echten kommen zum Start der Seite.',
+      ftitle: 'Filter', freset: 'Zurücksetzen', price_any: 'Alle Preise', price_max: 'Höchstens {n} kr',
+      g_wellness: 'Wellness', g_location: 'Lage', g_food: 'Essen und Trinken', g_facilities: 'Ausstattung',
+      a_sauna: 'Sauna', a_whirlpool: 'Whirlpool oder Spa', a_sea: 'Meer', a_fjord: 'Fjord', a_lake: 'See', a_beach: 'Strand', a_forest: 'Wald', a_swim: 'Bademöglichkeit',
+      a_breakfast: 'Frühstück', a_kitchen: 'Küche',
+      a_parking: 'Parkplatz', a_ev: 'Ladestation für E-Auto', a_dogs: 'Hunde erlaubt', a_kids: 'Kinderfreundlich', a_wifi: 'WLAN', a_heating: 'Ganzjährig beheizt', a_bath: 'Eigenes Bad',
+      ty_glamping: 'Glamping', ty_cabin: 'Hütte', ty_treehouse: 'Baumhaus', ty_houseboat: 'Hausboot', ty_tiny: 'Tiny House', ty_farm: 'Bauernhof',
+      r_nj: 'Nordjütland', r_mj: 'Mitteljütland', r_sj: 'Südjütland', r_fyn: 'Fünen', r_sjl: 'Seeland', r_bh: 'Bornholm',
+      rd_nj: 'Dünen, Skagen und Nordsee', rd_mj: 'Seenland und die Gegend um Aarhus', rd_sj: 'Wattenmeer und Kleiner Belt', rd_fyn: 'Südfünisches Inselmeer und kleine Dörfer', rd_sjl: 'Küsten und Wälder nahe Kopenhagen', rd_bh: 'Felsen, Räuchereien und kleine Hafenstädte',
+      n1: 'Månefjord Glamping', n2: 'Waldhütte mit Outdoor-Spa', n3: 'Baumhaus über dem Fjord', n4: 'Hausboot im alten Hafen', n5: 'Tiny House auf dem Feld', n6: 'Langhaus mit Meerblick', n7: 'Zeltdorf am See', n8: 'Fjordhütte mit Sauna', n9: 'Dorfhof mit Frühstück',
+      count_one: '1 Unterkunft', count_many: '{n} Unterkünfte',
+      empty_b: 'Noch keine passende Unterkunft.', empty: 'Probiere weniger Filter, eine andere Region oder mehr Plätze.',
+      up_to: 'Bis zu {n} Gäste', from_pre: 'ab', per_night: '/ Nacht', view: 'Unterkunft ansehen', view_site: 'Zur Website des Gastgebers', ad: 'Anzeige',
+      s2_label: 'Regionen', s2_h2: 'Nach Region finden',
+      s2_sub: 'Von den Dünen im Norden bis zu den Klippen auf Bornholm. Wähle eine Region, sieh dir an, was es in der Nähe zu erleben gibt, und finde eine Unterkunft.',
+      sights_label: 'Sehenswert', region_cta: 'Unterkünfte ansehen',
+      tips_label: 'Tipps', tips_h2: 'Tipps für deinen Aufenthalt',
+      tips_sub: 'Kleine Ratschläge, die einen Aufenthalt im Zelt, in der Hütte oder im Baumhaus besser machen.',
+      tip1_h: 'Glamping im Winter', tip1_p: 'Viele Orte haben Kaminofen oder Heizung für das ganze Jahr. Prüfe vor der Buchung Heizung, Dämmung und ein eigenes Bad.',
+      tip2_h: 'Reisen mit Hund', tip2_p: 'Frage nach, ob Hunde willkommen sind und ob es Zaun oder Auslauf gibt. Manche Orte verlangen eine Reinigungsgebühr.',
+      tip3_h: 'Beste Reisezeit', tip3_p: 'Der Juli ist am beliebtesten und am teuersten. Mai, Juni und September bringen oft niedrigere Preise und mehr Ruhe.',
+      tip4_h: 'Packen für Glamping', tip4_p: 'Nimm auch im Sommer warme Schichten mit. Die Nächte an der Küste können kühl sein. Frage, ob Bettwäsche und Handtücher dabei sind.',
+      tip5_h: 'Rechtzeitig buchen', tip5_p: 'Die beliebtesten Orte sind in den Sommerferien oft Monate im Voraus ausgebucht. Flexible Daten geben mehr Auswahl.',
+      tip6_h: 'Entfernungen und Parkplatz prüfen', tip6_p: 'Viele Orte liegen weit vom öffentlichen Verkehr entfernt. Frage nach Parkplatz und Entfernung zum nächsten Supermarkt.',
+      s3_label: 'Kuratierung', s3_h2: 'So wählen wir aus',
+      s3_sub: 'Wir zeigen weniger Unterkünfte, dafür solche, für die sich die Reise lohnt. Diese vier Dinge muss ein Ort erfüllen.',
+      c1_h: 'Besondere Lage', c1_p: 'Am Wasser, im Wald oder auf freiem Feld. Der Ort soll sich anders anfühlen als ein normales Ferienhaus.',
+      c2_h: 'Gute Fotos', c2_p: 'Gastgeber liefern hochwertige Bilder, damit du den Ort so siehst, wie er ist.',
+      c3_h: 'Stimmen der Gäste', c3_p: 'Bewertungen von Menschen, die dort übernachtet haben, zählen bei unserer Auswahl stark.',
+      c4_h: 'Klarer Preis', c4_p: 'Der Preis pro Nacht und was er umfasst, muss klar erkennbar sein, bevor du weiterklickst.',
+      faq_label: 'Fragen und Antworten', faq_h2: 'Häufige Fragen',
+      q1: 'Was ist Glamping?', a1: 'Glamping ist Camping mit Komfort. Du bekommst richtige Betten, oft ein eigenes Bad und Heizung, an manchen Orten auch Sauna oder Spa.',
+      q2: 'Wann ist die beste Zeit für Glamping in Dänemark?', a2: 'Von Mai bis September ist es am angenehmsten. Viele Orte haben das ganze Jahr geöffnet und sind beheizt, deshalb können auch Herbst und Winter gemütlich sein.',
+      q3: 'Darf ich meinen Hund mitbringen?', a3: 'Das hängt vom Ort ab. Nutze den Filter Hunde erlaubt, um nur Unterkünfte zu sehen, in denen Hunde willkommen sind.',
+      q4: 'Wie buche ich?', a4: 'Du klickst weiter zur Seite des Gastgebers und buchst direkt dort. Preise und freie Termine siehst du dort.',
+      q5: 'Kostet die Nutzung von Unikt Ophold etwas?', a5: 'Nein. Du zahlst nur den Gastgeber für deinen Aufenthalt. Wir erheben keine Gebühren von Gästen.',
+      q6: 'Was bedeutet Anzeige?', a6: 'Anzeige bedeutet, dass ein Gastgeber für mehr Sichtbarkeit bezahlt hat. Bezahlte Platzierungen sind immer gekennzeichnet.',
+      s4_label: 'Für Gastgeber', s4_h2: 'Der Gast bucht direkt bei dir',
+      s4_sub: 'Die Teilnahme ist kostenlos. Du zahlst keine Provision und keinen Klickpreis. Für mehr Sichtbarkeit kannst du Premium wählen.',
+      pb_h: 'Basis', pb_price: 'Kostenlos',
+      pb1: 'Aufgeführt in der Liste der Unterkünfte', pb2: 'Auffindbar über Suche und Filter', pb3: 'Keine Provision auf Buchungen',
+      pf_h: 'Premium', pf_price: '500 kr pro Jahr',
+      pf1: 'Alles aus Basis', pf2: 'Eigene Seite mit Bildern, Preis und Links', pf3: 'Zusätzlicher Werbeplatz auf der Startseite und in deiner Region, als Anzeige gekennzeichnet',
+      fine: 'Die Seite finanziert sich über Werbeanzeigen und über Gastgeber, die Premium wählen. Alle Anzeigen und bezahlten Platzierungen sind klar gekennzeichnet.',
+      cta: 'Unterkunft anmelden',
+      foot_p: 'Ein unabhängiger Überblick über Glamping und besondere Unterkünfte in Dänemark.',
+      toast_soon: 'Die Anmeldung öffnet zum Start der Seite.',
+      toast_out: 'Auf der fertigen Seite öffnet sich jetzt die eigene Seite der Unterkunft bei Unikt Ophold.',
+      toast_site: 'Auf der fertigen Seite öffnet sich die Website des Gastgebers in einem neuen Tab.'
+    },
+    en: {
+      aria_top: 'Unikt Ophold, back to top', aria_menu: 'Main menu', aria_lang: 'Language', aria_search: 'Search for stays', aria_types: 'Filter by type', aria_sections: 'Page sections',
+      nav_find: 'Find stays', nav_regions: 'Regions', nav_tips: 'Tips', nav_how: 'How we choose', nav_faq: 'FAQ', nav_hosts: 'For hosts',
+      back: '← Back to home',
+      crumb_home: 'Home', crumb_label: 'Breadcrumb',
+      rp_h1: 'Glamping in {r}', rp_stays: 'Stays in {r}', rp_all: 'All stays with filters', rp_see: 'See and do in {r}', rp_tips: 'Tips for {r}', rp_faq: 'Questions about {r}', rcard_guide: 'Read the guide',
+      eyebrow: 'Glamping and unique stays in Denmark',
+      h1: 'Sleep somewhere you won’t forget.',
+      lead: 'The tent in the dunes, the cabin in the forest, the house in the treetops. Compare handpicked stays and book directly with the host.',
+      lbl_region: 'Region', lbl_type: 'Type', lbl_guests: 'Guests', lbl_price: 'Price per night',
+      search_btn: 'Find stays', all_dk: 'All of Denmark', all_types: 'All types', chip_all: 'All',
+      guest_one: '{n} guest', guest_many: '{n} guests',
+      search_note: 'You’ll see prices and availability with the host.',
+      usp1: 'Handpicked stays', usp2: 'Book directly with the host', usp3: 'No fees for guests',
+      s1_label: 'Selected stays', s1_h2: 'Stays in Denmark', pill: 'Example',
+      s1_note: 'This preview uses fictional stays. The real ones arrive when the site launches.',
+      ftitle: 'Filters', freset: 'Reset', price_any: 'Any price', price_max: 'Up to {n} kr',
+      g_wellness: 'Wellness', g_location: 'Setting', g_food: 'Food and drink', g_facilities: 'Facilities',
+      a_sauna: 'Sauna', a_whirlpool: 'Hot tub or spa', a_sea: 'Sea', a_fjord: 'Fjord', a_lake: 'Lake', a_beach: 'Beach', a_forest: 'Forest', a_swim: 'Swimming nearby',
+      a_breakfast: 'Breakfast', a_kitchen: 'Kitchen',
+      a_parking: 'Parking', a_ev: 'EV charging', a_dogs: 'Dogs welcome', a_kids: 'Child-friendly', a_wifi: 'Wi-Fi', a_heating: 'Heated all year', a_bath: 'Private bathroom',
+      ty_glamping: 'Glamping', ty_cabin: 'Cabin', ty_treehouse: 'Treehouse', ty_houseboat: 'Houseboat', ty_tiny: 'Tiny house', ty_farm: 'Farmstay',
+      r_nj: 'North Jutland', r_mj: 'Central Jutland', r_sj: 'South Jutland', r_fyn: 'Funen', r_sjl: 'Zealand', r_bh: 'Bornholm',
+      rd_nj: 'Dunes, Skagen and the North Sea', rd_mj: 'The lake district and the Aarhus area', rd_sj: 'The Wadden Sea and the Little Belt', rd_fyn: 'The South Funen archipelago and small villages', rd_sjl: 'Coasts and forests close to Copenhagen', rd_bh: 'Cliffs, smokehouses and small harbour towns',
+      n1: 'Månefjord Glamping', n2: 'Forest cabin with outdoor spa', n3: 'Treehouse above the fjord', n4: 'Houseboat in the old harbour', n5: 'Tiny house in the field', n6: 'Longhouse with sea view', n7: 'Tent village by the lake', n8: 'Fjord cabin with sauna', n9: 'Village farm with breakfast',
+      count_one: '1 stay', count_many: '{n} stays',
+      empty_b: 'No stays match yet.', empty: 'Try fewer filters, another region or more places.',
+      up_to: 'Up to {n} guests', from_pre: 'from', per_night: '/ night', view: 'View stay', view_site: 'Go to host’s website', ad: 'Ad',
+      s2_label: 'Regions', s2_h2: 'Browse by region',
+      s2_sub: 'From the dunes in the north to the cliffs of Bornholm. Pick a region, see what there is to do nearby and find a stay.',
+      sights_label: 'See and do', region_cta: 'View stays',
+      tips_label: 'Tips', tips_h2: 'Tips for your stay',
+      tips_sub: 'Small tips that make a stay in a tent, cabin or treehouse better.',
+      tip1_h: 'Glamping in winter', tip1_p: 'Many places have a wood stove or heating all year. Check the heating, insulation and private bathroom before you book.',
+      tip2_h: 'Travelling with a dog', tip2_p: 'Ask whether dogs are welcome and whether there is a fence or room to run. Some places charge a cleaning fee.',
+      tip3_h: 'Best time to travel', tip3_p: 'July is the most popular and most expensive month. May, June and September often bring lower prices and more peace.',
+      tip4_h: 'Packing for glamping', tip4_p: 'Bring warm layers, even in summer. Nights on the coast can be cool. Ask whether bed linen and towels are included.',
+      tip5_h: 'Book early', tip5_p: 'The most popular places are often booked months ahead for the summer holidays. Flexible dates give you more choice.',
+      tip6_h: 'Check distances and parking', tip6_p: 'Many places are far from public transport. Ask about parking and the distance to the nearest shop.',
+      s3_label: 'Curation', s3_h2: 'How we choose',
+      s3_sub: 'We show fewer stays, but ones worth travelling for. These are the four things a place has to deliver.',
+      c1_h: 'A special setting', c1_p: 'By the water, in the forest or out in an open field. It should feel different from an ordinary holiday home.',
+      c2_h: 'Good photos', c2_p: 'Hosts supply high-quality photos so you see the place as it is.',
+      c3_h: 'Guest voices', c3_p: 'Reviews from people who have stayed there carry real weight in our selection.',
+      c4_h: 'A clear price', c4_p: 'The price per night and what it covers must be clear before you click through.',
+      faq_label: 'Questions and answers', faq_h2: 'Frequently asked questions',
+      q1: 'What is glamping?', a1: 'Glamping is camping with comfort. You get proper beds, often a private bathroom and heating, and at some places a sauna or spa.',
+      q2: 'When is the best time for glamping in Denmark?', a2: 'May to September is the most comfortable. Many places are open all year and heated, so autumn and winter can be cosy too.',
+      q3: 'Can I bring my dog?', a3: 'It depends on the place. Use the Dogs welcome filter to see only the stays where dogs are welcome.',
+      q4: 'How do I book?', a4: 'You click through to the host’s own page and book directly with them. You see prices and availability there.',
+      q5: 'Does it cost anything to use Unikt Ophold?', a5: 'No. You only pay the host for your stay. We charge guests no fees.',
+      q6: 'What does Ad mean?', a6: 'Ad means a host has paid for extra visibility. Paid placements are always marked.',
+      s4_label: 'For hosts', s4_h2: 'Guests book directly with you',
+      s4_sub: 'Listing is free. You pay no commission and no per-click fee. If you want extra visibility, you can choose Featured.',
+      pb_h: 'Basic', pb_price: 'Free',
+      pb1: 'Listed in the stays list', pb2: 'Findable through search and filters', pb3: 'No commission on bookings',
+      pf_h: 'Featured', pf_price: '500 kr per year',
+      pf1: 'Everything in Basic', pf2: 'Your own page with photos, price and links', pf3: 'Extra ad placement on the front page and in your region, marked as Ad',
+      fine: 'The site is funded by advertising and by hosts who choose Featured. All ads and paid placements are clearly marked.',
+      cta: 'List your stay',
+      foot_p: 'An independent overview of glamping and unique stays in Denmark.',
+      toast_soon: 'Sign-up opens when the site launches.',
+      toast_out: 'On the finished site the stay’s own page on Unikt Ophold would open now.',
+      toast_site: 'On the finished site the host’s own website would open in a new tab.'
+    }
+  };
+
+  var REGION_IDS = ['nj', 'mj', 'sj', 'fyn', 'sjl', 'bh'];
+  var TYPE_IDS = ['glamping', 'cabin', 'treehouse', 'houseboat', 'tiny', 'farm'];
+  var GROUPS = [
+    { id: 'wellness', items: ['sauna', 'whirlpool'] },
+    { id: 'location', items: ['sea', 'fjord', 'lake', 'beach', 'forest', 'swim'] },
+    { id: 'food', items: ['breakfast', 'kitchen'] },
+    { id: 'facilities', items: ['parking', 'ev', 'dogs', 'kids', 'wifi', 'heating', 'bath'] }
+  ];
+  var PRIORITY = ['sauna', 'whirlpool', 'breakfast', 'fjord', 'lake', 'sea', 'beach', 'swim', 'forest', 'dogs', 'kids', 'parking', 'kitchen', 'bath', 'heating', 'wifi', 'ev'];
+  var PRICES = [0, 1000, 1500, 2000];
+  var DATA = [
+    { id: 1, type: 'glamping', region: 'mj', sleeps: 2, price: null, ad: false, prem: false, url: 'https://www.manefjordglamping.dk',
+      am: ['parking', 'ev', 'wifi', 'heating', 'bath', 'kitchen', 'breakfast'] }
+  ];
+
+  var SIGHTS = {
+    nj: [
+      { n: 'Grenen, Skagen', d: { da: 'hvor to have mødes', de: 'wo zwei Meere aufeinandertreffen', en: 'where two seas meet' } },
+      { n: 'Råbjerg Mile', d: { da: 'Danmarks største vandredyne', de: 'Dänemarks größte Wanderdüne', en: 'Denmark’s largest migrating dune' } },
+      { n: 'Rubjerg Knude Fyr', d: { da: 'fyrtårn ved den høje klint', de: 'Leuchtturm an der hohen Steilküste', en: 'lighthouse on a tall cliff' } }
+    ],
+    mj: [
+      { n: 'Himmelbjerget', d: { da: 'udsigt over Søhøjlandet', de: 'Aussicht über das Seenland', en: 'views over the lake district' } },
+      { n: 'ARoS, Aarhus', d: { da: 'kunstmuseum med regnbuepanorama', de: 'Kunstmuseum mit Regenbogen-Panorama', en: 'art museum with a rainbow panorama' } },
+      { n: 'Moesgaard Museum', d: { da: 'arkæologi og vikingetid', de: 'Archäologie und Wikingerzeit', en: 'archaeology and the Viking age' } }
+    ],
+    sj: [
+      { n: 'Ribe', d: { da: 'Danmarks ældste by', de: 'Dänemarks älteste Stadt', en: 'Denmark’s oldest town' } },
+      { n: 'Mandø', d: { da: 'tidevandsø i Vadehavet', de: 'Gezeiteninsel im Wattenmeer', en: 'tidal island in the Wadden Sea' } },
+      { n: 'LEGOLAND, Billund', d: { da: 'forlystelsespark for familier', de: 'Freizeitpark für Familien', en: 'theme park for families' } }
+    ],
+    fyn: [
+      { n: { da: 'Egeskov Slot', de: 'Schloss Egeskov', en: 'Egeskov Castle' }, d: { da: 'vandslot fra 1500-tallet', de: 'Wasserschloss aus dem 16. Jahrhundert', en: '16th-century moated castle' } },
+      { n: 'H.C. Andersens Hus, Odense', d: { da: 'digterens fødeby', de: 'Geburtsstadt des Dichters', en: 'the author’s home town' } },
+      { n: 'Ærø', d: { da: 'ø med små byer og cykelruter', de: 'Insel mit kleinen Städten und Radrouten', en: 'island with small towns and cycle routes' } }
+    ],
+    sjl: [
+      { n: { da: 'Kronborg Slot', de: 'Schloss Kronborg', en: 'Kronborg Castle' }, d: { da: 'Hamlets slot i Helsingør', de: 'Hamlets Schloss in Helsingør', en: 'Hamlet’s castle in Helsingør' } },
+      { n: 'Louisiana', d: { da: 'kunstmuseum ved Øresund', de: 'Kunstmuseum am Öresund', en: 'art museum by the Øresund' } },
+      { n: 'Møns Klint', d: { da: 'hvide kridtklinter', de: 'weiße Kreidefelsen', en: 'white chalk cliffs' } }
+    ],
+    bh: [
+      { n: 'Hammershus', d: { da: 'Nordeuropas største borgruin', de: 'größte Burgruine Nordeuropas', en: 'northern Europe’s largest castle ruin' } },
+      { n: 'Christiansø', d: { da: 'lille ø med fæstning', de: 'kleine Insel mit Festung', en: 'small island with a fortress' } },
+      { n: 'Dueodde', d: { da: 'fin hvid sandstrand', de: 'feiner weißer Sandstrand', en: 'fine white sand beach' } }
+    ]
+  };
+
+  // Region guides (landing pages). Add another region by adding an entry with the same shape.
+  var GUIDES = {
+    nordjylland: {
+      id: 'nj',
+      da: {
+        intro: 'Nordjylland byder på høje klitter, lange sandstrande og et hav, der aldrig står stille. Himlen er stor, og mange ophold ligger helt tæt på vandet. Her samler vi håndplukkede glampingtelte, hytter og andre særlige overnatninger fra Vesterhavet til Kattegat.',
+        sights: [
+          'Ved Danmarks nordligste spids mødes Skagerrak og Kattegat. Strømmen er stærk, så hold dig på land og nyd udsigten.',
+          'Dynen flytter sig hvert år med vinden og ligner en ørken midt i landskabet. Tag gode sko på og gå op på toppen.',
+          'Fyret ligger ved en høj klint og blev i 2019 flyttet længere ind i landet for at redde det fra erosionen. Det er et godt sted ved solnedgang.'
+        ],
+        tips: [
+          ['Tag vindtæt tøj med', 'Vinden fra Vesterhavet kan være kraftig, også om sommeren. Et vindtæt lag gør aftenerne ved teltet meget mere behagelige.'],
+          ['Bo gerne uden for Skagen', 'Skagen er travl i højsæsonen. Et ophold lidt uden for byen giver mere ro, og byen er stadig inden for rækkevidde.'],
+          ['Respekter badeadvarsler', 'Vestkysten har kraftig strøm. Følg lokale advarsler, og bad kun, hvor det er tilladt og sikkert.']
+        ],
+        faq: [
+          ['Hvornår er det bedst at glampe i Nordjylland?', 'Fra maj til september er vejret mildest, og dagene er lange. Om efteråret er der færre mennesker, men tag varmt tøj med.'],
+          ['Hvordan kommer jeg rundt i Nordjylland?', 'De fleste ophold ligger langt fra offentlig transport, så bil er den nemmeste måde. Aalborg er et godt udgangspunkt for turen nordpå.']
+        ]
+      },
+      de: {
+        intro: 'Nordjütland bietet hohe Dünen, lange Sandstrände und ein Meer, das nie stillsteht. Der Himmel ist weit, und viele Unterkünfte liegen direkt am Wasser. Hier sammeln wir handverlesene Glamping-Zelte, Hütten und andere besondere Unterkünfte von der Nordsee bis zum Kattegat.',
+        sights: [
+          'An der Nordspitze Dänemarks treffen Skagerrak und Kattegat aufeinander. Die Strömung ist stark, bleib also an Land und genieße die Aussicht.',
+          'Die Düne wandert jedes Jahr mit dem Wind und wirkt wie eine Wüste mitten in der Landschaft. Zieh feste Schuhe an und steige auf den Kamm.',
+          'Der Leuchtturm steht an einer hohen Steilküste und wurde 2019 weiter ins Landesinnere versetzt, um ihn vor der Erosion zu retten. Bei Sonnenuntergang ist es ein schöner Ort.'
+        ],
+        tips: [
+          ['Winddichte Kleidung einpacken', 'Der Wind von der Nordsee kann auch im Sommer kräftig sein. Eine winddichte Schicht macht die Abende am Zelt viel angenehmer.'],
+          ['Gern außerhalb von Skagen wohnen', 'Skagen ist in der Hochsaison voll. Eine Unterkunft etwas außerhalb bringt mehr Ruhe, und die Stadt bleibt in Reichweite.'],
+          ['Badewarnungen beachten', 'An der Westküste ist die Strömung stark. Beachte lokale Warnungen und bade nur, wo es erlaubt und sicher ist.']
+        ],
+        faq: [
+          ['Wann ist die beste Zeit für Glamping in Nordjütland?', 'Von Mai bis September ist das Wetter am mildesten, und die Tage sind lang. Im Herbst ist weniger los, aber nimm warme Kleidung mit.'],
+          ['Wie komme ich in Nordjütland herum?', 'Die meisten Unterkünfte liegen weit vom öffentlichen Verkehr entfernt, deshalb ist das Auto am einfachsten. Aalborg ist ein guter Ausgangspunkt für die Reise nach Norden.']
+        ]
+      },
+      en: {
+        intro: 'North Jutland offers high dunes, long sandy beaches and a sea that never stands still. The sky is wide, and many stays sit right by the water. Here we collect handpicked glamping tents, cabins and other unique stays from the North Sea to the Kattegat.',
+        sights: [
+          'At Denmark’s northern tip the Skagerrak and the Kattegat meet. The current is strong, so stay on land and enjoy the view.',
+          'The dune moves a little every year with the wind and looks like a desert in the middle of the landscape. Wear good shoes and walk up to the top.',
+          'The lighthouse stands by a tall cliff and was moved further inland in 2019 to save it from erosion. It is a lovely spot at sunset.'
+        ],
+        tips: [
+          ['Bring windproof clothing', 'The wind from the North Sea can be strong, even in summer. A windproof layer makes evenings at the tent much more comfortable.'],
+          ['Consider staying outside Skagen', 'Skagen is busy in high season. A stay a little outside town gives you more peace, and the town is still within reach.'],
+          ['Respect swimming warnings', 'The west coast has strong currents. Follow local warnings and swim only where it is allowed and safe.']
+        ],
+        faq: [
+          ['When is the best time for glamping in North Jutland?', 'May to September has the mildest weather and long days. Autumn is quieter, but bring warm clothes.'],
+          ['How do I get around North Jutland?', 'Most stays are far from public transport, so a car is the easiest way. Aalborg is a good starting point for the trip north.']
+        ]
+      }
+    },
+    midtjylland: {"id": "mj", "da": {"intro": "Midtjylland samler søer, skove og Aarhus, Danmarks næststørste by. Det er et godt udgangspunkt, hvis du vil kombinere ro i naturen med kultur og gode spisesteder. Her samler vi håndplukkede glampingtelte, hytter og andre særlige overnatninger.", "sights": ["Bakken ligger over Søhøjlandet og giver udsigt over søer og skov. Der er stier til både korte og lange ture.", "Museet har en rund glaspanorama på taget, hvor du går rundt i alle regnbuens farver. Tjek åbningstider, før du tager afsted.", "Museet sydvest for Aarhus fortæller om forhistorien og vikingetiden i Danmark. Det passer godt til en regnvejrsdag."], "tips": [["Kombinér natur og by", "Bo ude i naturen, og tag en dag til Aarhus. Du får både stilhed og byliv uden at skifte ophold."], ["Tag cyklen med til søerne", "Området omkring søerne egner sig til cykel og kajak. Spørg værten, om der er udstyr at låne eller leje i nærheden."], ["Book i god tid om sommeren", "Populære ophold nær søerne er hurtigt optaget i højsæsonen. Planlæg gerne flere måneder frem."]], "faq": [["Hvad kan man opleve i Midtjylland?", "Søerne, skovene og Aarhus med museer og restauranter. Mange ophold ligger tæt på vand, hvor du kan bade eller sejle."], ["Er Midtjylland godt for børn?", "Ja, der er mange muligheder for familier, både i naturen og i byerne. Brug filteret for børnevenlige ophold."]]}, "de": {"intro": "Mitteljütland vereint Seen, Wälder und Aarhus, die zweitgrößte Stadt Dänemarks. Es ist ein guter Ausgangspunkt, wenn du Ruhe in der Natur mit Kultur und guten Restaurants verbinden willst. Hier sammeln wir handverlesene Glamping-Zelte, Hütten und andere besondere Unterkünfte.", "sights": ["Der Hügel liegt über dem Seenland und bietet Aussicht über Seen und Wald. Es gibt Wege für kurze und lange Touren.", "Das Museum hat auf dem Dach einen runden Glasgang in allen Regenbogenfarben. Prüfe die Öffnungszeiten, bevor du losfährst.", "Das Museum südwestlich von Aarhus erzählt von der Vorgeschichte und der Wikingerzeit in Dänemark. Es passt gut zu einem Regentag."], "tips": [["Natur und Stadt verbinden", "Wohne draußen in der Natur und nimm dir einen Tag für Aarhus. So hast du Stille und Stadtleben, ohne die Unterkunft zu wechseln."], ["Fahrrad zu den Seen mitnehmen", "Die Gegend um die Seen eignet sich für Rad und Kajak. Frag den Gastgeber, ob es in der Nähe Ausrüstung zum Leihen gibt."], ["Im Sommer früh buchen", "Beliebte Unterkünfte nahe den Seen sind in der Hochsaison schnell ausgebucht. Plane gern mehrere Monate im Voraus."]], "faq": [["Was kann man in Mitteljütland erleben?", "Die Seen, die Wälder und Aarhus mit Museen und Restaurants. Viele Unterkünfte liegen nah am Wasser, wo du baden oder paddeln kannst."], ["Ist Mitteljütland gut für Kinder?", "Ja, es gibt viele Möglichkeiten für Familien, in der Natur und in den Städten. Nutze den Filter für kinderfreundliche Unterkünfte."]]}, "en": {"intro": "Central Jutland brings together lakes, forests and Aarhus, Denmark’s second-largest city. It is a good base if you want to combine peace in nature with culture and good places to eat. Here we collect handpicked glamping tents, cabins and other unique stays.", "sights": ["The hill rises over the lake district and gives views over lakes and forest. There are paths for both short and long walks.", "The museum has a round glass walkway on the roof in all the colours of the rainbow. Check opening hours before you go.", "The museum southwest of Aarhus tells the story of prehistory and the Viking age in Denmark. It suits a rainy day well."], "tips": [["Combine nature and city", "Stay out in nature and take a day in Aarhus. You get quiet and city life without changing stay."], ["Bring bikes to the lakes", "The area around the lakes suits cycling and kayaking. Ask the host whether there is equipment to borrow or rent nearby."], ["Book early in summer", "Popular stays near the lakes fill up quickly in high season. Plan several months ahead."]], "faq": [["What can you do in Central Jutland?", "The lakes, the forests and Aarhus with museums and restaurants. Many stays are close to water where you can swim or paddle."], ["Is Central Jutland good for children?", "Yes, there are many options for families, in nature and in the cities. Use the filter for child-friendly stays."]]}},
+    sydjylland: {"id": "sj", "da": {"intro": "Sydjylland rummer Vadehavet, Danmarks ældste by og stor, flad natur, hvor himlen fylder meget. Her kan du kombinere ro ved havet med oplevelser for hele familien. Her samler vi håndplukkede glampingtelte, hytter og andre særlige overnatninger.", "sights": ["Byen er kendt som Danmarks ældste og har skæve huse, brostensgader og en domkirke. Gå en tur gennem det gamle centrum.", "Tidevandsøen i Vadehavet kan kun nås ad vejen ved lavvande. Tjek tidevandstabellen, og kør kun, når der er åbent.", "Forlystelsesparken i Billund har modeller i legoklodser og passer til børnefamilier. Mange gæster tager en hel dag."], "tips": [["Tjek tidevandet", "I Vadehavet skifter vandstanden hurtigt. Følg lokale anvisninger, før du går eller kører ud på havbunden."], ["Planlæg legolanddagen", "Parken er travl i skoleferien. Køb billetter i forvejen, og overvej en hverdag."], ["Se efter fugle om efteråret", "Vadehavet er kendt for store flokke af trækfugle. Tag kikkert med, og spørg lokalt om gode steder."]], "faq": [["Hvad er Vadehavet?", "Det er et stort tidevandsområde langs kysten, hvor havet trækker sig tilbage ved ebbe. Det er en populær destination for natur og fugleliv."], ["Hvordan kommer jeg rundt i Sydjylland?", "Bil er den nemmeste måde at nå både byer og naturområder. Mange ophold ligger uden for byerne."]]}, "de": {"intro": "Südjütland umfasst das Wattenmeer, Dänemarks älteste Stadt und weite, flache Natur, in der der Himmel viel Raum einnimmt. Hier kannst du Ruhe am Meer mit Erlebnissen für die ganze Familie verbinden. Hier sammeln wir handverlesene Glamping-Zelte, Hütten und andere besondere Unterkünfte.", "sights": ["Die Stadt gilt als Dänemarks älteste und hat schiefe Häuser, Kopfsteinpflaster und einen Dom. Mach einen Spaziergang durch die Altstadt.", "Die Gezeiteninsel im Wattenmeer ist nur bei Niedrigwasser über die Straße erreichbar. Prüfe die Gezeitentabelle und fahre nur, wenn geöffnet ist.", "Der Freizeitpark in Billund zeigt Modelle aus Legosteinen und passt zu Familien mit Kindern. Viele Gäste bleiben einen ganzen Tag."], "tips": [["Gezeiten prüfen", "Im Wattenmeer wechselt der Wasserstand schnell. Folge den örtlichen Hinweisen, bevor du auf den Meeresboden gehst oder fährst."], ["Den Legoland-Tag planen", "Der Park ist in den Schulferien voll. Kaufe Tickets im Voraus und überlege einen Wochentag."], ["Im Herbst auf Vögel achten", "Das Wattenmeer ist für große Zugvogelschwärme bekannt. Nimm ein Fernglas mit und frag vor Ort nach guten Plätzen."]], "faq": [["Was ist das Wattenmeer?", "Es ist ein großes Gezeitengebiet entlang der Küste, in dem sich das Meer bei Ebbe zurückzieht. Es ist ein beliebtes Ziel für Natur und Vogelwelt."], ["Wie komme ich in Südjütland herum?", "Das Auto ist am einfachsten, um sowohl Städte als auch Naturgebiete zu erreichen. Viele Unterkünfte liegen außerhalb der Städte."]]}, "en": {"intro": "South Jutland holds the Wadden Sea, Denmark’s oldest town and wide, flat nature where the sky takes up a lot of room. Here you can combine peace by the sea with experiences for the whole family. Here we collect handpicked glamping tents, cabins and other unique stays.", "sights": ["The town is known as Denmark’s oldest and has crooked houses, cobbled streets and a cathedral. Take a walk through the old centre.", "The tidal island in the Wadden Sea can only be reached by road at low tide. Check the tide table and drive only when it is open.", "The theme park in Billund shows models built from toy bricks and suits families with children. Many guests stay a whole day."], "tips": [["Check the tide", "In the Wadden Sea the water level changes quickly. Follow local guidance before you walk or drive out onto the seabed."], ["Plan the Legoland day", "The park is busy in school holidays. Buy tickets in advance and consider a weekday."], ["Watch for birds in autumn", "The Wadden Sea is known for large flocks of migrating birds. Bring binoculars and ask locally for good spots."]], "faq": [["What is the Wadden Sea?", "It is a large tidal area along the coast where the sea retreats at low tide. It is a popular destination for nature and birdlife."], ["How do I get around South Jutland?", "A car is the easiest way to reach both towns and nature areas. Many stays are outside the towns."]]}},
+    fyn: {"id": "fyn", "da": {"intro": "Fyn kaldes ofte Danmarks have: bløde marker, små landsbyer og et sydfynsk øhav med rolige farvande. Afstandene er korte, så du kan se meget på få dage. Her samler vi håndplukkede glampingtelte, hytter og andre særlige overnatninger.", "sights": ["Slottet fra 1500-tallet ligger i vand og har en stor have. Det er et af de mest besøgte slotte i Danmark.", "Museet i Odense fortæller om digterens liv og eventyr. Byen er også godt at gå rundt i til fods.", "Øen syd for Fyn har små byer med farverige huse og gode cykelruter. Du kommer dertil med færge."], "tips": [["Tag færgen til øerne", "Øerne i det sydfynske øhav er lette at nå med færge. Tjek afgangstider og book bil i forvejen om sommeren."], ["Lej en cykel", "Fyn er forholdsvis fladt og har mange cykelruter. Spørg værten, om der er cykler i nærheden."], ["Besøg lokale gårdbutikker", "Mange gårde sælger frugt og grønt direkte. Det er en god måde at smage egnen på."]], "faq": [["Hvad er sydfynske øhav?", "Det er en gruppe små øer syd for Fyn med rolige farvande. Det er populært til sejlads, kajak og cykelture."], ["Er Fyn godt til en weekendtur?", "Ja, afstandene er korte, og der er meget at se. Mange ophold ligger tæt på både natur og byer."]]}, "de": {"intro": "Fünen wird oft Dänemarks Garten genannt: sanfte Felder, kleine Dörfer und ein südfünisches Inselmeer mit ruhigen Gewässern. Die Wege sind kurz, sodass du in wenigen Tagen viel sehen kannst. Hier sammeln wir handverlesene Glamping-Zelte, Hütten und andere besondere Unterkünfte.", "sights": ["Das Schloss aus dem 16. Jahrhundert liegt im Wasser und hat einen großen Garten. Es gehört zu den meistbesuchten Schlössern Dänemarks.", "Das Museum in Odense erzählt vom Leben und von den Märchen des Dichters. Die Stadt lässt sich auch gut zu Fuß erkunden.", "Die Insel südlich von Fünen hat kleine Städte mit bunten Häusern und gute Radrouten. Du erreichst sie mit der Fähre."], "tips": [["Mit der Fähre zu den Inseln", "Die Inseln im südfünischen Inselmeer sind leicht mit der Fähre zu erreichen. Prüfe die Abfahrtszeiten und buche im Sommer das Auto im Voraus."], ["Ein Fahrrad leihen", "Fünen ist relativ flach und hat viele Radrouten. Frag den Gastgeber, ob es in der Nähe Fahrräder gibt."], ["Lokale Hofläden besuchen", "Viele Höfe verkaufen Obst und Gemüse direkt. So schmeckst du die Gegend."]], "faq": [["Was ist das südfünische Inselmeer?", "Es ist eine Gruppe kleiner Inseln südlich von Fünen mit ruhigen Gewässern. Es ist beliebt für Segeln, Kajak und Radtouren."], ["Ist Fünen gut für ein Wochenende?", "Ja, die Wege sind kurz, und es gibt viel zu sehen. Viele Unterkünfte liegen nah an Natur und Städten."]]}, "en": {"intro": "Funen is often called Denmark’s garden: soft fields, small villages and a South Funen archipelago with calm waters. Distances are short, so you can see a lot in a few days. Here we collect handpicked glamping tents, cabins and other unique stays.", "sights": ["The 16th-century castle stands in water and has a large garden. It is one of the most visited castles in Denmark.", "The museum in Odense tells of the author’s life and fairy tales. The town is also good to explore on foot.", "The island south of Funen has small towns with colourful houses and good cycle routes. You get there by ferry."], "tips": [["Take the ferry to the islands", "The islands in the South Funen archipelago are easy to reach by ferry. Check departure times and book your car in advance in summer."], ["Rent a bike", "Funen is fairly flat and has many cycle routes. Ask the host whether there are bikes nearby."], ["Visit local farm shops", "Many farms sell fruit and vegetables directly. It is a good way to taste the area."]], "faq": [["What is the South Funen archipelago?", "It is a group of small islands south of Funen with calm waters. It is popular for sailing, kayaking and cycling."], ["Is Funen good for a weekend trip?", "Yes, distances are short and there is a lot to see. Many stays are close to both nature and towns."]]}},
+    sjaelland: {"id": "sjl", "da": {"intro": "Sjælland har både hovedstadens tempo og rolige kyster, skove og bakker. Mange ophold ligger inden for en times kørsel fra København, men føles langt væk. Her samler vi håndplukkede glampingtelte, hytter og andre særlige overnatninger.", "sights": ["Slottet i Helsingør kendes som Hamlets slot. Det ligger ved Øresund og kan besøges hele året.", "Kunstmuseet i Humlebæk ligger ud mod Øresund og er kendt for samtidskunst og skulpturpark. Det er værd at afsætte tid til haven.", "De hvide kridtklinter på Møn rejser sig over havet. Der er trapper ned til stranden, og stien langs toppen giver udsigt."], "tips": [["Brug toget til København", "Mange ophold ligger tæt på stationer. Tjek, om du kan tage toget ind til byen en dag."], ["Gå ned ad trapperne ved klinten", "Trappen ned til stranden under Møns Klint har mange trin. Tag fornuftigt fodtøj på."], ["Undgå weekenderne om sommeren", "Kysterne nær København er travle på varme weekender. Hverdage giver mere ro."]], "faq": [["Kan man bo i naturen tæt på København?", "Ja, flere ophold ligger i skov eller ved kysten inden for kort kørsel. Se listen for aktuelle eksempler."], ["Hvornår er det bedst at besøge Møns Klint?", "Om sommeren er der flest besøgende. Tidlig morgen eller sen eftermiddag giver ofte mere ro."]]}, "de": {"intro": "Seeland bietet das Tempo der Hauptstadt ebenso wie ruhige Küsten, Wälder und Hügel. Viele Unterkünfte liegen höchstens eine Autostunde von Kopenhagen entfernt, fühlen sich aber weit weg an. Hier sammeln wir handverlesene Glamping-Zelte, Hütten und andere besondere Unterkünfte.", "sights": ["Das Schloss in Helsingør ist als Hamlets Schloss bekannt. Es liegt am Öresund und kann das ganze Jahr besucht werden.", "Das Kunstmuseum in Humlebæk liegt am Öresund und ist für zeitgenössische Kunst und seinen Skulpturenpark bekannt. Plane Zeit für den Garten ein.", "Die weißen Kreidefelsen auf Møn ragen über dem Meer auf. Treppen führen zum Strand, und der Weg oben bietet Aussicht."], "tips": [["Mit dem Zug nach Kopenhagen", "Viele Unterkünfte liegen nah an Bahnhöfen. Prüfe, ob du an einem Tag mit dem Zug in die Stadt fahren kannst."], ["Treppen an den Klippen", "Die Treppe zum Strand unter Møns Klint hat viele Stufen. Zieh festes Schuhwerk an."], ["Sommerwochenenden meiden", "Die Küsten nahe Kopenhagen sind an warmen Wochenenden voll. Wochentage bringen mehr Ruhe."]], "faq": [["Kann man in der Natur nahe Kopenhagen wohnen?", "Ja, einige Unterkünfte liegen im Wald oder an der Küste, in kurzer Fahrt entfernt. Aktuelle Beispiele findest du in der Liste."], ["Wann ist die beste Zeit für Møns Klint?", "Im Sommer sind die meisten Besucher da. Früher Morgen oder später Nachmittag bringen oft mehr Ruhe."]]}, "en": {"intro": "Zealand offers the pace of the capital as well as quiet coasts, forests and hills. Many stays are within an hour’s drive of Copenhagen but feel far away. Here we collect handpicked glamping tents, cabins and other unique stays.", "sights": ["The castle in Helsingør is known as Hamlet’s castle. It stands by the Øresund and can be visited all year.", "The art museum in Humlebæk lies by the Øresund and is known for contemporary art and its sculpture park. Set aside time for the garden.", "The white chalk cliffs on Møn rise above the sea. Stairs lead down to the beach, and the path along the top gives views."], "tips": [["Use the train to Copenhagen", "Many stays are close to stations. Check whether you can take the train into the city for a day."], ["Mind the stairs at the cliffs", "The stairs down to the beach below Møns Klint have many steps. Wear sensible shoes."], ["Avoid summer weekends", "The coasts near Copenhagen are busy on warm weekends. Weekdays are calmer."]], "faq": [["Can you stay in nature close to Copenhagen?", "Yes, several stays are in forest or by the coast within a short drive. See the list for current examples."], ["When is the best time to visit Møns Klint?", "Summer has the most visitors. Early morning or late afternoon is often calmer."]]}},
+    bornholm: {"id": "bh", "da": {"intro": "Bornholm ligger midt i Østersøen og adskiller sig fra resten af Danmark med klipper, røgerier og små havnebyer. Øen er lille nok til at udforske på cykel. Her samler vi håndplukkede glampingtelte, hytter og andre særlige overnatninger.", "sights": ["Ruinen ligger på en klippe i nordvest og er Nordeuropas største borgruin. Der er stier rundt om området.", "Den lille ø med fæstning nordøst for Bornholm kan nås med færge. Her kører ingen biler.", "Stranden i sydøst er kendt for sin fine, hvide sand. Den er et populært udflugtsmål om sommeren."], "tips": [["Book færge i god tid", "Overfarten til Bornholm bliver hurtigt booket om sommeren. Planlæg både færge og ophold tidligt."], ["Brug cyklen", "Øen har et net af cykelstier. Det er en god måde at se landskab og små byer på."], ["Prøv de lokale røgerier", "Bornholm er kendt for sin røgede fisk. Spørg værten, hvor der er et godt sted i nærheden."]], "faq": [["Hvordan kommer jeg til Bornholm?", "Der er færge og fly. Færgen sejler blandt andet fra Ystad i Sverige og fra Køge til Rønne. Tjek aktuelle ruter og tider."], ["Er Bornholm godt uden for sommeren?", "Mange steder har lukket i vinterhalvåret, men naturen er stadig smuk. Tjek åbningstider og opvarmning på det enkelte ophold."]]}, "de": {"intro": "Bornholm liegt mitten in der Ostsee und unterscheidet sich mit Felsen, Räuchereien und kleinen Hafenstädten vom Rest Dänemarks. Die Insel ist klein genug, um sie mit dem Rad zu erkunden. Hier sammeln wir handverlesene Glamping-Zelte, Hütten und andere besondere Unterkünfte.", "sights": ["Die Ruine liegt auf einem Felsen im Nordwesten und ist die größte Burgruine Nordeuropas. Rund um das Gelände gibt es Wege.", "Die kleine Insel mit Festung nordöstlich von Bornholm erreichst du mit der Fähre. Hier fahren keine Autos.", "Der Strand im Südosten ist für seinen feinen weißen Sand bekannt. Im Sommer ist er ein beliebtes Ausflugsziel."], "tips": [["Fähre früh buchen", "Die Überfahrt nach Bornholm ist im Sommer schnell ausgebucht. Plane Fähre und Unterkunft früh."], ["Das Rad nutzen", "Die Insel hat ein Netz von Radwegen. So siehst du Landschaft und kleine Orte am besten."], ["Lokale Räuchereien probieren", "Bornholm ist für geräucherten Fisch bekannt. Frag den Gastgeber nach einem guten Platz in der Nähe."]], "faq": [["Wie komme ich nach Bornholm?", "Es gibt Fähre und Flug. Die Fähre fährt unter anderem ab Ystad in Schweden oder ab Køge nach Rønne. Prüfe aktuelle Routen und Zeiten."], ["Ist Bornholm auch außerhalb des Sommers schön?", "Viele Orte haben im Winterhalbjahr geschlossen, aber die Natur bleibt schön. Prüfe Öffnungszeiten und Heizung bei der einzelnen Unterkunft."]]}, "en": {"intro": "Bornholm lies in the middle of the Baltic Sea and stands apart from the rest of Denmark with cliffs, smokehouses and small harbour towns. The island is small enough to explore by bike. Here we collect handpicked glamping tents, cabins and other unique stays.", "sights": ["The ruin sits on a rock in the northwest and is northern Europe’s largest castle ruin. There are paths around the area.", "The small island with a fortress northeast of Bornholm can be reached by ferry. No cars are driven here.", "The beach in the southeast is known for its fine white sand. It is a popular day trip in summer."], "tips": [["Book the ferry early", "The crossing to Bornholm books up fast in summer. Plan ferry and stay early."], ["Use a bike", "The island has a network of cycle paths. It is a good way to see landscape and small towns."], ["Try the local smokehouses", "Bornholm is known for smoked fish. Ask the host for a good place nearby."]], "faq": [["How do I get to Bornholm?", "There are ferries and flights. Ferries run from Ystad in Sweden and from Køge to Rønne, among others. Check current routes and times."], ["Is Bornholm good outside summer?", "Many places close in the winter half-year, but the nature is still beautiful. Check opening hours and heating on the individual stay."]]}}
+  };
+  // Theme landing pages (#t-sauna etc.): one per stay type or amenity. k = 'type' or 'am'.
+  var TH_UI = {
+    da: { title: 'Find efter tema', stays: 'Ophold', all: 'Se alle i listen', more: 'Flere temaer', faq: 'Spørgsmål og svar', none: 'Der er endnu ingen eksempler her.', crumb: 'Temaer', byregion: 'Find i region' },
+    de: { title: 'Nach Thema finden', stays: 'Unterkünfte', all: 'Alle in der Liste ansehen', more: 'Weitere Themen', faq: 'Fragen und Antworten', none: 'Hier gibt es noch keine Beispiele.', crumb: 'Themen', byregion: 'Nach Region finden' },
+    en: { title: 'Browse by theme', stays: 'Stays', all: 'See all in the list', more: 'More themes', faq: 'Questions and answers', none: 'No examples here yet.', crumb: 'Themes', byregion: 'Find by region' }
+  };
+  var THEMES = {
+    glamping: { k: 'type', v: 'glamping',
+      da: { h1: 'Glamping i Danmark', intro: 'Glamping er camping med komfort: rigtige senge og en bolig, der allerede er sat op. Her finder du telte og andre lette overnatninger tæt på naturen, uden at du skal slæbe et helt telt med.', faq: [['Hvad er forskellen på glamping og camping?', 'Ved glamping er telt eller bolig og seng som regel allerede på plads. Du kommer med tøj og mad, og resten er klart.'], ['Hvornår kan man glampe i Danmark?', 'Mange steder har åbent fra forår til efterår. Nogle har opvarmning og holder åbent længere, så tjek altid det enkelte ophold.']] },
+      de: { h1: 'Glamping in Dänemark', intro: 'Glamping ist Camping mit Komfort: echte Betten und eine Unterkunft, die schon aufgebaut ist. Hier findest du Zelte und andere leichte Unterkünfte nah an der Natur, ohne ein ganzes Zelt mitschleppen zu müssen.', faq: [['Was ist der Unterschied zwischen Glamping und Camping?', 'Beim Glamping sind Zelt oder Unterkunft und Bett in der Regel schon aufgebaut. Du bringst Kleidung und Essen mit, der Rest ist bereit.'], ['Wann kann man in Dänemark glampen?', 'Viele Orte haben von Frühling bis Herbst geöffnet. Manche haben eine Heizung und länger geöffnet, prüfe also immer die einzelne Unterkunft.']] },
+      en: { h1: 'Glamping in Denmark', intro: 'Glamping is camping with comfort: real beds and a stay that is already set up. Here you find tents and other light stays close to nature, without having to haul a whole tent along.', faq: [['What is the difference between glamping and camping?', 'With glamping the tent or cabin and the bed are usually already in place. You bring clothes and food, and the rest is ready.'], ['When can you go glamping in Denmark?', 'Many places are open from spring to autumn. Some have heating and stay open longer, so always check the individual stay.']] } },
+    cabin: { k: 'type', v: 'cabin',
+      da: { h1: 'Hytter og små huse', intro: 'En hytte giver dig faste vægge, varme og ofte eget køkken. Det er et godt valg, hvis du vil have ro og plads, også uden for sommeren.', faq: [['Er hytterne egnede om vinteren?', 'Mange har varme og isolering, men det varierer. Tjek opvarmning på det enkelte ophold.'], ['Kan jeg lave mad selv?', 'Mange hytter har køkken eller køkkenkrog. Brug filteret for køkken for at finde dem.']] },
+      de: { h1: 'Hütten und kleine Häuser', intro: 'Eine Hütte bietet feste Wände, Wärme und oft eine eigene Küche. Sie ist eine gute Wahl, wenn du Ruhe und Platz willst, auch außerhalb des Sommers.', faq: [['Sind die Hütten im Winter geeignet?', 'Viele haben Heizung und Dämmung, aber das ist unterschiedlich. Prüfe die Heizung bei der einzelnen Unterkunft.'], ['Kann ich selbst kochen?', 'Viele Hütten haben eine Küche oder Kochnische. Nutze den Filter für die Küche, um sie zu finden.']] },
+      en: { h1: 'Cabins and small houses', intro: 'A cabin gives you solid walls, warmth and often your own kitchen. It is a good choice if you want peace and space, also outside summer.', faq: [['Are the cabins suitable in winter?', 'Many have heating and insulation, but it varies. Check the heating on the individual stay.'], ['Can I cook for myself?', 'Many cabins have a kitchen or kitchenette. Use the kitchen filter to find them.']] } },
+    treehouse: { k: 'type', v: 'treehouse',
+      da: { h1: 'Trætophuse', intro: 'Et trætophus ligger oppe mellem trækronerne og giver en særlig følelse af at være væk fra hverdagen. Husene er ofte små, så de passer bedst til par og små familier.', faq: [['Er trætophuse sikre for børn?', 'Det afhænger af det enkelte hus, for eksempel trapper og rækværk. Spørg værten, hvis du rejser med små børn.'], ['Er der toilet og bad?', 'Det varierer. Nogle har eget bad, andre deler faciliteter. Det står på det enkelte ophold.']] },
+      de: { h1: 'Baumhäuser', intro: 'Ein Baumhaus liegt oben zwischen den Baumkronen und vermittelt ein besonderes Gefühl, dem Alltag entrückt zu sein. Die Häuser sind oft klein und passen am besten zu Paaren und kleinen Familien.', faq: [['Sind Baumhäuser für Kinder sicher?', 'Das hängt vom einzelnen Haus ab, zum Beispiel Treppen und Geländer. Frag den Gastgeber, wenn du mit kleinen Kindern reist.'], ['Gibt es Toilette und Bad?', 'Das ist unterschiedlich. Manche haben ein eigenes Bad, andere teilen sich die Einrichtungen. Es steht bei der einzelnen Unterkunft.']] },
+      en: { h1: 'Treehouses', intro: 'A treehouse sits up among the treetops and gives a special feeling of being away from everyday life. The houses are often small, so they suit couples and small families best.', faq: [['Are treehouses safe for children?', 'It depends on the individual house, for example stairs and railings. Ask the host if you travel with small children.'], ['Is there a toilet and bathroom?', 'It varies. Some have their own bathroom, others share facilities. It is stated on the individual stay.']] } },
+    houseboat: { k: 'type', v: 'houseboat',
+      da: { h1: 'Husbåde', intro: 'På en husbåd bor du på vandet med havn, fjord eller sø lige uden for døren. Det er et roligt og anderledes alternativ til en almindelig ferielejlighed.', faq: [['Skal jeg kunne sejle?', 'Ikke nødvendigvis. Spørg værten, om båden ligger fast eller kan sejle, og om det kræver bevis.'], ['Er husbåde egnede til børn?', 'Det kan de være, men vand kræver opmærksomhed. Spørg om rækværk og redningsveste.']] },
+      de: { h1: 'Hausboote', intro: 'Auf einem Hausboot wohnst du auf dem Wasser, mit Hafen, Fjord oder See direkt vor der Tür. Es ist eine ruhige und andere Alternative zur normalen Ferienwohnung.', faq: [['Muss ich segeln oder fahren können?', 'Nicht unbedingt. Frag den Gastgeber, ob das Boot fest liegt oder fahren kann und ob dafür ein Schein nötig ist.'], ['Sind Hausboote für Kinder geeignet?', 'Das können sie sein, aber Wasser erfordert Aufmerksamkeit. Frag nach Geländer und Rettungswesten.']] },
+      en: { h1: 'Houseboats', intro: 'On a houseboat you live on the water with a harbour, fjord or lake right outside the door. It is a calm and different alternative to an ordinary holiday flat.', faq: [['Do I need to know how to sail?', 'Not necessarily. Ask the host whether the boat is moored or can sail, and whether a licence is needed.'], ['Are houseboats suitable for children?', 'They can be, but water needs attention. Ask about railings and life jackets.']] } },
+    tiny: { k: 'type', v: 'tiny',
+      da: { h1: 'Tiny houses', intro: 'Et tiny house er et lille hus med det vigtigste på få kvadratmeter. Det passer til dig, der vil bo enkelt og tæt på naturen.', faq: [['Hvor mange kan sove i et tiny house?', 'Som regel to til fire personer, men se det enkelte ophold.'], ['Er der plads til bagage?', 'Pladsen er begrænset, så pak let. Spørg værten om opbevaring, hvis du er i tvivl.']] },
+      de: { h1: 'Tiny Houses', intro: 'Ein Tiny House ist ein kleines Haus mit dem Wichtigsten auf wenigen Quadratmetern. Es passt zu dir, wenn du einfach und nah an der Natur wohnen willst.', faq: [['Wie viele Personen können in einem Tiny House schlafen?', 'In der Regel zwei bis vier Personen, aber sieh dir die einzelne Unterkunft an.'], ['Ist Platz für Gepäck?', 'Der Platz ist begrenzt, also pack leicht. Frag den Gastgeber nach Stauraum, wenn du unsicher bist.']] },
+      en: { h1: 'Tiny houses', intro: 'A tiny house is a small house with the essentials in a few square metres. It suits you if you want to live simply and close to nature.', faq: [['How many people can sleep in a tiny house?', 'Usually two to four people, but see the individual stay.'], ['Is there room for luggage?', 'Space is limited, so pack light. Ask the host about storage if you are unsure.']] } },
+    farm: { k: 'type', v: 'farm',
+      da: { h1: 'Ferie på gården', intro: 'På en gård bor du på landet med marker, dyr og åbent landskab omkring dig. Det er ofte et godt valg for familier, der vil have plads og tid.', faq: [['Kan børn møde dyrene?', 'Mange gårde har dyr, men det er ikke en garanti. Spørg værten, hvilke dyr der er, og om børn må komme tæt på.'], ['Er morgenmad inkluderet?', 'Nogle gårde tilbyder morgenmad, andre ikke. Brug filteret for morgenmad.']] },
+      de: { h1: 'Urlaub auf dem Bauernhof', intro: 'Auf einem Hof wohnst du auf dem Land, mit Feldern, Tieren und offener Landschaft um dich herum. Das ist oft eine gute Wahl für Familien, die Platz und Zeit wollen.', faq: [['Können Kinder die Tiere treffen?', 'Viele Höfe haben Tiere, aber das ist keine Garantie. Frag den Gastgeber, welche Tiere es gibt und ob Kinder nah herankommen dürfen.'], ['Ist Frühstück inklusive?', 'Manche Höfe bieten Frühstück an, andere nicht. Nutze den Filter für Frühstück.']] },
+      en: { h1: 'Farm stays', intro: 'On a farm you stay in the countryside with fields, animals and open landscape around you. It is often a good choice for families who want space and time.', faq: [['Can children meet the animals?', 'Many farms have animals, but it is no guarantee. Ask the host which animals there are and whether children may come close.'], ['Is breakfast included?', 'Some farms offer breakfast, others do not. Use the breakfast filter.']] } },
+    sauna: { k: 'am', v: 'sauna',
+      da: { h1: 'Overnatning med sauna', intro: 'Sauna og kolde dage hører sammen. Her finder du ophold med sauna, enten ved huset eller delt med andre gæster.', faq: [['Er saunaen privat?', 'Det varierer. Nogle ophold har egen sauna, andre en fælles. Det står i beskrivelsen.'], ['Koster sauna ekstra?', 'Nogle værter tager ekstra betaling eller kræver varsel for at fyre op. Spørg, før du booker.']] },
+      de: { h1: 'Übernachten mit Sauna', intro: 'Sauna und kalte Tage gehören zusammen. Hier findest du Unterkünfte mit Sauna, entweder am Haus oder mit anderen Gästen geteilt.', faq: [['Ist die Sauna privat?', 'Das ist unterschiedlich. Manche Unterkünfte haben eine eigene Sauna, andere eine gemeinsame. Es steht in der Beschreibung.'], ['Kostet die Sauna extra?', 'Manche Gastgeber verlangen einen Aufpreis oder Vorlauf zum Anheizen. Frag vor der Buchung nach.']] },
+      en: { h1: 'Stays with a sauna', intro: 'Sauna and cold days go together. Here you find stays with a sauna, either at the house or shared with other guests.', faq: [['Is the sauna private?', 'It varies. Some stays have their own sauna, others a shared one. It is stated in the description.'], ['Does the sauna cost extra?', 'Some hosts charge extra or need notice to heat it. Ask before you book.']] } },
+    whirlpool: { k: 'am', v: 'whirlpool',
+      da: { h1: 'Ophold med whirlpool', intro: 'Et varmt bad under åben himmel gør en kort tur til noget særligt. Her finder du ophold med whirlpool eller udendørs spabad.', faq: [['Er whirlpoolen altid varm?', 'Ofte skal den varmes op først, og det kan tage tid. Spørg værten, hvor længe det tager.'], ['Er whirlpool med i prisen?', 'Nogle værter tager ekstra betaling. Se beskrivelsen eller spørg værten.']] },
+      de: { h1: 'Unterkünfte mit Whirlpool', intro: 'Ein warmes Bad unter freiem Himmel macht aus einem Kurztrip etwas Besonderes. Hier findest du Unterkünfte mit Whirlpool oder Außenbad.', faq: [['Ist der Whirlpool immer warm?', 'Oft muss er erst aufgeheizt werden, und das kann dauern. Frag den Gastgeber, wie lange es dauert.'], ['Ist der Whirlpool im Preis enthalten?', 'Manche Gastgeber verlangen einen Aufpreis. Sieh in die Beschreibung oder frag den Gastgeber.']] },
+      en: { h1: 'Stays with a hot tub', intro: 'A warm bath under the open sky makes a short trip something special. Here you find stays with a hot tub or outdoor spa.', faq: [['Is the hot tub always warm?', 'Often it has to be heated first, which can take time. Ask the host how long it takes.'], ['Is the hot tub included in the price?', 'Some hosts charge extra. See the description or ask the host.']] } },
+    dogs: { k: 'am', v: 'dogs',
+      da: { h1: 'Ophold med hund', intro: 'Din hund er velkommen. Her finder du ophold, hvor hunde må være med, så ferien ikke kræver hundepension.', faq: [['Koster det ekstra at have hund med?', 'Nogle værter tager et gebyr. Spørg, før du booker.'], ['Hvor mange hunde må jeg have med?', 'Det bestemmer værten. Skriv til værten, hvis du har flere hunde.']] },
+      de: { h1: 'Urlaub mit Hund', intro: 'Dein Hund ist willkommen. Hier findest du Unterkünfte, in denen Hunde mitkommen dürfen, sodass dein Urlaub keine Hundepension braucht.', faq: [['Kostet der Hund extra?', 'Manche Gastgeber verlangen eine Gebühr. Frag vor der Buchung nach.'], ['Wie viele Hunde darf ich mitbringen?', 'Das entscheidet der Gastgeber. Schreib dem Gastgeber, wenn du mehrere Hunde hast.']] },
+      en: { h1: 'Dog-friendly stays', intro: 'Your dog is welcome. Here you find stays where dogs may come along, so your holiday does not need a kennel.', faq: [['Does a dog cost extra?', 'Some hosts charge a fee. Ask before you book.'], ['How many dogs can I bring?', 'The host decides. Write to the host if you have several dogs.']] } },
+    kids: { k: 'am', v: 'kids',
+      da: { h1: 'Ophold for familier med børn', intro: 'Børn har brug for plads til at lege og trygge rammer. Her finder du ophold, der passer til familier.', faq: [['Er der barneseng eller højstol?', 'Det varierer. Spørg værten på forhånd.'], ['Hvad skal jeg tænke på med børn og vand?', 'Tjek, om der er sø, fjord eller hav tæt på, og hold øje med børnene. Spørg om rækværk eller redningsveste.']] },
+      de: { h1: 'Unterkünfte für Familien mit Kindern', intro: 'Kinder brauchen Platz zum Spielen und einen sicheren Rahmen. Hier findest du Unterkünfte, die zu Familien passen.', faq: [['Gibt es ein Kinderbett oder einen Hochstuhl?', 'Das ist unterschiedlich. Frag den Gastgeber vorher.'], ['Woran muss ich bei Kindern und Wasser denken?', 'Prüfe, ob See, Fjord oder Meer in der Nähe sind, und behalte die Kinder im Blick. Frag nach Geländer oder Rettungswesten.']] },
+      en: { h1: 'Stays for families with children', intro: 'Children need room to play and a safe setting. Here you find stays that suit families.', faq: [['Is there a cot or high chair?', 'It varies. Ask the host in advance.'], ['What should I think about with children and water?', 'Check whether a lake, fjord or sea is close by, and keep an eye on the children. Ask about railings or life jackets.']] } }
+  };
+  var curTheme = '', curThemeReg = '';
+  var curGuide = '';
+  function slugOf(id) { for (var k in GUIDES) { if (GUIDES[k].id === id) return k; } return ''; }
+
+  var lang = detect();
+  var state = { type: '', region: '', guests: 1, price: 0, am: {} };
+
+  function detect() {
+    try { var s = localStorage.getItem('uo-lang'); if (s && T[s]) return s; } catch (e) {}
+    var n = ((navigator.languages && navigator.languages[0]) || navigator.language || 'da').toLowerCase();
+    return n.indexOf('de') === 0 ? 'de' : 'da';
+  }
+  function t(k, v) {
+    var s = (T[lang] && T[lang][k]) || T.da[k] || k;
+    if (v) for (var key in v) s = s.replace('{' + key + '}', v[key]);
+    return s;
+  }
+  function $(id) { return document.getElementById(id); }
+  function fmt(n) { try { return n.toLocaleString(LOCALE[lang]); } catch (e) { return String(n); } }
+  function reduced() { return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches); }
+  function guestLabel(n) { return t(n === 1 ? 'guest_one' : 'guest_many', { n: n }); }
+  function sname(s) { return typeof s.n === 'string' ? s.n : (s.n[lang] || s.n.da); }
+
+  // Illustrations
+  var S = 'var(--ill-shape)', L = 'var(--ill-line)';
+  var SW = 'stroke-width="3" stroke-linejoin="round"';
+  var SHAPES = {
+    glamping: '<path d="M118 188 L200 94 L282 188 Z" fill="' + S + '" stroke="' + L + '" ' + SW + '/><path d="M200 94 V150" stroke="' + L + '" ' + SW + '/><path d="M180 188 L200 148 L220 188 Z" fill="' + L + '"/>',
+    cabin: '<path d="M70 188 L88 140 L106 188 Z" fill="' + L + '" opacity=".25"/><path d="M296 188 L314 134 L332 188 Z" fill="' + L + '" opacity=".25"/><rect x="132" y="130" width="136" height="58" fill="' + S + '" stroke="' + L + '" ' + SW + '/><path d="M120 132 L200 82 L280 132 Z" fill="' + S + '" stroke="' + L + '" ' + SW + '/><rect x="188" y="150" width="26" height="38" fill="' + L + '"/>',
+    treehouse: '<rect x="188" y="140" width="24" height="48" fill="' + L + '"/><circle cx="200" cy="106" r="66" fill="var(--ill-ground)"/><rect x="170" y="98" width="60" height="38" fill="' + S + '" stroke="' + L + '" ' + SW + '/><path d="M162 100 L200 74 L238 100 Z" fill="' + S + '" stroke="' + L + '" ' + SW + '/><rect x="192" y="112" width="16" height="24" fill="' + L + '"/>',
+    houseboat: '<rect y="188" width="400" height="72" fill="var(--ill-water)"/><path d="M104 192 H296 L274 224 H126 Z" fill="' + S + '" stroke="' + L + '" ' + SW + '/><rect x="150" y="146" width="100" height="46" fill="' + S + '" stroke="' + L + '" ' + SW + '/><path d="M140 148 H260 L246 126 H154 Z" fill="' + L + '"/><rect x="190" y="162" width="20" height="30" fill="' + L + '"/>',
+    tiny: '<rect x="140" y="140" width="120" height="46" fill="' + S + '" stroke="' + L + '" ' + SW + '/><path d="M130 142 L200 102 L270 142 Z" fill="' + S + '" stroke="' + L + '" ' + SW + '/><rect x="186" y="156" width="24" height="30" fill="' + L + '"/><circle cx="162" cy="192" r="9" fill="' + L + '"/><circle cx="238" cy="192" r="9" fill="' + L + '"/>',
+    farm: '<path d="M110 188 V128 L200 84 L290 128 V188 Z" fill="' + S + '" stroke="' + L + '" ' + SW + '/><rect x="174" y="138" width="52" height="50" fill="' + L + '"/><path d="M174 138 L226 188 M226 138 L174 188" stroke="' + S + '" ' + SW + '/>'
+  };
+  function scene(type) {
+    return '<svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true">' +
+      '<rect width="400" height="260" fill="var(--ill-sky)"/>' +
+      '<circle cx="320" cy="62" r="26" fill="var(--red)" opacity=".92"/>' +
+      '<rect y="188" width="400" height="72" fill="var(--ill-ground)"/>' +
+      (SHAPES[type] || '') + '</svg>';
+  }
+
+  // Build language-dependent controls
+  function opts(items, selected) {
+    return items.map(function (i) { return '<option value="' + i[0] + '"' + (String(i[0]) === String(selected) ? ' selected' : '') + '>' + i[1] + '</option>'; }).join('');
+  }
+  function buildControls() {
+    var regionOpts = [['', t('all_dk')]].concat(REGION_IDS.map(function (r) { return [r, t('r_' + r)]; }));
+    var typeOpts = [['', t('all_types')]].concat(TYPE_IDS.map(function (x) { return [x, t('ty_' + x)]; }));
+    var guestOpts = [1, 2, 3, 4, 5, 6].map(function (n) { return [n, guestLabel(n)]; });
+    var priceOpts = PRICES.map(function (p) { return [p, p ? t('price_max', { n: fmt(p) }) : t('price_any')]; });
+    $('f-region').innerHTML = opts(regionOpts, state.region);
+    $('s-region').innerHTML = opts(regionOpts, state.region);
+    $('f-type').innerHTML = opts(typeOpts, state.type);
+    $('f-guests').innerHTML = opts(guestOpts, state.guests);
+    $('s-guests').innerHTML = opts(guestOpts, state.guests);
+    $('s-price').innerHTML = opts(priceOpts, state.price);
+
+    $('chips').innerHTML = '<button class="chip" type="button" data-type="">' + t('chip_all') + '</button>' +
+      TYPE_IDS.map(function (x) { return '<button class="chip" type="button" data-type="' + x + '">' + t('ty_' + x) + '</button>'; }).join('');
+
+    $('regions').innerHTML = REGION_IDS.map(function (r) {
+      var items = SIGHTS[r].map(function (s) {
+        return '<li><b>' + sname(s) + '</b><span>' + (s.d[lang] || s.d.da) + '</span></li>';
+      }).join('');
+      return '<article class="rcard"><h3 class="rname">' + t('r_' + r) + '</h3><p class="rdesc">' + t('rd_' + r) + '</p>' +
+        '<p class="rlabel">' + t('sights_label') + '</p><ul class="sights">' + items + '</ul>' +
+        '<div class="rlinks">' + (slugOf(r) ? '<a class="rlink" href="#' + slugOf(r) + '">' + t('rcard_guide') + ' <span aria-hidden="true">→</span></a>' : '') +
+        '<button class="rlink" type="button" data-region="' + r + '">' + t('region_cta') + ' <span aria-hidden="true">→</span></button></div></article>';
+    }).join('');
+
+    $('h-temaer').textContent = (TH_UI[lang] || TH_UI.da).title;
+    $('themes').innerHTML = themeLinks('');
+    $('temaer').hidden = $('themes').children.length < 2;
+
+    $('amen').innerHTML = GROUPS.map(function (g) {
+      return '<fieldset class="fgroup"><legend>' + t('g_' + g.id) + '</legend>' +
+        g.items.map(function (a) { return '<label class="check"><input type="checkbox" value="' + a + '"><span>' + t('a_' + a) + '</span></label>'; }).join('') +
+        '</fieldset>';
+    }).join('');
+  }
+
+  function applyStatic() {
+    document.documentElement.lang = lang;
+    Array.prototype.forEach.call(document.querySelectorAll('[data-i18n]'), function (el) { el.textContent = t(el.getAttribute('data-i18n')); });
+    Array.prototype.forEach.call(document.querySelectorAll('[data-i18n-aria]'), function (el) { el.setAttribute('aria-label', t(el.getAttribute('data-i18n-aria'))); });
+    Array.prototype.forEach.call(document.querySelectorAll('.lang button'), function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-lang') === lang ? 'true' : 'false'); });
+  }
+
+  function card(d) {
+    var chosen = PRIORITY.filter(function (a) { return d.am.indexOf(a) > -1 && state.am[a]; });
+    var rest = PRIORITY.filter(function (a) { return d.am.indexOf(a) > -1 && !state.am[a]; });
+    var tags = chosen.concat(rest).slice(0, 4).map(function (a) { return t('a_' + a); }).join(' · ');
+    return '<article class="card">' +
+      '<figure class="card-fig">' + scene(d.type) + (d.ad ? '<span class="tag-ad">' + t('ad') + '</span>' : '') + '</figure>' +
+      '<div class="card-body">' +
+      '<p class="card-meta">' + t('ty_' + d.type) + ' · ' + t('r_' + d.region) + '</p>' +
+      '<h3 class="card-title">' + t('n' + d.id) + '</h3>' +
+      '<p class="card-tags">' + tags + '</p>' +
+      '<div class="card-row"><span>' + t('up_to', { n: d.sleeps }) + '</span>' + (d.price != null ? '<span>' + t('from_pre') + ' <b>' + fmt(d.price) + ' kr</b> ' + t('per_night') + '</span>' : '') + '</div>' +
+      (d.url
+        ? '<a class="card-link" href="' + d.url + '" target="_blank" rel="noopener' + (d.prem ? '' : '') + '">' + t('view_site') + ' <span aria-hidden="true">↗</span></a>'
+        : d.prem
+        ? '<a class="card-link" href="#ophold" data-toast-key="toast_out">' + t('view') + ' <span aria-hidden="true">→</span></a>'
+        : '<a class="card-link" href="#ophold" data-toast-key="toast_site" rel="nofollow noopener">' + t('view_site') + ' <span aria-hidden="true">↗</span></a>') +
+      '</div></article>';
+  }
+
+  function render() {
+    var ams = Object.keys(state.am).filter(function (k) { return state.am[k]; });
+    var list = DATA.filter(function (d) {
+      return (!state.type || d.type === state.type) &&
+        (!state.region || d.region === state.region) &&
+        d.sleeps >= state.guests &&
+        (!state.price || (d.price != null && d.price <= state.price)) &&
+        ams.every(function (a) { return d.am.indexOf(a) > -1; });
+    }).sort(function (a, b) { return (b.ad ? 1 : 0) - (a.ad ? 1 : 0); });
+
+    $('grid').innerHTML = list.length ? list.map(card).join('') :
+      '<p class="empty"><b>' + t('empty_b') + '</b>' + t('empty') + '</p>';
+    $('count').textContent = list.length === 1 ? t('count_one') : t('count_many', { n: list.length });
+
+    ['f-region', 's-region'].forEach(function (id) { $(id).value = state.region; });
+    $('f-type').value = state.type;
+    ['f-guests', 's-guests'].forEach(function (id) { $(id).value = String(state.guests); });
+    $('s-price').value = String(state.price);
+    Array.prototype.forEach.call(document.querySelectorAll('.chip'), function (c) {
+      c.setAttribute('aria-pressed', c.getAttribute('data-type') === state.type ? 'true' : 'false');
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('#amen input'), function (cb) { cb.checked = !!state.am[cb.value]; });
+
+    var n = (state.region ? 1 : 0) + (state.type ? 1 : 0) + (state.guests > 1 ? 1 : 0) + (state.price ? 1 : 0) + ams.length;
+    $('badge').textContent = n;
+    $('badge').hidden = n === 0;
+    $('reset').hidden = n === 0;
+  }
+
+  function renderGuide(slug) {
+    var g = GUIDES[slug];
+    if (!g) return;
+    curGuide = slug;
+    var c = g[lang] || g.da, r = t('r_' + g.id);
+    var list = DATA.filter(function (d) { return d.region === g.id; }).sort(function (a, b) { return (b.ad ? 1 : 0) - (a.ad ? 1 : 0); });
+    var head = '<section class="page-head"><div class="wrap">' +
+      '<nav class="crumbs" aria-label="' + t('crumb_label') + '"><a href="#top">' + t('crumb_home') + '</a><span aria-hidden="true">›</span><a href="#regioner">' + t('s2_label') + '</a><span aria-hidden="true">›</span><span aria-current="page">' + r + '</span></nav>' +
+      '<h1>' + t('rp_h1', { r: r }) + '</h1><p class="sub rp-intro">' + c.intro + '</p></div></section>';
+    var stays = '<section class="section"><div class="wrap"><div class="section-head"><h2>' + t('rp_stays', { r: r }) + '</h2></div>' +
+      '<div class="grid">' + list.map(card).join('') + '</div>' +
+      '<div class="cta-row"><button class="btn btn-red" type="button" data-go="list" data-region="' + g.id + '">' + t('rp_all') + '</button></div></div></section>';
+    var sights = '<section class="section alt"><div class="wrap"><div class="section-head"><h2>' + t('rp_see', { r: r }) + '</h2></div><div class="tips">' +
+      SIGHTS[g.id].map(function (s, i) { return '<article class="crit"><h3>' + sname(s) + '</h3><p>' + c.sights[i] + '</p></article>'; }).join('') + '</div></div></section>';
+    var tips = '<section class="section"><div class="wrap"><div class="section-head"><h2>' + t('rp_tips', { r: r }) + '</h2></div><div class="tips">' +
+      c.tips.map(function (x) { return '<article class="crit"><h3>' + x[0] + '</h3><p>' + x[1] + '</p></article>'; }).join('') + '</div></div></section>';
+    var faq = '<section class="section alt"><div class="wrap"><div class="section-head"><h2>' + t('rp_faq', { r: r }) + '</h2></div><div class="faq">' +
+      c.faq.map(function (x) { return '<details class="qa"><summary>' + x[0] + '</summary><p>' + x[1] + '</p></details>'; }).join('') + '</div></div></section>';
+    $('view-region').innerHTML = head + stays + sights + tips + faq;
+  }
+
+  function themeMatch(th, d) { return th.k === 'type' ? d.type === th.v : d.am.indexOf(th.v) > -1; }
+  function renderTheme(slug, reg) {
+    var th = THEMES[slug];
+    if (!th) return;
+    curTheme = slug; curThemeReg = reg || '';
+    var c = th[lang] || th.da, u = TH_UI[lang] || TH_UI.da;
+    var h1 = c.h1, intro = c.intro;
+    if (reg) { h1 = c.h1 + ' – ' + t('r_' + reg); intro = t('r_' + reg) + ': ' + t('rd_' + reg) + '. ' + c.intro; }
+    var list = DATA.filter(function (d) { return themeMatch(th, d) && (!reg || d.region === reg); })
+      .sort(function (a, b) { return (b.ad ? 1 : 0) - (a.ad ? 1 : 0); });
+    var head = '<section class="page-head"><div class="wrap">' +
+      '<nav class="crumbs" aria-label="' + t('crumb_label') + '"><a href="#top">' + t('crumb_home') + '</a><span aria-hidden="true">›</span><a href="#temaer">' + u.crumb + '</a><span aria-hidden="true">›</span>' +
+      (reg ? '<a href="#t-' + slug + '">' + c.h1 + '</a><span aria-hidden="true">›</span><span aria-current="page">' + t('r_' + reg) + '</span>' : '<span aria-current="page">' + c.h1 + '</span>') + '</nav>' +
+      '<h1>' + h1 + '</h1><p class="sub rp-intro">' + intro + '</p></div></section>';
+    var stays = '<section class="section"><div class="wrap"><div class="section-head"><h2>' + u.stays + ': ' + h1 + '</h2></div>' +
+      (list.length ? '<div class="grid">' + list.map(card).join('') + '</div>' : '<p class="empty">' + u.none + '</p>') +
+      '<div class="cta-row"><button class="btn btn-red" type="button" data-theme-go="' + slug + '"' + (reg ? ' data-region="' + reg + '"' : '') + '>' + u.all + '</button></div></div></section>';
+    var faq = '<section class="section alt"><div class="wrap"><div class="section-head"><h2>' + u.faq + '</h2></div><div class="faq">' +
+      c.faq.map(function (x) { return '<details class="qa"><summary>' + x[0] + '</summary><p>' + x[1] + '</p></details>'; }).join('') + '</div></div></section>';
+    var regs = REGION_IDS.filter(function (r) { return r !== reg && DATA.some(function (d) { return d.region === r && themeMatch(th, d); }); });
+    var regLinks = regs.length ? '<section class="section alt"><div class="wrap"><div class="section-head"><h2>' + u.byregion + '</h2></div><div class="tlinks">' +
+      regs.map(function (r) { return '<a class="tlink" href="#t-' + slug + '~' + r + '">' + c.h1 + ' – ' + t('r_' + r) + '</a>'; }).join('') + '</div></div></section>' : '';
+    var more = '<section class="section"><div class="wrap"><div class="section-head"><h2>' + u.more + '</h2></div><div class="tlinks">' + themeLinks(slug) + '</div></div></section>';
+    $('view-theme').innerHTML = head + stays + faq + regLinks + more;
+  }
+
+  function themeLinks(except) {
+    return Object.keys(THEMES).filter(function (k) { return k !== except && DATA.some(function (d) { return themeMatch(THEMES[k], d); }); }).map(function (k) {
+      var x = THEMES[k][lang] || THEMES[k].da;
+      return '<a class="tlink" href="#t-' + k + '">' + x.h1 + '</a>';
+    }).join('');
+  }
+
+  function setLang(l) {
+    lang = l;
+    try { localStorage.setItem('uo-lang', l); } catch (e) {}
+    applyStatic();
+    buildControls();
+    render();
+    if (curGuide && !$('view-region').hidden) renderGuide(curGuide);
+    if (curTheme && !$('view-theme').hidden) renderTheme(curTheme, curThemeReg);
+  }
+
+  function toList() {
+    $('ophold').scrollIntoView({ behavior: reduced() ? 'auto' : 'smooth', block: 'start' });
+  }
+
+  var timer;
+  function toast(msg) {
+    var el = $('toast');
+    el.textContent = msg;
+    el.hidden = false;
+    clearTimeout(timer);
+    timer = setTimeout(function () { el.hidden = true; }, 3400);
+  }
+
+  // Three views: home, host page (#hosts) and region guides (#nordjylland)
+  var view = 'home';
+  function route() {
+    var h = (location.hash || '').replace('#', '');
+    var tp = h.indexOf('t-') === 0 ? h.slice(2).split('~') : [];
+    var isTheme = !!THEMES[tp[0]] && (!tp[1] || REGION_IDS.indexOf(tp[1]) > -1);
+    var next = h === 'hosts' ? 'hosts' : (GUIDES[h] ? 'region' : (isTheme ? 'theme' : 'home'));
+    $('view-home').hidden = next !== 'home';
+    $('view-hosts').hidden = next !== 'hosts';
+    $('view-region').hidden = next !== 'region';
+    $('view-theme').hidden = next !== 'theme';
+    if (next === 'region') renderGuide(h);
+    if (next === 'theme') renderTheme(tp[0], tp[1]);
+    if (next !== 'home') { window.scrollTo(0, 0); view = next; return; }
+    if (view !== 'home') {
+      view = 'home';
+      var el = h && h !== 'top' ? $(h) : null;
+      if (el) el.scrollIntoView({ behavior: 'auto', block: 'start' }); else window.scrollTo(0, 0);
+    }
+  }
+
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest ? e.target.closest('[data-toast-key],[data-type],[data-region],[data-lang],[data-theme-go]') : null;
+    if (!el) return;
+    if (el.hasAttribute('data-theme-go')) {
+      var th = THEMES[el.getAttribute('data-theme-go')];
+      state = { type: th.k === 'type' ? th.v : '', region: el.getAttribute('data-region') || '', guests: 1, price: 0, am: {} };
+      if (th.k === 'am') state.am[th.v] = true;
+      render();
+      location.hash = 'ophold';
+      return;
+    }
+    if (el.hasAttribute('data-lang')) { setLang(el.getAttribute('data-lang')); return; }
+    if (el.hasAttribute('data-toast-key')) { e.preventDefault(); toast(t(el.getAttribute('data-toast-key'))); return; }
+    if (el.classList.contains('chip')) { state.type = el.getAttribute('data-type'); render(); return; }
+    if (el.hasAttribute('data-go')) { state.region = el.getAttribute('data-region'); render(); location.hash = 'ophold'; return; }
+    if (el.classList.contains('rlink')) { state.region = el.getAttribute('data-region'); render(); toList(); }
+  });
+
+  $('search').addEventListener('submit', function (e) {
+    e.preventDefault();
+    state.region = $('f-region').value;
+    state.type = $('f-type').value;
+    state.guests = parseInt($('f-guests').value, 10) || 1;
+    render();
+    toList();
+  });
+  $('s-region').addEventListener('change', function () { state.region = this.value; render(); });
+  $('s-guests').addEventListener('change', function () { state.guests = parseInt(this.value, 10) || 1; render(); });
+  $('s-price').addEventListener('change', function () { state.price = parseInt(this.value, 10) || 0; render(); });
+  $('amen').addEventListener('change', function (e) {
+    if (e.target && e.target.type === 'checkbox') { state.am[e.target.value] = e.target.checked; render(); }
+  });
+  $('reset').addEventListener('click', function () {
+    state = { type: '', region: '', guests: 1, price: 0, am: {} };
+    render();
+  });
+  $('filter-toggle').addEventListener('click', function () {
+    var open = $('filters').classList.toggle('open');
+    this.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  window.addEventListener('hashchange', route);
+
+  setLang(lang);
+  route();
+})();
+</script>
