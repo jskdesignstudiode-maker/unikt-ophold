@@ -651,7 +651,7 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
       ftitle: 'Filtre', freset: 'Nulstil', price_any: 'Alle priser', price_max: 'Højst {n} kr',
       g_wellness: 'Wellness', g_location: 'Beliggenhed', g_food: 'Mad og drikke', g_facilities: 'Faciliteter',
       a_sauna: 'Sauna', a_whirlpool: 'Whirlpool eller spa', a_sea: 'Hav', a_fjord: 'Fjord', a_lake: 'Sø', a_beach: 'Strand', a_forest: 'Skov', a_swim: 'Bademulighed',
-      a_breakfast: 'Morgenmad inkluderet', a_breakfast_x: 'Morgenmad mod tillæg', a_kitchen: 'Køkken',
+      a_breakfast: 'Morgenmad inkluderet', a_breakfast_x: 'Morgenmad mod tillæg', a_quiet: 'Rolig beliggenhed', a_nature: 'Natur', a_kitchen: 'Køkken',
       a_parking: 'Parkering', a_ev: 'Ladestander til elbil', a_dogs: 'Hunde tilladt', a_kids: 'Børnevenlig', a_wifi: 'Wi-Fi', a_heating: 'Opvarmet hele året', a_bath: 'Eget badeværelse',
       ty_glamping: 'Glamping', ty_cabin: 'Hytte', ty_treehouse: 'Trætophus', ty_houseboat: 'Husbåd', ty_tiny: 'Tiny house', ty_farm: 'Gårdferie',
       r_nj: 'Nordjylland', r_mj: 'Midtjylland', r_sj: 'Sydjylland', r_fyn: 'Fyn', r_sjl: 'Sjælland', r_bh: 'Bornholm',
@@ -716,7 +716,7 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
       ftitle: 'Filter', freset: 'Zurücksetzen', price_any: 'Alle Preise', price_max: 'Höchstens {n} kr',
       g_wellness: 'Wellness', g_location: 'Lage', g_food: 'Essen und Trinken', g_facilities: 'Ausstattung',
       a_sauna: 'Sauna', a_whirlpool: 'Whirlpool oder Spa', a_sea: 'Meer', a_fjord: 'Fjord', a_lake: 'See', a_beach: 'Strand', a_forest: 'Wald', a_swim: 'Bademöglichkeit',
-      a_breakfast: 'Frühstück inklusive', a_breakfast_x: 'Frühstück gegen Aufpreis', a_kitchen: 'Küche',
+      a_breakfast: 'Frühstück inklusive', a_breakfast_x: 'Frühstück gegen Aufpreis', a_quiet: 'Ruhige Lage', a_nature: 'Natur', a_kitchen: 'Küche',
       a_parking: 'Parkplatz', a_ev: 'Ladestation für E-Auto', a_dogs: 'Hunde erlaubt', a_kids: 'Kinderfreundlich', a_wifi: 'WLAN', a_heating: 'Ganzjährig beheizt', a_bath: 'Eigenes Bad',
       ty_glamping: 'Glamping', ty_cabin: 'Hütte', ty_treehouse: 'Baumhaus', ty_houseboat: 'Hausboot', ty_tiny: 'Tiny House', ty_farm: 'Bauernhof',
       r_nj: 'Nordjütland', r_mj: 'Mitteljütland', r_sj: 'Südjütland', r_fyn: 'Fünen', r_sjl: 'Seeland', r_bh: 'Bornholm',
@@ -781,7 +781,7 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
       ftitle: 'Filters', freset: 'Reset', price_any: 'Any price', price_max: 'Up to {n} kr',
       g_wellness: 'Wellness', g_location: 'Setting', g_food: 'Food and drink', g_facilities: 'Facilities',
       a_sauna: 'Sauna', a_whirlpool: 'Hot tub or spa', a_sea: 'Sea', a_fjord: 'Fjord', a_lake: 'Lake', a_beach: 'Beach', a_forest: 'Forest', a_swim: 'Swimming nearby',
-      a_breakfast: 'Breakfast included', a_breakfast_x: 'Breakfast at extra cost', a_kitchen: 'Kitchen',
+      a_breakfast: 'Breakfast included', a_breakfast_x: 'Breakfast at extra cost', a_quiet: 'Quiet location', a_nature: 'Nature', a_kitchen: 'Kitchen',
       a_parking: 'Parking', a_ev: 'EV charging', a_dogs: 'Dogs welcome', a_kids: 'Child-friendly', a_wifi: 'Wi-Fi', a_heating: 'Heated all year', a_bath: 'Private bathroom',
       ty_glamping: 'Glamping', ty_cabin: 'Cabin', ty_treehouse: 'Treehouse', ty_houseboat: 'Houseboat', ty_tiny: 'Tiny house', ty_farm: 'Farmstay',
       r_nj: 'North Jutland', r_mj: 'Central Jutland', r_sj: 'South Jutland', r_fyn: 'Funen', r_sjl: 'Zealand', r_bh: 'Bornholm',
@@ -833,15 +833,15 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
   var TYPE_IDS = ['glamping', 'cabin', 'treehouse', 'houseboat', 'tiny', 'farm'];
   var GROUPS = [
     { id: 'wellness', items: ['sauna', 'whirlpool'] },
-    { id: 'location', items: ['sea', 'fjord', 'lake', 'beach', 'forest', 'swim'] },
+    { id: 'location', items: ['quiet', 'nature', 'sea', 'fjord', 'lake', 'beach', 'forest', 'swim'] },
     { id: 'food', items: ['breakfast', 'breakfast_x', 'kitchen'] },
     { id: 'facilities', items: ['parking', 'ev', 'dogs', 'kids', 'wifi', 'heating', 'bath'] }
   ];
-  var PRIORITY = ['sauna', 'whirlpool', 'breakfast', 'breakfast_x', 'fjord', 'lake', 'sea', 'beach', 'swim', 'forest', 'dogs', 'kids', 'parking', 'kitchen', 'bath', 'heating', 'wifi', 'ev'];
+  var PRIORITY = ['sauna', 'whirlpool', 'breakfast', 'breakfast_x', 'quiet', 'nature', 'fjord', 'lake', 'sea', 'beach', 'swim', 'forest', 'dogs', 'kids', 'parking', 'kitchen', 'bath', 'heating', 'wifi', 'ev'];
   var PRICES = [0, 1000, 1500, 2000];
   var DATA = [
     { id: 1, type: 'glamping', region: 'mj', sleeps: 2, price: null, ad: false, prem: true, slug: 'manefjord', img: 'zelt-leuchtet', url: 'https://manefjordglamping.dk/',
-      am: ['parking', 'ev', 'wifi', 'heating', 'bath', 'kitchen', 'breakfast_x'] }
+      am: ['parking', 'ev', 'wifi', 'heating', 'bath', 'kitchen', 'breakfast_x', 'quiet', 'nature', 'fjord'] }
   ];
 
   var SIGHTS = {
