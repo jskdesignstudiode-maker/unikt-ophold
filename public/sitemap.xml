@@ -1,4 +1,297 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://unikt-ophold.dk/</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://unikt-ophold.dk/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/hosts/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/hosts/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/hosts/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/hosts/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/hosts/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/impressum/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/impressum/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/impressum/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/impressum/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/impressum/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/datenschutz/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/datenschutz/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/datenschutz/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/datenschutz/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/datenschutz/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/lodgify/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/lodgify/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/lodgify/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/lodgify/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/lodgify/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/nordjylland/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/nordjylland/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/nordjylland/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/nordjylland/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/nordjylland/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/midtjylland/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/midtjylland/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/midtjylland/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/midtjylland/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/midtjylland/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/sydjylland/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/sydjylland/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/sydjylland/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/sydjylland/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/sydjylland/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/fyn/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/fyn/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/fyn/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/fyn/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/fyn/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/sjaelland/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/sjaelland/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/sjaelland/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/sjaelland/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/sjaelland/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/bornholm/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/bornholm/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/bornholm/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/bornholm/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/bornholm/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/manefjord/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/manefjord/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/manefjord/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/manefjord/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/manefjord/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/t-glamping/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/t-glamping/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/t-glamping/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/t-glamping/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/t-glamping/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/t-glamping/mj/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/t-glamping/mj/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/t-glamping/mj/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/t-glamping/mj/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/t-glamping/mj/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/de/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/de/hosts/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/hosts/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/hosts/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/hosts/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/hosts/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/de/impressum/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/impressum/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/impressum/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/impressum/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/impressum/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/de/datenschutz/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/datenschutz/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/datenschutz/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/datenschutz/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/datenschutz/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/de/lodgify/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/lodgify/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/lodgify/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/lodgify/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/lodgify/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/de/nordjylland/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/nordjylland/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/nordjylland/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/nordjylland/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/nordjylland/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/de/midtjylland/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/midtjylland/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/midtjylland/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/midtjylland/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/midtjylland/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/de/sydjylland/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/sydjylland/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/sydjylland/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/sydjylland/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/sydjylland/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/de/fyn/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/fyn/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/fyn/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/fyn/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/fyn/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/de/sjaelland/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/sjaelland/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/sjaelland/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/sjaelland/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/sjaelland/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/de/bornholm/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/bornholm/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/bornholm/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/bornholm/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/bornholm/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/de/manefjord/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/manefjord/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/manefjord/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/manefjord/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/manefjord/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/de/t-glamping/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/t-glamping/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/t-glamping/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/t-glamping/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/t-glamping/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/de/t-glamping/mj/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/t-glamping/mj/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/t-glamping/mj/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/t-glamping/mj/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/t-glamping/mj/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/en/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/en/hosts/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/hosts/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/hosts/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/hosts/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/hosts/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/en/impressum/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/impressum/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/impressum/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/impressum/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/impressum/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/en/datenschutz/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/datenschutz/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/datenschutz/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/datenschutz/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/datenschutz/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/en/lodgify/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/lodgify/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/lodgify/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/lodgify/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/lodgify/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/en/nordjylland/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/nordjylland/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/nordjylland/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/nordjylland/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/nordjylland/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/en/midtjylland/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/midtjylland/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/midtjylland/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/midtjylland/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/midtjylland/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/en/sydjylland/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/sydjylland/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/sydjylland/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/sydjylland/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/sydjylland/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/en/fyn/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/fyn/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/fyn/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/fyn/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/fyn/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/en/sjaelland/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/sjaelland/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/sjaelland/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/sjaelland/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/sjaelland/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/en/bornholm/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/bornholm/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/bornholm/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/bornholm/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/bornholm/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/en/manefjord/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/manefjord/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/manefjord/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/manefjord/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/manefjord/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/en/t-glamping/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/t-glamping/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/t-glamping/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/t-glamping/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/t-glamping/"/>
+  </url>
+  <url>
+    <loc>https://unikt-ophold.dk/en/t-glamping/mj/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://unikt-ophold.dk/t-glamping/mj/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unikt-ophold.dk/de/t-glamping/mj/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unikt-ophold.dk/en/t-glamping/mj/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unikt-ophold.dk/t-glamping/mj/"/>
+  </url>
 </urlset>
