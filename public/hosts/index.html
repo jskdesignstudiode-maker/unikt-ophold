@@ -438,16 +438,16 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
 
 <header class="top" id="top">
   <div class="wrap bar">
-    <a class="brand" href="/" data-i18n-aria="aria_top" aria-label="Unikt Ophold, til toppen">
+    <a class="brand" href="/" data-i18n-aria="aria_top" aria-label="Unikt Ophold, til toppen" data-hk="top">
       <svg class="mark" viewBox="0 0 37 28" aria-hidden="true"><rect class="bg" width="37" height="28"></rect><rect class="x" x="12" width="4" height="28"></rect><rect class="x" y="12" width="37" height="4"></rect></svg>
       <span>Unikt Ophold</span>
     </a>
     <nav class="nav" data-i18n-aria="aria_menu" aria-label="Hovedmenu">
       <div class="nav-links">
-        <a href="/#ophold" data-i18n="nav_find">Find ophold</a>
-        <a href="/#regioner" data-i18n="nav_regions">Regioner</a>
-        <a href="/#tips" data-i18n="nav_tips">Tips</a>
-        <a href="/#udvaelgelse" data-i18n="nav_how">Sådan vælger vi</a>
+        <a href="/#ophold" data-i18n="nav_find" data-hk="ophold">Find ophold</a>
+        <a href="/#regioner" data-i18n="nav_regions" data-hk="regioner">Regioner</a>
+        <a href="/#tips" data-i18n="nav_tips" data-hk="tips">Tips</a>
+        <a href="/#udvaelgelse" data-i18n="nav_how" data-hk="udvaelgelse">Sådan vælger vi</a>
       </div>
       <div class="lang" role="group" data-i18n-aria="aria_lang" aria-label="Sprog">
         <button type="button" data-lang="da" aria-pressed="true">DA</button>
@@ -510,7 +510,7 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
           <div class="results">
             <div class="chips" id="chips" role="group" data-i18n-aria="aria_types" aria-label="Filtrer efter type"><button class="chip" type="button" data-type="" aria-pressed="true">Alle</button><button class="chip" type="button" data-type="glamping" aria-pressed="false">Glamping</button><button class="chip" type="button" data-type="cabin" aria-pressed="false">Hytte</button><button class="chip" type="button" data-type="treehouse" aria-pressed="false">Trætophus</button><button class="chip" type="button" data-type="houseboat" aria-pressed="false">Husbåd</button><button class="chip" type="button" data-type="tiny" aria-pressed="false">Tiny house</button><button class="chip" type="button" data-type="farm" aria-pressed="false">Gårdferie</button></div>
             <p class="count" id="count" aria-live="polite">Viser 1 ophold</p>
-            <div class="grid" id="grid"><article class="card"><figure class="card-fig"><img src="/img/t/zelt-leuchtet.webp" alt="Månefjord Glamping" loading="lazy" width="720" height="450"></figure><div class="card-body"><p class="card-meta">Glamping · Midtjylland</p><h3 class="card-title">Månefjord Glamping</h3><p class="card-tags">Morgenmad mod tillæg · Rolig beliggenhed · Natur · Fjord</p><div class="card-row"><span>Op til 2 gæster</span><span>fra <b>975 kr.</b> / nat</span></div><a class="card-link" href="/manefjord/">Se opholdet <span aria-hidden="true">→</span></a></div></article></div>
+            <div class="grid" id="grid"><article class="card"><figure class="card-fig"><img src="/img/t/zelt-leuchtet.webp" alt="Månefjord Glamping" loading="lazy" width="720" height="450"></figure><div class="card-body"><p class="card-meta">Glamping · Midtjylland</p><h3 class="card-title">Månefjord Glamping</h3><p class="card-tags">Morgenmad mod tillæg · Rolig beliggenhed · Natur · Fjord</p><div class="card-row"><span>Op til 2 gæster</span><span>fra <b>975 kr.</b> / nat</span></div><a class="card-link" href="/manefjord/" data-hk="manefjord">Se opholdet <span aria-hidden="true">→</span></a></div></article></div>
           </div>
         </div>
       </div>
@@ -523,14 +523,14 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
           <h2 id="h-regioner" data-i18n="s2_h2">Find dit ophold efter region</h2>
           <p class="sub" data-i18n="s2_sub">Fra klitterne i nord til klipperne på Bornholm. Vælg en egn, læs, hvad der gør den særlig, og find stedet, hvor du vil vågne.</p>
         </div>
-        <div class="regions" id="regions"><article class="rcard"><h3 class="rname">Nordjylland</h3><p class="rdesc">Klitter, Skagen og Vesterhavet</p><p class="rlabel">Se og oplev</p><ul class="sights"><li><b>Grenen, Skagen</b><span>hvor to have mødes</span></li><li><b>Råbjerg Mile</b><span>Danmarks største vandreklit</span></li><li><b>Rubjerg Knude Fyr</b><span>fyrtårn ved den høje klint</span></li></ul><div class="rlinks"><a class="rlink" href="/nordjylland/">Læs guiden <span aria-hidden="true">→</span></a><button class="rlink" type="button" data-region="nj">Se ophold <span aria-hidden="true">→</span></button></div></article><article class="rcard"><h3 class="rname">Midtjylland</h3><p class="rdesc">Søhøjlandet og egnen omkring Aarhus</p><p class="rlabel">Se og oplev</p><ul class="sights"><li><b>Himmelbjerget</b><span>udsigt over Søhøjlandet</span></li><li><b>ARoS, Aarhus</b><span>kunstmuseum med regnbuepanorama</span></li><li><b>Moesgaard Museum</b><span>arkæologi og vikingetid</span></li></ul><div class="rlinks"><a class="rlink" href="/midtjylland/">Læs guiden <span aria-hidden="true">→</span></a><button class="rlink" type="button" data-region="mj">Se ophold <span aria-hidden="true">→</span></button></div></article><article class="rcard"><h3 class="rname">Sydjylland</h3><p class="rdesc">Vadehavet og Lillebælt</p><p class="rlabel">Se og oplev</p><ul class="sights"><li><b>Ribe</b><span>Danmarks ældste by</span></li><li><b>Mandø</b><span>tidevandsø i Vadehavet</span></li><li><b>LEGOLAND, Billund</b><span>forlystelsespark for familier</span></li></ul><div class="rlinks"><a class="rlink" href="/sydjylland/">Læs guiden <span aria-hidden="true">→</span></a><button class="rlink" type="button" data-region="sj">Se ophold <span aria-hidden="true">→</span></button></div></article><article class="rcard"><h3 class="rname">Fyn</h3><p class="rdesc">Det sydfynske øhav og små landsbyer</p><p class="rlabel">Se og oplev</p><ul class="sights"><li><b>Egeskov Slot</b><span>vandslot fra 1500-tallet</span></li><li><b>H.C. Andersens Hus, Odense</b><span>digterens fødeby</span></li><li><b>Ærø</b><span>ø med små byer og cykelruter</span></li></ul><div class="rlinks"><a class="rlink" href="/fyn/">Læs guiden <span aria-hidden="true">→</span></a><button class="rlink" type="button" data-region="fyn">Se ophold <span aria-hidden="true">→</span></button></div></article><article class="rcard"><h3 class="rname">Sjælland</h3><p class="rdesc">Kyster og skove tæt på København</p><p class="rlabel">Se og oplev</p><ul class="sights"><li><b>Kronborg Slot</b><span>Hamlets slot i Helsingør</span></li><li><b>Louisiana</b><span>kunstmuseum ved Øresund</span></li><li><b>Møns Klint</b><span>hvide kridtklinter</span></li></ul><div class="rlinks"><a class="rlink" href="/sjaelland/">Læs guiden <span aria-hidden="true">→</span></a><button class="rlink" type="button" data-region="sjl">Se ophold <span aria-hidden="true">→</span></button></div></article><article class="rcard"><h3 class="rname">Bornholm</h3><p class="rdesc">Klipper, røgerier og små havnebyer</p><p class="rlabel">Se og oplev</p><ul class="sights"><li><b>Hammershus</b><span>Nordeuropas største borgruin</span></li><li><b>Christiansø</b><span>lille ø med fæstning</span></li><li><b>Dueodde</b><span>fin hvid sandstrand</span></li></ul><div class="rlinks"><a class="rlink" href="/bornholm/">Læs guiden <span aria-hidden="true">→</span></a><button class="rlink" type="button" data-region="bh">Se ophold <span aria-hidden="true">→</span></button></div></article></div>
+        <div class="regions" id="regions"><article class="rcard"><h3 class="rname">Nordjylland</h3><p class="rdesc">Klitter, Skagen og Vesterhavet</p><p class="rlabel">Se og oplev</p><ul class="sights"><li><b>Grenen, Skagen</b><span>hvor to have mødes</span></li><li><b>Råbjerg Mile</b><span>Danmarks største vandreklit</span></li><li><b>Rubjerg Knude Fyr</b><span>fyrtårn ved den høje klint</span></li></ul><div class="rlinks"><a class="rlink" href="/nordjylland/" data-hk="nordjylland">Læs guiden <span aria-hidden="true">→</span></a><button class="rlink" type="button" data-region="nj">Se ophold <span aria-hidden="true">→</span></button></div></article><article class="rcard"><h3 class="rname">Midtjylland</h3><p class="rdesc">Søhøjlandet og egnen omkring Aarhus</p><p class="rlabel">Se og oplev</p><ul class="sights"><li><b>Himmelbjerget</b><span>udsigt over Søhøjlandet</span></li><li><b>ARoS, Aarhus</b><span>kunstmuseum med regnbuepanorama</span></li><li><b>Moesgaard Museum</b><span>arkæologi og vikingetid</span></li></ul><div class="rlinks"><a class="rlink" href="/midtjylland/" data-hk="midtjylland">Læs guiden <span aria-hidden="true">→</span></a><button class="rlink" type="button" data-region="mj">Se ophold <span aria-hidden="true">→</span></button></div></article><article class="rcard"><h3 class="rname">Sydjylland</h3><p class="rdesc">Vadehavet og Lillebælt</p><p class="rlabel">Se og oplev</p><ul class="sights"><li><b>Ribe</b><span>Danmarks ældste by</span></li><li><b>Mandø</b><span>tidevandsø i Vadehavet</span></li><li><b>LEGOLAND, Billund</b><span>forlystelsespark for familier</span></li></ul><div class="rlinks"><a class="rlink" href="/sydjylland/" data-hk="sydjylland">Læs guiden <span aria-hidden="true">→</span></a><button class="rlink" type="button" data-region="sj">Se ophold <span aria-hidden="true">→</span></button></div></article><article class="rcard"><h3 class="rname">Fyn</h3><p class="rdesc">Det sydfynske øhav og små landsbyer</p><p class="rlabel">Se og oplev</p><ul class="sights"><li><b>Egeskov Slot</b><span>vandslot fra 1500-tallet</span></li><li><b>H.C. Andersens Hus, Odense</b><span>digterens fødeby</span></li><li><b>Ærø</b><span>ø med små byer og cykelruter</span></li></ul><div class="rlinks"><a class="rlink" href="/fyn/" data-hk="fyn">Læs guiden <span aria-hidden="true">→</span></a><button class="rlink" type="button" data-region="fyn">Se ophold <span aria-hidden="true">→</span></button></div></article><article class="rcard"><h3 class="rname">Sjælland</h3><p class="rdesc">Kyster og skove tæt på København</p><p class="rlabel">Se og oplev</p><ul class="sights"><li><b>Kronborg Slot</b><span>Hamlets slot i Helsingør</span></li><li><b>Louisiana</b><span>kunstmuseum ved Øresund</span></li><li><b>Møns Klint</b><span>hvide kridtklinter</span></li></ul><div class="rlinks"><a class="rlink" href="/sjaelland/" data-hk="sjaelland">Læs guiden <span aria-hidden="true">→</span></a><button class="rlink" type="button" data-region="sjl">Se ophold <span aria-hidden="true">→</span></button></div></article><article class="rcard"><h3 class="rname">Bornholm</h3><p class="rdesc">Klipper, røgerier og små havnebyer</p><p class="rlabel">Se og oplev</p><ul class="sights"><li><b>Hammershus</b><span>Nordeuropas største borgruin</span></li><li><b>Christiansø</b><span>lille ø med fæstning</span></li><li><b>Dueodde</b><span>fin hvid sandstrand</span></li></ul><div class="rlinks"><a class="rlink" href="/bornholm/" data-hk="bornholm">Læs guiden <span aria-hidden="true">→</span></a><button class="rlink" type="button" data-region="bh">Se ophold <span aria-hidden="true">→</span></button></div></article></div>
       </div>
     </section>
 
     <section class="section" id="temaer" aria-labelledby="h-temaer" hidden="">
       <div class="wrap">
         <div class="section-head"><h2 id="h-temaer">Find efter tema</h2></div>
-        <div class="tlinks" id="themes"><a class="tlink" href="/t-glamping/">Glamping i Danmark</a></div>
+        <div class="tlinks" id="themes"><a class="tlink" href="/t-glamping/" data-hk="t-glamping">Glamping i Danmark</a></div>
       </div>
     </section>
 
@@ -592,7 +592,7 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
 <div id="view-hosts">
   <section class="page-head">
     <div class="wrap">
-      <a class="back" href="/" data-i18n="back">← Tilbage til forsiden</a>
+      <a class="back" href="/" data-i18n="back" data-hk="top">← Tilbage til forsiden</a>
       <p class="label" data-i18n="s4_label">For værter</p>
       <h1 data-i18n="s4_h2">Lad de rigtige gæster finde dig</h1>
       <p class="sub" data-i18n="s4_sub">Det er gratis at komme med, og du beholder hele din indtægt. Ingen provision og ingen klikpris. Vil du fortælle din historie med flere billeder og din egen side, kan du vælge Udvalgt.</p>
@@ -622,7 +622,7 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
       </div>
       <p class="fine" data-i18n="fine">Siden finansieres af annoncer og af værter, der vælger Udvalgt. Alle annoncer og betalte placeringer er tydeligt markeret.</p>
       <div class="cta-row"><button class="btn btn-red" type="button" data-toast-key="toast_soon" data-i18n="cta">Tilmeld dit ophold</button></div>
-      <p style="margin-top:28px"><a class="rlink" href="/lodgify/" data-i18n="nosite">Har du ikke en hjemmeside endnu? Se, hvordan du får en bookingside →</a></p>
+      <p style="margin-top:28px"><a class="rlink" href="/lodgify/" data-i18n="nosite" data-hk="lodgify">Har du ikke en hjemmeside endnu? Se, hvordan du får en bookingside →</a></p>
     </div>
   </section>
 </div>
@@ -637,21 +637,21 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
   <div class="wrap">
     <div class="foot-in">
       <div>
-        <a class="brand" href="/" data-i18n-aria="aria_top" aria-label="Unikt Ophold, til toppen">
+        <a class="brand" href="/" data-i18n-aria="aria_top" aria-label="Unikt Ophold, til toppen" data-hk="top">
           <svg class="mark" viewBox="0 0 37 28" aria-hidden="true"><rect class="bg" width="37" height="28"></rect><rect class="x" x="12" width="4" height="28"></rect><rect class="x" y="12" width="37" height="4"></rect></svg>
           <span>Unikt Ophold</span>
         </a>
         <p class="about" data-i18n="foot_p">Vi samler glamping og særlige overnatninger i Danmark, så du lettere finder stedet, du vil huske.</p>
       </div>
       <nav data-i18n-aria="aria_sections" aria-label="Sidens afsnit">
-        <a href="/#ophold" data-i18n="nav_find">Find ophold</a>
-        <a href="/#regioner" data-i18n="nav_regions">Regioner</a>
-        <a href="/#tips" data-i18n="nav_tips">Tips</a>
-        <a href="/#faq" data-i18n="nav_faq">Spørgsmål</a>
-        <a href="/hosts/" data-i18n="nav_hosts">For værter</a>
+        <a href="/#ophold" data-i18n="nav_find" data-hk="ophold">Find ophold</a>
+        <a href="/#regioner" data-i18n="nav_regions" data-hk="regioner">Regioner</a>
+        <a href="/#tips" data-i18n="nav_tips" data-hk="tips">Tips</a>
+        <a href="/#faq" data-i18n="nav_faq" data-hk="faq">Spørgsmål</a>
+        <a href="/hosts/" data-i18n="nav_hosts" data-hk="hosts">For værter</a>
       </nav>
     </div>
-    <p class="legal">© 2026 Unikt Ophold · <a href="/impressum/" data-i18n="nav_imp">Virksomhedsoplysninger</a> · <a href="/datenschutz/" data-i18n="nav_priv">Privatlivspolitik</a><span id="cc-link-wrap" hidden=""> · <button type="button" class="linkbtn" id="cc-open"></button></span></p>
+    <p class="legal">© 2026 Unikt Ophold · <a href="/impressum/" data-i18n="nav_imp" data-hk="impressum">Virksomhedsoplysninger</a> · <a href="/datenschutz/" data-i18n="nav_priv" data-hk="datenschutz">Privatlivspolitik</a><span id="cc-link-wrap" hidden=""> · <button type="button" class="linkbtn" id="cc-open"></button></span></p>
   </div>
 </footer>
 
@@ -1529,9 +1529,10 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
     if (window.__uoThin) add('meta', { name: 'robots', content: 'noindex,follow' });
   }
   function fixLinks() {
-    Array.prototype.forEach.call(document.querySelectorAll('a[href^="#"]'), function (a) {
-      var k = a.getAttribute('href').slice(1);
+    Array.prototype.forEach.call(document.querySelectorAll('a[href^="#"],a[data-hk]'), function (a) {
+      var k = a.hasAttribute('data-hk') ? a.getAttribute('data-hk') : a.getAttribute('href').slice(1);
       if (k === '' ) return;
+      a.setAttribute('data-hk', k);
       a.setAttribute('href', isViewKey(k) ? pathOf(k) : (k === 'top' ? pathOf('') : pathOf('') + '#' + k));
     });
   }

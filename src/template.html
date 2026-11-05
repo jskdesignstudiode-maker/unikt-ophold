@@ -1530,9 +1530,10 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
     if (window.__uoThin) add('meta', { name: 'robots', content: 'noindex,follow' });
   }
   function fixLinks() {
-    Array.prototype.forEach.call(document.querySelectorAll('a[href^="#"]'), function (a) {
-      var k = a.getAttribute('href').slice(1);
+    Array.prototype.forEach.call(document.querySelectorAll('a[href^="#"],a[data-hk]'), function (a) {
+      var k = a.hasAttribute('data-hk') ? a.getAttribute('data-hk') : a.getAttribute('href').slice(1);
       if (k === '' ) return;
+      a.setAttribute('data-hk', k);
       a.setAttribute('href', isViewKey(k) ? pathOf(k) : (k === 'top' ? pathOf('') : pathOf('') + '#' + k));
     });
   }
