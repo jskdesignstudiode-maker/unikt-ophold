@@ -623,7 +623,7 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
         </div>
       </div>
       <p class="fine" data-i18n="fine">Die Seite finanziert sich über Werbeanzeigen und über Gastgeber, die Premium wählen. Alle Anzeigen und bezahlten Platzierungen sind klar gekennzeichnet.</p>
-      <div class="cta-row"><button class="btn btn-red" type="button" data-toast-key="toast_soon" data-i18n="cta">Unterkunft anmelden</button></div>
+      <div class="cta-row"><a class="btn btn-red" id="host-cta" href="mailto:uniktophold@gmail.com?subject=Unterkunft%20bei%20Unikt%20Ophold%20anmelden&amp;body=Hallo%2C%0A%0Aich%20m%C3%B6chte%20meine%20Unterkunft%20anmelden.%0A%0AName%20der%20Unterkunft%3A%0AWebsite%3A%0ARegion%3A%0ABasis%20(kostenlos)%20oder%20Premium%3A%0A%0AViele%20Gr%C3%BC%C3%9Fe" data-i18n="cta">Unterkunft anmelden</a></div>
       <p style="margin-top:28px"><a class="rlink" href="/de/lodgify/" data-i18n="nosite" data-hk="lodgify">Noch keine eigene Website? So bekommst du eine Buchungsseite →</a></p>
     </div>
   </section>
@@ -694,6 +694,7 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
       s2_label: 'Regioner', s2_h2: 'Find dit ophold efter region',
       s2_sub: 'Fra klitterne i nord til klipperne på Bornholm. Vælg en egn, læs, hvad der gør den særlig, og find stedet, hvor du vil vågne.',
       sights_label: 'Se og oplev', region_cta: 'Se ophold',
+      hm_subj: 'Tilmelding af ophold til Unikt Ophold', hm_body: 'Hej\n\nJeg vil gerne tilmelde mit ophold.\n\nNavn på opholdet:\nHjemmeside:\nRegion:\nBasis (gratis) eller Udvalgt:\n\nVenlig hilsen',
       fy_label: 'Med færge', fy_h: 'Sådan kommer du over vandet', fy_sub: 'Kommer du fra Sverige, Norge eller Tyskland, eller skal du til Bornholm? Her kan du sammenligne færgeafgange og priser.', fy_go: 'Se afgange og priser', fy_note: 'Reklamelinks til Direct Ferries. Hvis du bestiller via et link, får vi en lille provision. Det koster dig ikke noget ekstra.',
       pk_label: 'Pak til turen', pk_h: 'Det er godt at have med', pk_sub: 'De fleste ophold har seng og sengetøj. Alligevel gør en lille pakkeliste turen nemmere. Her er nogle ting, mange tager med.', pk_go: 'Se udvalget', pk_note: 'Reklamelinks til Backpackerlife.dk. Hvis du handler der, får vi en lille provision. Det koster dig ikke noget ekstra.',
       tips_label: 'Tips', tips_h2: 'Tips til dit ophold',
@@ -726,7 +727,6 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
       fine: 'Siden finansieres af annoncer og af værter, der vælger Udvalgt. Alle annoncer og betalte placeringer er tydeligt markeret.',
       cta: 'Tilmeld dit ophold',
       foot_p: 'Vi samler glamping og særlige overnatninger i Danmark, så du lettere finder stedet, du vil huske.', nav_imp: 'Virksomhedsoplysninger', nav_priv: 'Privatlivspolitik', nosite: 'Har du ikke en hjemmeside endnu? Se, hvordan du får en bookingside →',
-      toast_soon: 'Du kan tilmelde dit overnatningssted, når siden lanceres.',
       toast_out: 'På den færdige side åbnes opholdets egen side her på Unikt Ophold.',
       toast_site: 'På den færdige side åbnes værtens egen hjemmeside i en ny fane.'
     },
@@ -760,6 +760,7 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
       s2_label: 'Regionen', s2_h2: 'Nach Region finden',
       s2_sub: 'Von den Dünen im Norden bis zu den Felsen auf Bornholm. Such dir eine Gegend aus, lies, was sie besonders macht, und finde den Ort, an dem du aufwachen willst.',
       sights_label: 'Sehenswert', region_cta: 'Unterkünfte ansehen',
+      hm_subj: 'Unterkunft bei Unikt Ophold anmelden', hm_body: 'Hallo,\n\nich möchte meine Unterkunft anmelden.\n\nName der Unterkunft:\nWebsite:\nRegion:\nBasis (kostenlos) oder Premium:\n\nViele Grüße',
       fy_label: 'Mit der Fähre', fy_h: 'So kommst du übers Wasser', fy_sub: 'Du kommst aus Schweden, Norwegen oder Deutschland oder reist nach Bornholm? Hier kannst du Abfahrten und Preise der Fähren vergleichen.', fy_go: 'Abfahrten und Preise ansehen', fy_note: 'Werbelinks zu Direct Ferries. Wenn du über einen Link buchst, erhalten wir eine kleine Provision. Für dich wird es nicht teurer.',
       pk_label: 'Packliste', pk_h: 'Das gehört ins Gepäck', pk_sub: 'Die meisten Unterkünfte haben Bett und Bettwäsche. Trotzdem macht eine kleine Packliste die Reise leichter. Das nehmen viele mit.', pk_go: 'Zum Angebot', pk_note: 'Werbelinks zu Backpackerlife.dk. Wenn du dort kaufst, erhalten wir eine kleine Provision. Für dich wird es nicht teurer.',
       tips_label: 'Tipps', tips_h2: 'Tipps für deinen Aufenthalt',
@@ -792,7 +793,6 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
       fine: 'Die Seite finanziert sich über Werbeanzeigen und über Gastgeber, die Premium wählen. Alle Anzeigen und bezahlten Platzierungen sind klar gekennzeichnet.',
       cta: 'Unterkunft anmelden',
       foot_p: 'Wir sammeln Glamping und besondere Unterkünfte in Dänemark, damit du den Ort findest, an den du dich erinnern wirst.', nav_imp: 'Impressum', nav_priv: 'Datenschutz', nosite: 'Noch keine eigene Website? So bekommst du eine Buchungsseite →',
-      toast_soon: 'Du kannst deine Unterkunft anmelden, sobald die Seite offiziell startet.',
       toast_out: 'Auf der fertigen Seite öffnet sich jetzt die eigene Seite der Unterkunft bei Unikt Ophold.',
       toast_site: 'Auf der fertigen Seite öffnet sich die Website des Gastgebers in einem neuen Tab.'
     },
@@ -826,6 +826,7 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
       s2_label: 'Regions', s2_h2: 'Browse by region',
       s2_sub: 'From the dunes in the north to the cliffs of Bornholm. Pick an area, read what makes it special and find the place where you want to wake up.',
       sights_label: 'See and do', region_cta: 'View stays',
+      hm_subj: 'Listing my stay on Unikt Ophold', hm_body: 'Hello,\n\nI would like to list my stay.\n\nName of the stay:\nWebsite:\nRegion:\nBasic (free) or Featured:\n\nKind regards',
       fy_label: 'By ferry', fy_h: 'Crossing by ferry', fy_sub: 'Travelling from Sweden, Norway or Germany, or heading to Bornholm? Compare ferry departures and prices here.', fy_go: 'See departures and prices', fy_note: 'Ad links to Direct Ferries. If you book through a link, we receive a small commission. It costs you nothing extra.',
       pk_label: 'Packing list', pk_h: 'Good to bring along', pk_sub: 'Most stays come with a bed and bedding. A short packing list still makes the trip easier. Here are a few things many guests bring.', pk_go: 'See the selection', pk_note: 'Ad links to Backpackerlife.dk. If you buy there, we receive a small commission. It costs you nothing extra.',
       tips_label: 'Tips', tips_h2: 'Tips for your stay',
@@ -858,7 +859,6 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
       fine: 'The site is funded by advertising and by hosts who choose Featured. All ads and paid placements are clearly marked.',
       cta: 'List your stay',
       foot_p: 'We gather glamping and unique stays in Denmark, so you can find the place you will remember.', nav_imp: 'Legal notice', nav_priv: 'Privacy policy', nosite: 'No website of your own yet? See how to get a booking site →',
-      toast_soon: 'You can list your property once the site officially launches.',
       toast_out: 'On the finished site the stay’s own page on Unikt Ophold would open now.',
       toast_site: 'On the finished site the host’s own website would open in a new tab.'
     }
@@ -1173,6 +1173,7 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
     Array.prototype.forEach.call(document.querySelectorAll('[data-i18n]'), function (el) { el.textContent = t(el.getAttribute('data-i18n')); });
     Array.prototype.forEach.call(document.querySelectorAll('[data-i18n-aria]'), function (el) { el.setAttribute('aria-label', t(el.getAttribute('data-i18n-aria'))); });
     $('ferry-home').innerHTML = ferryHtml('<p class="label">' + t('fy_label') + '</p><h2 id="h-fy">' + t('fy_h') + '</h2><p class="sub">' + t('fy_sub') + '</p>');
+    $('host-cta').setAttribute('href', 'mailto:uniktophold@gmail.com?subject=' + encodeURIComponent(t('hm_subj')) + '&body=' + encodeURIComponent(t('hm_body')));
     $('pack-home').innerHTML = packHtml('<p class="label">' + t('pk_label') + '</p><h2 id="h-pak">' + t('pk_h') + '</h2><p class="sub">' + t('pk_sub') + '</p>');
     Array.prototype.forEach.call(document.querySelectorAll('.lang button'), function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-lang') === lang ? 'true' : 'false'); });
   }
@@ -1358,7 +1359,7 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
   }
 
   var curLegal = null;
-  var OP = { name: 'Skaberhuset v/Jessica Stockmayer', cvr: '45811816', street: 'Bjergbyvej 5', city: '7870 Roslev', muni: 'Skive', mail: 'info@skaberhusetjessicastockmayer.dk' };
+  var OP = { name: 'Skaberhuset v/Jessica Stockmayer', cvr: '45811816', street: 'Bjergbyvej 5', city: '7870 Roslev', muni: 'Skive', mail: 'uniktophold@gmail.com' };
   var LEGAL = {
     impressum: {
       da: { h: 'Virksomhedsoplysninger', ps: [
