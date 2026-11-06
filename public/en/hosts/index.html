@@ -999,7 +999,6 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
         know_h: 'Godt at vide',
         know: ['Ikke egnet til gæster med nedsat mobilitet og ikke kørestolsvenligt', 'Bagage kan afleveres før indtjekning', 'Afhængigt af sæsonen kan der være landbrugsarbejde på markerne omkring grunden'],
         book: 'Tjek pris og ledige datoer', call: 'Skriv til værterne', book_note: 'I booker direkte hos værten på manefjordglamping.dk. Det koster jer ikke noget ekstra.',
-        own: 'Månefjord drives af samme person, som står bag Unikt Ophold.',
         back: 'Tilbage til alle ophold', gallery_h: 'Billeder', close: 'Luk', prev: 'Forrige billede', next: 'Næste billede'
       },
       de: {
@@ -1036,7 +1035,6 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
         know_h: 'Gut zu wissen',
         know: ['Nicht geeignet für Gäste mit eingeschränkter Mobilität und nicht rollstuhlgerecht', 'Gepäck kann vor dem Check-in abgestellt werden', 'Je nach Jahreszeit kann es auf den umliegenden Feldern zu landwirtschaftlichen Arbeiten kommen'],
         book: 'Preis und freie Termine prüfen', call: 'Schreibt den Gastgebern', book_note: 'Ihr bucht direkt bei den Gastgebern auf manefjordglamping.dk. Für euch entstehen dadurch keine zusätzlichen Kosten.',
-        own: 'Månefjord wird von derselben Person betrieben, die hinter Unikt Ophold steht.',
         back: 'Zurück zu allen Unterkünften', gallery_h: 'Bilder', close: 'Schließen', prev: 'Vorheriges Bild', next: 'Nächstes Bild'
       },
       en: {
@@ -1073,7 +1071,6 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
         know_h: 'Good to know',
         know: ['Not suitable for guests with limited mobility and not wheelchair accessible', 'Luggage can be dropped off before check-in', 'Farm work in the surrounding fields may take place depending on the season'],
         book: 'Check price and availability', call: 'Write to the host', book_note: 'You book directly with the host at manefjordglamping.dk. It costs you nothing extra.',
-        own: 'Månefjord is run by the same person who is behind Unikt Ophold.',
         back: 'Back to all stays', gallery_h: 'Photos', close: 'Close', prev: 'Previous photo', next: 'Next photo'
       }
     }
@@ -1356,7 +1353,6 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
       st.gallery.map(function (gi, i) {
         return '<button type="button" data-lb="' + i + '"><img src="/img/t/' + gi[0] + '.webp" alt="' + esc(gi[1][lang] || gi[1].da) + '" loading="lazy" width="720" height="540"></button>';
       }).join('') + '</div>' +
-      '<p class="stay-note" style="margin-top:28px">' + c.own + '</p>' +
       '<div class="cta-row stay-cta"><a class="btn btn-red" href="' + st.book + '" target="_blank" rel="noopener">' + c.book + ' ↗</a><a class="rlink" href="#ophold">← ' + c.back + '</a></div></div></section>';
     $('view-stay').innerHTML = head + top + body + gal;
   }
