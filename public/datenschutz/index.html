@@ -683,7 +683,7 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
       nav_find: 'Find ophold', nav_regions: 'Regioner', nav_tips: 'Tips', nav_how: 'Sådan vælger vi', nav_faq: 'Spørgsmål', nav_hosts: 'For værter',
       back: '← Tilbage til forsiden',
       crumb_home: 'Forside', crumb_label: 'Brødkrummesti',
-      rp_h1: 'Glamping i {r}', rp_stays: 'Ophold i {r}', rp_all: 'Se alle ophold med filtre', rp_see: 'Se og oplev i {r}', rp_tips: 'Tips til {r}', rp_faq: 'Spørgsmål om {r}', rcard_guide: 'Læs guiden',
+      rp_h1: 'Glamping {i} {r}', rp_stays: 'Ophold {i} {r}', rp_all: 'Se alle ophold med filtre', rp_see: 'Se og oplev {i} {r}', rp_tips: 'Tips til {r}', rp_faq: 'Spørgsmål om {r}', rcard_guide: 'Læs guiden',
       eyebrow: 'Glamping og særlige ophold i Danmark',
       h1: 'Sov et sted, du aldrig glemmer.',
       lead: 'Et telt under stjernerne. En hytte med skoven lige uden for døren. Et hus oppe i trætoppene. Vi har samlet de steder, du kommer til at tænke på længe efter, at du er kørt hjem.',
@@ -1113,6 +1113,7 @@ h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem
   function detect() { return pathInfo().lang; }
   function t(k, v) {
     var s = (T[lang] && T[lang][k]) || T.da[k] || k;
+    if (v && v.r !== undefined) s = s.replace('{i}', ['Fyn', 'Sjælland', 'Bornholm'].indexOf(v.r) > -1 ? 'på' : 'i');
     if (v) for (var key in v) s = s.replace('{' + key + '}', v[key]);
     return s;
   }
