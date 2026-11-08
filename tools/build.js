@@ -20,7 +20,7 @@ const pathOf = (key, l) => (l === 'da' ? '' : '/' + l) + (!key ? '/' : '/' + key
   await page.goto(base + '/'); await page.waitForFunction(() => window.__uoKeys);
   const keys = await page.evaluate(() => window.__uoKeys());
   // remove previously generated pages (keep fonts, img, robots, sitemap)
-  for (const e of fs.readdirSync(PUB)) if (!['fonts', 'img', 'robots.txt', 'sitemap.xml', '_headers'].includes(e)) fs.rmSync(path.join(PUB, e), { recursive: true, force: true });
+  for (const e of fs.readdirSync(PUB)) if (!['fonts', 'img', 'robots.txt', 'sitemap.xml', '_headers', 'favicon.ico', 'favicon.svg', 'apple-touch-icon.png'].includes(e)) fs.rmSync(path.join(PUB, e), { recursive: true, force: true });
   const urls = [];
   for (const l of ['da', 'de', 'en']) for (const k of keys) {
     const u = pathOf(k, l);
